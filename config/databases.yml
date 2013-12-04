@@ -1,0 +1,14 @@
+all: 
+  doctrine: 
+    class: sfDoctrineDatabase
+    param: 
+      dsn: mysql:host=localhost;dbname=pszx
+      username: root
+      password: 142536
+dev: 
+  doctrine: 
+    class: sfDoctrineDatabase
+    param: 
+      dsn: mysql:host=localhost;dbname=m_pszx
+      username: root
+      password: 

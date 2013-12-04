@@ -1,0 +1,4 @@
+buddha: 
+  is_secure:   false
+buddhamove: 
+  is_secure:   true

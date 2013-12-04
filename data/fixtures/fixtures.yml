@@ -1,0 +1,221 @@
+#sfGuardUser default data
+sfGuardUser: 
+  User_admin: 
+    email_address:  mia@gmail.com
+    username:       mia
+    gender:         1
+    city:           珠海
+    province:       广东省
+    password:       mia123
+    phone:          13824789585
+    is_super_admin: true
+    Permissions:     [high_admin,senior_admin,primary_admin]  
+  User_high: 
+    email_address:  high@gmail.com
+    username:       high
+    gender:         1
+    city:           珠海
+    province:       广东省
+    password:       aaaaaa
+    phone:          13824789585
+    Permissions:     [high_admin,senior_admin,primary_admin]  
+  User_senior: 
+    email_address:  senior@gmail.com
+    username:       senior
+    gender:         1
+    city:           珠海
+    province:       广东省
+    password:       aaaaaa
+    phone:          13824789585
+    Permissions:     [senior_admin,primary_admin]   
+  User_primary: 
+    email_address:  primary@gmail.com
+    username:       primary
+    gender:         1
+    city:           珠海
+    province:       广东省
+    password:       aaaaaa
+    phone:          13824789585
+    Permissions:     [primary_admin] 
+  User_origin1: 
+    email_address:  t@gmail.com
+    username:       user
+    gender:         1
+    password:       aaaaaa
+    phone:          13824789585
+  User_origin2: 
+    email_address:  tt@gmail.com
+    username:       user2
+    gender:         0
+    password:       aaaaaa
+    phone:          13824789515
+
+#sfGuardGroup:
+#  Group_admin:
+#    name:           admin
+#    description:    Administrator group
+#    Permissions:    [Permission_admin]
+#  Group_ordinary_user: 
+#    name:           ordinary 
+#    description:    Ordinary user group
+#    Permissions:    [Permission_ordinary]
+     
+sfGuardPermission:
+  primary_admin:  
+    name:           primary
+    description:    初级管理员
+  senior_admin: 
+    name:           senior
+    description:    中级管理员
+  high_admin: 
+    name:           high
+    description:    高级管理员
+    
+# 纪念馆分类
+MemorialCategory: 
+  single: 
+    name: 单人馆
+  double: 
+    name: 双人馆
+# 祭品分类
+OblationCategory: 
+  c1: 
+    name: 节日祭品
+  c2: 
+    name: 香烛烟花
+  c3: 
+    name: 鲜花盆景
+  c4: 
+    name: 食品水果
+  c5: 
+    name: 数码产品
+  c6: 
+    name: 家用电器
+  c7: 
+    name: 交通工具
+  c8: 
+    name: 休闲娱乐
+  c9: 
+    name: 儿童用品
+  c10: 
+    name: 学习用品
+  c11: 
+    name: 特色礼品
+  c12: 
+    name: 金银珠宝
+  c13: 
+    name: 服装衣帽
+  c14: 
+    name: 宠物宝贝
+  c15: 
+    name: 守护神兽
+  c16: 
+    name: 跪地拜祭
+  c17: 
+    name: 住房别墅
+  c18: 
+    name: 奢侈用品
+  c19: 
+    name: 文化音像
+  c20: 
+    name: 其它祭品
+
+# 帖子分类
+ArticleCategory: 
+  c1: 
+    name: 佛教资讯
+  c2: 
+    name: 祭祀活动
+  c3: 
+    name: 慈善救助
+  c4: 
+    name: 同城活动
+  c5: 
+    name: 追忆祭文
+  c6: 
+    name: 在线讣告
+
+# 祈福词语
+PrayWords: 
+  buddha: 
+    words : 金榜题名、大鹏展翅、马到成功、美丽可爱、年年有余、工作顺利、财源广进、心想事成、回心转意、百年好合、夫妻恩爱、喜得贵子、出门平安、母子平安、全家健康、事业有成、兴旺腾达、步步高升、常来拜祭
+  temple: 
+    words : 学习进步、大鹏展翅、马到成功、美丽可爱、年年有余、工作顺利、财源广进、心想事成、回心转意、百年好合、夫妻恩爱、喜得贵子、出门平安、母子平安、全家健康、事业有成、兴旺腾达、步步高升、常来拜祭
+  memorial: 
+    words : 学习进步、金榜题名、马到成功、美丽可爱、年年有余、工作顺利、财源广进、心想事成、回心转意、百年好合、夫妻恩爱、喜得贵子、出门平安、母子平安、全家健康、事业有成、兴旺腾达、步步高升、常来拜祭
+
+# 广告
+Adv: 
+  iv1: 
+    block: 网站首页1
+    title: 首页广告1
+  iv2: 
+    block: 网站首页2
+    title: 首页广告2
+  iv3: 
+    block: 网站首页3
+    title: 首页关广告3
+  bv1: 
+    block: 网上礼佛1
+    title: 网上礼佛1
+  bv2: 
+    block: 网上礼佛2
+    title: 网上礼佛2
+  bv3: 
+    block: 网上礼佛3
+    title: 网上礼佛3
+  av1: 
+    block: 最新动态1
+    title: 最新动态1
+  av2: 
+    block: 最新动态2
+    title: 最新动态2
+  av3: 
+    block: 最新动态3
+    title: 最新动态3
+  mv1: 
+    block: 纪念馆1
+    title: 纪念馆1
+  mv2: 
+    block: 纪念馆2
+    title: 纪念馆2
+  mv3: 
+    block: 纪念馆3
+    title: 纪念馆3
+  ov1: 
+    block: 祭品商店1
+    title: 祭品商店1
+  ov2: 
+    block: 祭品商店2
+    title: 祭品商店2
+  ov3: 
+    block: 祭品商店3
+    title: 祭品商店3
+  fj1: 
+    block: 佛教文化1
+    title: 佛教文化1
+  fj2: 
+    block: 佛教文化2
+    title: 佛教文化2
+  fj3: 
+    block: 佛教文化3
+    title: 佛教文化3
+
+# 首页推荐内容
+Recommend: 
+  FJZXA1: 
+    r_type: 佛教资讯A1
+  FJZXA2: 
+    r_type: 佛教资讯A2
+  CSJZA3: 
+    r_type: 慈善救助A3
+  CSJZA4: 
+    r_type: 慈善救助A4
+  ZYJWA5: 
+    r_type: 追忆祭文A5
+  ZYJWA6: 
+    r_type: 追忆祭文A6
+  TCHDA7: 
+    r_type: 同城活动A7
+  TCHDA8: 
+    r_type: 同城活动A8
