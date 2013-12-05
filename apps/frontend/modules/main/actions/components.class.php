@@ -7,7 +7,10 @@ class mainComponents extends sfComponents {
 	}
 
 	public function executeTemple() {
-		$this->temple = $this->getRecommendResult('Temple');
+		$this->temple = Doctrine_Core::getTable('Temple')->createQuery()
+								->where('is_approved = 1 and is_rejected = 0')
+								->execute()
+								;
 	}
 
 	public function executeOblation() {

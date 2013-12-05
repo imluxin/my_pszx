@@ -2,7 +2,15 @@
 <div class="slides_container">
 
 <?php foreach($advs as $one):?>
-	<a href="<?php echo $one->getUrl() ?>" title="<?php echo $one->getTitle() ?>" rel="external">
+	<?php $u = $one->getUrl();
+	$match = preg_match('^(http|https)://^', $u);
+	if ($match){
+		$url = $u;
+	}else {
+		$url = 'http://'.$u;
+	}
+	?>
+	<a href="<?php echo $url ?>" title="<?php echo $one->getTitle() ?>" rel="external">
 	<?php echo image_tag('../uploads/adv/'.$one['images'],array('alt'=> $one->getTitle())) ?>
 	</a>
 <?php endforeach;?>

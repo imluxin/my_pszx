@@ -3,12 +3,13 @@
     	<div class="row box clearfix">
         	<div class="side fr">
             	<div class="cont">
-                	<div class="authorInfo clearfix">
+            		<?php $author = $article->getSfGuardUser()?>
+                	<div class="authorInfo clearfix mb20">
                         <div class="authorPhoto">
-                            <img src="#" />
+                            <?php echo image_tag('../uploads/userphoto/'.$myuser->getPhoto(),array('class'=>'userIntro_photo')) ?>
                         </div>
                         <div class="authorLink">
-                            <h4 class="authorLink_name">作者名称</h4>
+                            <h4 class="authorLink_name"><?php echo $article->getUserName()?></h4>
                             <a class="btnPurple" href="#">我的空间</a>
                             <a class="btnPurple" href="#">给我留言</a>
                         </div>
@@ -17,12 +18,11 @@
                     	<h3 class="subTitle">其他作品</h3>
                         <div class="txtList">
                         	<ul>
+                        		<?php foreach($all as $a): ?>
                             	<li>
-                                	<a href="#">作品标题</a>
+                                	<a href="<?php echo url_for('article/details?id='.$a->getId()) ?>"><?php echo $a['title']?></a>
                                 </li>
-                            	<li>
-                                	<a href="#">作品标题</a>
-                                </li>
+                                <?php endforeach;?>
                             </ul>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                         </p>
                         <!--帖子内容-->
                         <div class="writingCont">
-                           <?php echo $article->getContent() ?>
+                           <?php echo $article->getRaw('content') ?>
                         </div>
                         <!--帖子内容-->
                     </div>

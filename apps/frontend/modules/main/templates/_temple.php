@@ -7,7 +7,7 @@
 <ul class="clearfix">
 	<?php foreach($temple as $one): ?>
 	<li>
-	<a href="<?php echo url_for('temple/details?id='.$one->getId()) ?>"> 
+	<a href="<?php echo url_for('temple/detail?id='.$one->getId()) ?>"> 
 		<?php echo image_tag('../uploads/temple/'.$one->getImgOne()) ?>
 		<p><?php echo $one->getName() ?></p>
 	</a>

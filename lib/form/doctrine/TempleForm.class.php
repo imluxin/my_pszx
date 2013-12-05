@@ -118,9 +118,9 @@ class TempleForm extends BaseTempleForm
 		
 		$this->widgetSchema->setLabels(array(
 		  'name' => '名山寺庙名称：',
-		  'img_one' => '实景照片1：',
-		  'img_two' => '实景照片2：',
-		  'img_three' => '实景照片3：',
+		  'img_one' => '景照片1：',
+		  'img_two' => '实景照片1：',
+		  'img_three' => '实景照片2：',
 		  'description' => '名山寺庙介绍：',
 		  'province' => ' ',
 		  'city' => ' ',

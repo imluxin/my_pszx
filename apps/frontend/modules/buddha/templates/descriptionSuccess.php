@@ -13,7 +13,7 @@
 		<br /><br />
 		<p style="font-weight: bold;font-size:20px;"><?php echo $bunddla_hall->getName() ?></p>
 		<br /><br />
-		<p style="width:500px;margin:0px auto;text-align: left;text-indent: 25px;"><?php echo $bunddla_hall->getDescription() ?></p>
+		<p style="width:500px;margin:0px auto;text-align: left;text-indent: 25px;"><?php echo $bunddla_hall->getRaw('description') ?></p>
 	</div>
 </div>
 </div>

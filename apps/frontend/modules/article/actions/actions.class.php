@@ -68,6 +68,10 @@ class articleActions extends sfActions
 		$this->myuser = $this->getUser()->getGuardUser();
 		
 		$this->article = Doctrine_Core::getTable('Article')->findOneById($this->id);
+		$this->all = Doctrine_Core::getTable('Article')->createQuery()
+						->where('user_id = ?', $this->article->getUserId())
+						->andWhere('id != ?', $this->id)
+						->execute();
 		if(!$this->article)
 		$this->redirect('article/index');
 

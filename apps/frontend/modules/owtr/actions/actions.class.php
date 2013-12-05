@@ -52,7 +52,7 @@ class owtrActions extends sfActions {
 			$bh->setUserId($user->getId());
 			$bh->setCoins($coins);
 			$bh->setTxt($txt);
-			$bh->setGType('http://localhost/pszx/web/uploads/oblation/'.$type.'.jpg');
+			$bh->setGType('/uploads/oblation/'.$type.'.jpg');
 			$bh->save();
 
 			$user->setCoins($c);

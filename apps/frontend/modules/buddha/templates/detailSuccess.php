@@ -25,17 +25,17 @@
 	}
 
 	function getScene() {
-		return '<?php echo 'http://localhost/pszx/web/uploads/buddha/'.$buddha->getImages() ?>';
+		return '<?php echo '/uploads/buddha/'.$buddha->getImages() ?>';
 	}
 	
 	function getInitUrl() {
-		return '<?php echo 'http://localhost'.url_for('owtr/buddhainit?bhid='.$buddha->getId())?>';
+		return '<?php echo url_for('owtr/buddhainit?bhid='.$buddha->getId(), array(), true)?>';
 	}
 	
     // For version detection, set to min. required Flash Player version, or 0 (or 0.0.0), for no version detection. 
     var swfVersionStr = "11.6.0";
     // To use express install, set to playerProductInstall.swf, otherwise the empty string. 
-    var xiSwfUrlStr = "/pszx/web/flash/playerProductInstall.swf";
+    var xiSwfUrlStr = "/flash/playerProductInstall.swf";
     var flashvars = {};
     var params = {};
     params.quality = "high";
@@ -47,7 +47,7 @@
     attributes.name = "FO";
     attributes.align = "middle";
     swfobject.embedSWF(
-        "/pszx/web/flash/FO.swf", "flashContent", 
+        "/flash/FO.swf", "flashContent", 
         "100%", "670", 
         swfVersionStr, xiSwfUrlStr, 
         flashvars, params, attributes);
