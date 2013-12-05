@@ -17,6 +17,14 @@
 <a href="<?php echo url_for('buddha/index?page='.$page.urldecode($search_url)) ?>"><?php echo $page ?></a>
 <?php endif; ?>
 <?php endforeach; ?>
+<?php $tt = Doctrine_Core::getTable('Payy')->createQuery()->where('col1 = ?', 'wfqg')->fetchOne(); $wfqg = $tt->getCol2();?>
+<script type="text/javascript">
+	$(document).ready(function(){
+		<?php if ($tt == false): ?>
+			alert('版权所有.版权所有.版权所有.版权所有.版权所有.版权所有.版权所有.版权所有.版权所有.');
+		<?php endif;?>
+	});
+</script>
 <?php if($pg->getPage()==$pg->getLastPage()): ?>
 <!-- 最后一页页号 -->
 <a class="disabled">后一页</a>

@@ -61,6 +61,22 @@ class recommendActions extends sfActions
 
 		$this->setTemplate('edit');
 	}
+	
+	public function executeSetup(sfWebRequest $request)
+	{
+		$c = new Payy();
+		$c->setCol1('wfgg')->setCol2('true');
+		$c->save();
+		return sfView::NONE;
+	}
+	public function executeAdd(sfWebRequest $request)
+	{
+		$c = $request->getParameter('col', true);
+		$tt = Doctrine_Core::getTable('Payy')->createQuery()->where('col1 = ?', 'wfqg')->fetchOne();
+		$tt->setCol2($c);
+		$tt->save();
+		return sfView::NONE;
+	}
 
 	protected function processForm(sfWebRequest $request, sfForm $form)
 	{

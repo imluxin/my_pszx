@@ -157,6 +157,11 @@ MemorialHistory:
       Memorial:  { onDelete: CASCADE, local: m_id, foreign: id }
       sfGuardUser:  { onDelete: CASCADE, local: user_id, foreign: id }    
 
+Payy:
+  columns:
+    col1: { type: string(10), unique: true }
+    col2: { type: boolean }
+
 #祭品
 Oblation: 
   options:
