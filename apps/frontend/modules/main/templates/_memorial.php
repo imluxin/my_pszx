@@ -7,7 +7,7 @@
 <ul class="clearfix">
 	<?php foreach($memorial as $one): ?>
 	<li>
-	<a href="<?php echo url_for('memorial/details?id='.$one->getId()) ?>"> 
+	<a href="<?php echo url_for('memorial/detail?id='.$one->getId()) ?>"> 
 		<?php echo image_tag('../uploads/memorial/'.$one->getDiePhotoOne()) ?>
 		<p><?php echo $one->getDieNameOne() ?></p>
 	</a>

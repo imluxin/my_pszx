@@ -5,7 +5,7 @@
 <span style="font-size:14px;text-decoration: underline;"><?php echo link_to('创建寺庙','temple/new')?></span>
 </div>
 <div class="cont">
-<p>待审核</p>
+<div class="subTitle">待审核</div>
 <p>
 <ul class="imgList clearfix">
 	<?php foreach($temple as $one): ?>
@@ -37,7 +37,7 @@
 </div>
 
 <div class="cont">
-<p>打回</p>
+<div class="subTitle">打回</div>
 <p>
 <ul class="imgList clearfix">
 	<?php foreach($reject_temple as $one): ?>
@@ -69,7 +69,7 @@
 </div>
 
 <div class="cont">
-<p>通过审核</p>
+<div class="subTitle">通过审核</div>
 <p>
 <ul class="imgList clearfix">
 	<?php foreach($approve_temple as $one): ?>

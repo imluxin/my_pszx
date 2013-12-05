@@ -5,7 +5,7 @@
 <span style="font-size:14px;text-decoration: underline;"><?php echo link_to('创建祭品','oblation/new')?></span>
 </div>
 <div class="cont">
-<p>待审核</p>
+<div class="subTitle">待审核</div>
 <ul class="imgList clearfix">
 	<?php foreach ($oblation as $one):?>
 	<li>
@@ -36,7 +36,7 @@
 </div>
 
 <div class="cont">
-<p>打回</p>
+<div class="subTitle">打回</div>
 <ul class="imgList clearfix">
 	<?php foreach ($reject_oblation as $one):?>
 	<li>
@@ -67,7 +67,7 @@
 </div>
 
 <div class="cont">
-<p>通过审核</p>
+<div class="subTitle">通过审核</div>
 <ul class="imgList clearfix">
 	<?php foreach ($approve_oblation as $one):?>
 	<li>

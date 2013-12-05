@@ -1,7 +1,7 @@
 <div class="admin_memorial_audit admin_box">
 <div class="subTitle">纪念馆审核</div>
 <div class="cont">
-<p>待审核</p>
+<div class="subTitle">待审核</div>
 <ul class="imgList clearfix">
 	<?php foreach($memorial as $one):?>
 	<li>
@@ -43,7 +43,7 @@
 </div>
 
 <div class="cont">
-<p>打回</p>
+<div class="subTitle">打回</div>
 <ul class="imgList clearfix">
 	<?php foreach($reject_memorial as $one):?>
 	<li>
@@ -73,7 +73,7 @@
 </div>
 
 <div class="cont">
-<p>通过审核</p>
+<div class="subTitle">通过审核</div>
 <ul class="imgList clearfix">
 	<?php foreach($approve_memorial as $one):?>
 	<li>

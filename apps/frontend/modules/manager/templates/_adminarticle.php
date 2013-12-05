@@ -13,7 +13,7 @@
                 <tr>
                 	<td><?php echo $one->getId() ?></td>
                     <td><?php echo $one->gettitle() ?></td>
-                    <td><?php echo $one->getContent() ?></td>
+                    <td><span title="<?php echo strip_tags($one->getRaw('content')) ?>" style="cursor: default;">(鼠标移上查看)</span></td>
                     <td>
                     <?php if(!$one->getIsApproved()) {?>
                     	<?php echo jq_link_to_remote('同意', 

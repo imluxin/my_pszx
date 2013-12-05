@@ -43,7 +43,7 @@
 	                            <span class="newsList_time">日期：<?php echo $one->getCreatedAt()?></span>
                             </p>
                             <p class="newsList_content">
-                            <?php echo $one->getContent() ?>
+                            <?php $des = strip_tags($one->getContent(ESC_RAW)); echo substr($des, 0, 670)."..." ?>
                             </p>
                         </li>
                         <?php endforeach;?>

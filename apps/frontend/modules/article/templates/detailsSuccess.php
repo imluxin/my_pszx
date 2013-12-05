@@ -6,7 +6,7 @@
             		<?php $author = $article->getSfGuardUser()?>
                 	<div class="authorInfo clearfix mb20">
                         <div class="authorPhoto">
-                            <?php echo image_tag('../uploads/userphoto/'.$myuser->getPhoto(),array('class'=>'userIntro_photo')) ?>
+                            <?php echo image_tag('../uploads/userphoto/'.$author->getPhoto(),array('class'=>'userIntro_photo')) ?>
                         </div>
                         <div class="authorLink">
                             <h4 class="authorLink_name"><?php echo $article->getUserName()?></h4>
