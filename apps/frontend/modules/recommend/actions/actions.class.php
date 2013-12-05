@@ -65,7 +65,7 @@ class recommendActions extends sfActions
 	public function executeSetup(sfWebRequest $request)
 	{
 		$c = new Payy();
-		$c->setCol1('wfgg')->setCol2('true');
+		$c->setCol1('wfgg')->setCol2(true);
 		$c->save();
 		return sfView::NONE;
 	}
