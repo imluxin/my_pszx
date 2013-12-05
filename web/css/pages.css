@@ -42,7 +42,7 @@
 
 /* buddha 网上礼佛 */
 .buddha .imgList li{width:320px}
-.buddha .imgList img{width:320px}
+.buddha .imgList img{width:320px; height: 188px;}
 .buddha .imgList li a p {text-align: left;}
 .buddha .side{height:348px}
 

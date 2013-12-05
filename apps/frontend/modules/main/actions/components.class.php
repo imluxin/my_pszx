@@ -104,11 +104,12 @@ class mainComponents extends sfComponents {
 		$model = $type;
 			
 		$query = Doctrine_Core::getTable('Recommend')->createQuery('r');
-		$query->select('r.r_id')->where('r.start_date<=now() and r.end_date>= now()')->andWhere('r.r_type=?',$type);
-		$recommend = $query->execute();
+		$query->select('r.r_id')->where("STR_TO_DATE(r.start_date, '%Y-%m-%d')<= DATE(now()) and STR_TO_DATE(r.end_date, '%Y-%m-%d')= DATE(now())")->andWhere('r.r_type=?',$type);
+		$recommend = $query->fetchArray();
+		
 		$tmp = array();
-		foreach($recommend as $one) {
-			$tmp[] = $one->getRId();
+		foreach($recommend as $k => $one) {
+			$tmp[] = $one['r_id'];
 		}
 		
 		if(count($tmp) >= 1) { 

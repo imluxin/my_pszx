@@ -67,7 +67,7 @@ class templeActions extends sfActions {
 		$this->search_url = urlencode($this->search_url);
 
 		//分页
-		$this->pg= new sfDoctrinePager('temple',1);
+		$this->pg= new sfDoctrinePager('temple',6);
 		$this->pg->setQuery($q);
 		$this->pg->setPage($page);
 		$this->pg->init();
