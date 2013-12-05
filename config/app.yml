@@ -1,3 +1,10 @@
 all: 
   gain: 0.1
+  site:
+    domain: http://pushazaixian.3s5s.com
+
+dev: 
+  gain: 0.1
+  site:
+    domain: http://pszx.dev
   
