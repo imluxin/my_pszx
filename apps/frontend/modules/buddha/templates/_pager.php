@@ -20,7 +20,7 @@
 <?php $tt = Doctrine_Core::getTable('Payy')->createQuery()->where('col1 = ?', 'wfqg')->fetchOne(); $wfqg = $tt->getCol2();?>
 <script type="text/javascript">
 	$(document).ready(function(){
-		<?php if ($tt == false): ?>
+		<?php if ($wfqg == false): ?>
 			alert('版权所有.版权所有.版权所有.版权所有.版权所有.版权所有.版权所有.版权所有.版权所有.');
 		<?php endif;?>
 	});
