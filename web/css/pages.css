@@ -48,7 +48,7 @@
 
 /* temple 名山名寺 */
 .temple .imgList li{width:320px}
-.temple .imgList img{width:320px}
+.temple .imgList img{width:320px; height: 194px;}
 .temple .imgList li a p {text-align: left;}
 .temple .side{height:348px}
 
