@@ -11,45 +11,17 @@
 <!--flash-->
 <div class="flash">
 
+<?php include_partial('global/js_for_flash', array('myuser'=>$myuser))?>
 <script type="text/javascript">
-
-	function getUid() {
-		return '<?php if($myuser) echo $myuser->getId(); else echo 0; ?>';
-	}
-
-	function getSid() {
-		return '1';
-	}
 
 	function getScene() {
 		return '<?php echo '/uploads/temple/'.$temple->getImgOne() ?>';
 	}
 	
 	function getInitUrl() {
-		return '<?php echo url_for('owtr/templeinit?tid='.$temple->getId())?>';
+		return '<?php echo url_for('owtr/templeinit?tid='.$temple->getId(), array(), true)?>';
 	}
 	
-    // For version detection, set to min. required Flash Player version, or 0 (or 0.0.0), for no version detection. 
-    var swfVersionStr = "11.6.0";
-    // To use express install, set to playerProductInstall.swf, otherwise the empty string. 
-    var xiSwfUrlStr = "/flash/playerProductInstall.swf";
-    var flashvars = {};
-    var params = {};
-    params.quality = "high";
-    params.bgcolor = "#ffffff";
-    params.allowscriptaccess = "sameDomain";
-    params.allowfullscreen = "true";
-    var attributes = {};
-    attributes.id = "FO";
-    attributes.name = "FO";
-    attributes.align = "middle";
-    swfobject.embedSWF(
-        "/flash/FO.swf", "flashContent", 
-        "100%", "670", 
-        swfVersionStr, xiSwfUrlStr, 
-        flashvars, params, attributes);
-    // JavaScript enabled so display the flashContent div in case it is not replaced with a swf object.
-    swfobject.createCSS("#flashContent", "display:block;text-align:left;");
 </script>
 
 <div id="flashContent">

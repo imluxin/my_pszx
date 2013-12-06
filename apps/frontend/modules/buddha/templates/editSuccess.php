@@ -8,7 +8,7 @@
 <div class="main fr">
 <div class="cont">
 <h3 class="subTitle">修改佛殿</h3>
-<div class="buildForm">
+<div class="buildForm fix-img-400">
 <?php include_partial('buddha/edit_form', array('form' => $form,'bunddla_hall'=>$bunddla_hall)) ?>
 </div>
 </div>

@@ -12,6 +12,26 @@ class lx
 		return substr($str, '0', $length).'...';
 	}
 	
+	/**
+	 * for flash
+	 * @return string
+	 */
+	
+	public static function getZhuozi()
+	{
+		return sfConfig::get('app_site_domain').'/flash/asset/zhuozi.png';
+	}
+	public static function getShe()
+	{
+		return sfConfig::get('app_site_domain').'/flash/asset/she.gif';
+	}
+	public static function getFOswf()
+	{
+		return sfConfig::get('app_site_domain')."/flash/FO.swf";
+	}
+	
+	
+	
 	public static function get_sort_choices($nb = '15')
 	{
 		$sort = array('');

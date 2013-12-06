@@ -9,7 +9,7 @@
 <div class="main fr">
 <div class="cont">
 <h3 class="subTitle">修改寺庙</h3>
-<div class="buildForm">
+<div class="buildForm fix-img-400">
 	<?php include_partial('edit_form', array('form' => $form,'temple' => $temple)) ?>
 </div>
 </div>

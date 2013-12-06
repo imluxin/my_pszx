@@ -2,7 +2,7 @@
 <div class="subTitle">纪念馆审核</div>
 <div class="cont">
 <div class="subTitle">待审核</div>
-<ul class="imgList clearfix">
+<ul class="imgList clearfix fix-img-160">
 	<?php foreach($memorial as $one):?>
 	<li>
 	<table>
@@ -44,7 +44,7 @@
 
 <div class="cont">
 <div class="subTitle">打回</div>
-<ul class="imgList clearfix">
+<ul class="imgList clearfix fix-img-160">
 	<?php foreach($reject_memorial as $one):?>
 	<li>
 	<table>
@@ -74,7 +74,7 @@
 
 <div class="cont">
 <div class="subTitle">通过审核</div>
-<ul class="imgList clearfix">
+<ul class="imgList clearfix fix-img-160">
 	<?php foreach($approve_memorial as $one):?>
 	<li>
 	<table>

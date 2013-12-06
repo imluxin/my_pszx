@@ -38,41 +38,6 @@
                                 <a class="btnPurple upgrade" href="#">升级</a>
                             </li>
                         <?php endif;?>
-                            <li>
-                                <a href="#">
-                                    <img src="#" />
-                                    <p>姓名</p>
-                                </a>
-                                <a class="btnPurple upgrade" href="#">升级</a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="#" />
-                                    <p>姓名</p>
-                                </a>
-                                <a class="btnPurple upgrade" href="#">升级</a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="#" />
-                                    <p>姓名</p>
-                                </a>
-                                <a class="btnPurple upgrade" href="#">升级</a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="#" />
-                                    <p>姓名</p>
-                                </a>
-                                <a class="btnPurple upgrade" href="#">升级</a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <img src="#" />
-                                    <p>姓名</p>
-                                </a>
-                                <a class="btnPurple upgrade" href="##">升级</a>
-                            </li>
                         </ul>
                 </div>
             </div>

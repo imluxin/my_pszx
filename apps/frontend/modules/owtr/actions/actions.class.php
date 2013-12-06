@@ -53,6 +53,8 @@ class owtrActions extends sfActions {
 			$bh->setCoins($coins);
 			$bh->setTxt($txt);
 			$bh->setGType(sfConfig::get('app_site_domain').'/uploads/oblation/'.$type.'.jpg');
+			$bh->setPointX('320');
+			$bh->setPointY('330');
 			$bh->save();
 
 			$user->setCoins($c);
@@ -188,7 +190,9 @@ class owtrActions extends sfActions {
 			$th->setUserId($user->getId());
 			$th->setCoins($coins);
 			$th->setTxt($txt);
-			$th->setGType('http://localhost/pszx/web/uploads/oblation/'.$type.'.jpg');
+			$th->setGType(sfConfig::get('app_site_domain').'/uploads/oblation/'.$type.'.jpg');
+			$th->setPointX('320');
+			$th->setPointY('330');
 			$th->save();
 
 			$user->setCoins($c);
@@ -324,7 +328,10 @@ class owtrActions extends sfActions {
 			$mh->setUserId($user->getId());
 			$mh->setCoins($coins);
 			$mh->setTxt($txt);
-			$mh->setGType('http://localhost/pszx/web/uploads/oblation/'.$type.'.jpg');
+			//$mh->setGType('http://localhost/pszx/web/uploads/oblation/'.$type.'.jpg');
+			$mh->setGType(sfConfig::get('app_site_domain').'/uploads/oblation/'.$type.'.jpg');
+			$mh->setPointX('320');
+			$mh->setPointY('330');
 			$mh->save();
 
 			$user->setCoins($c);
@@ -460,7 +467,10 @@ class owtrActions extends sfActions {
 			$mh->setUserId($user->getId());
 			$mh->setCoins($coins);
 			$mh->setTxt($txt);
-			$mh->setGType('http://localhost/pszx/web/uploads/oblation/'.$type.'.jpg');
+			//$mh->setGType('http://localhost/pszx/web/uploads/oblation/'.$type.'.jpg');
+			$mh->setGType(sfConfig::get('app_site_domain').'/uploads/oblation/'.$type.'.jpg');
+			$mh->setPointX('320');
+			$mh->setPointY('330');
 			$mh->save();
 
 			$user->setCoins($c);

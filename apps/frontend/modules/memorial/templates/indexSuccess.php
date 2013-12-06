@@ -84,6 +84,14 @@
 			<p><?php echo $one['die_name_one'] ?></p>
 		</a>
 	</li>
+	<?php if (!empty($one['die_name_two'])):?>
+	<li>
+		<a href="<?php echo url_for('memorial/detail?id='.$one['id']) ?>"> 
+			<?php echo image_tag('../uploads/memorial/'.$one['die_photo_two']) ?>
+			<p><?php echo $one['die_name_two'] ?></p>
+		</a>
+	</li>
+	<?php endif;?>
 <?php }?>
 </ul>
 </div>
