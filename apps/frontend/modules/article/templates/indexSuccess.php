@@ -18,10 +18,10 @@
                     </div>
                     <div class="userLink">
                         <ul class="clearfix">
-                            <li><a class="btnGray" href="#">我要充值</a></li>
-                            <li><a class="btnGray" href="#">我要提现</a></li>
-                            <li><a class="btnGray" href="#">我要拜佛</a></li>
-                            <li><a class="btnGray" href="#">我要祭祀</a></li>
+                            <li><a class="btnGray" href="<?php echo url_for('cash/index') ?>">我要充值</a></li>
+                            <li><a class="btnGray" href="<?php echo url_for('cash/index') ?>">我要提现</a></li>
+                            <li><a class="btnGray" href="<?php echo url_for('buddha/index') ?>">我要拜佛</a></li>
+                            <li><a class="btnGray" href="<?php echo url_for('memorial/index') ?>">我要祭祀</a></li>
                         </ul>
                     </div>
                 </div>
