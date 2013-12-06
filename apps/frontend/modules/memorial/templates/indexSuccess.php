@@ -11,13 +11,18 @@
 </div>
 <div class="side fr box">
 <div class="cont">
-<div class="bannerTip"></div>
-<div class="bannerNote"></div>
+<div class="bannerTip static-border mb20">
+祭祀是对祖先的孝思和情感的缅怀，饮水不忘思源，修身齐家的一种人文科学。没有哪种关系 比孝，用来更好修身齐家了。百善孝当先－－－
+
+</div>
+<div class="bannerNote mb20">
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您可以建网上纪念堂,可以让逝去的名人、英烈、亲人永远被我们缅怀,让我们在线祭祀他们,同时您可以获得祭祀消费金币的10%作为回报.金币满一定数目可以提现.
+</div>
 <div class="userLink">
 <ul class="clearfix">
-	<li><a class="btnGray" href="<?php echo url_for('cache/index')?>">我要充值</a></li>
-	<li><a class="btnGray" href="<?php echo url_for('cache/index')?>">我要提现</a></li>
-	<li><a class="btnGray" href="#">我要拜佛</a></li>
+	<li><a class="btnGray" href="<?php echo url_for('cash/index')?>">我要充值</a></li>
+	<li><a class="btnGray" href="<?php echo url_for('cash/index')?>">我要提现</a></li>
+	<li><a class="btnGray" href="<?php echo url_for('buddha/index')?>">我要拜佛</a></li>
 	<li><a class="btnGray" href="<?php echo url_for('memorial/new')?>">我要建馆</a></li>
 </ul>
 </div>

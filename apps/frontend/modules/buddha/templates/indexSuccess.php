@@ -9,8 +9,14 @@
 </div>
 <div class="side fr box">
 <div class="cont">
-<div class="bannerTip"></div>
-<div class="bannerNote"></div>
+<div class="bannerTip static-border mb20 tc">
+人行善 福未到  祸以远 <br>
+人行恶 祸未到  福已远
+</div>
+<div class="bannerNote">
+<p>网上礼佛让人们可以超越时空,随时随地向佛主跪拜祭祀,佛在心中，心在佛在，真正实现每个人的礼佛三炷香，心愿自然成的美好愿望.<br></p>
+<p>您可以烧香拜佛祈求平安，让您万事如意，全家岁岁平安,积德积财,而网上香火不断更是超越地区,时时刻刻表达自己对佛主菩萨的感恩,佛在心中,也是供佛的最高境界.</p>
+</div>
 </div>
 </div>
 </div>

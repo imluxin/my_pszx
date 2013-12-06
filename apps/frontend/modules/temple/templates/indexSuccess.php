@@ -9,8 +9,14 @@
 </div>
 <div class="side fr box">
 <div class="cont">
-<div class="bannerTip"></div>
-<div class="bannerNote"></div>
+<div class="bannerTip tc mb15 static-border">
+山西五台山  浙江普陀山<br><br>
+四川峨眉山  安徽九华山
+</div>
+<div class="bannerNote">
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您可以建网上名山寺庙，让人们超越时空也能领略名山秀丽风景.让人们在线祭拜名山菩萨神仙,同时您可以获得祭祀消费金币的10%作为回报.金币满一定数目可以提现.</p>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;互联网超越时空无处不在的信息传播媒介,佛主菩萨在广阔的天堂宇宙管理我们,已经早早使用互联网工具,所以与佛主菩萨的最好沟通方式就是通过互联网平台.</p>
+</div>
 <a class="buildBtn btnPurple" href="<?php echo url_for('temple/new') ?>">创建寺庙</a></div>
 </div>
 </div>

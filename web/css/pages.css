@@ -93,7 +93,6 @@
 .news .otherWriting li{text-align:center}
 .news .side.box{height:348px}
 
-.article-border{border: 1px solid #800080;border-radius: 12px;margin-top:15px;}
 
 /* pay 充值提现 */
 .pay .note{font-size:16px;color:#800080}
@@ -161,6 +160,8 @@
 .writingCont{
 	margin-bottom: 20px;
 }
+
+.static-border{border: 1px solid #800080;border-radius: 12px;margin-top:15px;}
 
 .fix-img-400 img{width:400px;}
 .fix-img-160 img{width:160px;}

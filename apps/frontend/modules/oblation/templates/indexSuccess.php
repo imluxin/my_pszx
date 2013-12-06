@@ -8,8 +8,14 @@
             </div>
             <div class="side fr box">
             	<div class="cont">
-                	<div class="bannerTip"></div>
-                    <div class="bannerNote"></div>
+                	<div class="bannerTip static-border mb20">
+					祭祀是对祖先的孝思和情感的缅怀，饮水不忘思源，修身齐家的一种人文科学。没有哪种关系 比孝，用来更好修身齐家了。百善孝当先－－－
+					
+					</div>
+					<div class="bannerNote mb20">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;创建网上祭品,让逝去的亲人也分享美好的生活,在天堂也一样享受各种生活用品,也是我们最好的纪念,当别人祭祀消费,您也能获得10%的金币提成.
+					</div>
+					<a class="buildBtn btnPurple" href="<?php echo url_for('oblation/new') ?>">创建祭品</a>
                 </div>
             </div>
         </div>

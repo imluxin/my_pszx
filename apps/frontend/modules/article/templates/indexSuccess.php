@@ -8,7 +8,7 @@
             </div>
             <div class="side fr box">
             	<div class="cont">
-                	<div class="bannerTip article-border mb15">
+                	<div class="bannerTip static-border mb15">
                 		祭祀是对祖先的孝思和情感的缅怀，饮水不忘思源，修身齐家的一种人文科学。
                 		没有哪种关系 比孝，用来更好修身齐家了。百善孝当先－－－
                 	</div>
