@@ -7,17 +7,17 @@
 <ul class="clearfix">
 	<?php foreach($fjzxa1 as $one):?>
 	<li>
-		<a href="<?php echo url_for('article/details?id='.$one->getId()) ?>"> 
+		<a href="<?php echo url_for('article/details?id='.$one->getId()) ?>" class="w125"> 
 			<?php echo image_tag('../uploads/article/'.$one->getImgOne()) ?>
-			<p><?php echo $one->getTitle() ?></p>
+			<span><?php echo lx::get_substr($one->getTitle(), '15') ?></span>
 		</a>
 	</li>
 	<?php endforeach; ?>
 	<?php foreach($fjzxa2 as $one):?>
 	<li>
-		<a href="<?php echo url_for('article/details?id='.$one->getId()) ?>"> 
+		<a href="<?php echo url_for('article/details?id='.$one->getId()) ?>" class="w125"> 
 			<?php echo image_tag('../uploads/article/'.$one->getImgOne()) ?>
-			<p><?php echo $one->getTitle() ?></p>
+			<span><?php echo lx::get_substr($one->getTitle(), '15') ?></span>
 		</a>
 	</li>
 	<?php endforeach; ?>
