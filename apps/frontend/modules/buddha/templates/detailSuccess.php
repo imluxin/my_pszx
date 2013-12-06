@@ -109,7 +109,7 @@ function owtr(g) {
 				var py = result.py;  
 				var sx = result.sx;
 				var sy = result.sy;
-				document.getElementById("FO").addGoods(type_id,user_id,gid,bless,px,py,sx,sy);
+				document.getElementById("FO").effect(type_id,user_id,gid,bless,px,py,sx,sy);
 			} else {
 				alert(result.error);
 				

@@ -53,7 +53,7 @@
 					<li><a href="#">联系我们</a></li>
 				</ul>
 			</div>
-			<div class="cpr">
+			<div class="cpr mt20 mb20">
 				<p>粤ICP备075612345678号．版权所有：菩萨在线网</p>
 			</div>
 		</div>

@@ -8,8 +8,37 @@
             	<div class="cont">
                     <h3 class="subTitle">我要充值</h3>
                     <div class="money">
-                        <p>你当前账户余额：<?php echo $myuser->getCoins() ?>金币（<?php echo ($myuser->getCoins()/100) ?>元）</p>
-                        <p>充值金额&nbsp;<input type="text" />&nbsp;元</p>
+                        <table class="cash_table">
+                        	<tr>
+                        		<td>你当前账户余额：</td>
+                        		<td><?php echo $myuser->getCoins() ?>金币（<?php echo ($myuser->getCoins()/100) ?>元）</td>
+                        	</tr>
+                        	<tr>
+                        		<td>充值金额: </td>
+                        		<td><input type="radio" name="push" value="1000"> 1000元</td>
+                        	</tr>
+                        	<tr>
+                        		<td></td>
+                        		<td><input type="radio" name="push" value="500"> 500元</td>
+                        	</tr>
+                        	<tr>
+                        		<td></td>
+                        		<td><input type="radio" name="push" value="200"> 200元</td>
+                        	</tr>
+                        	<tr>
+                        		<td></td>
+                        		<td><input type="radio" name="push" value="100"> 100元</td>
+                        	</tr>
+                        	<tr>
+                        		<td></td>
+                        		<td><input type="radio" name="push" value="50"> 50元</td>
+                        	</tr>
+                        	<tr>
+                        		<td></td>
+                        		<td><input type="radio" name="push" value="30"> 30元</td>
+                        	</tr>
+                        </table>
+                        </p>
                     </div>
                     <div class="bank">
                     	<h3 class="subTitle">请选择充值方式</h3>
@@ -35,9 +64,40 @@
             	<div class="cont">
                     <h3 class="subTitle">我要提现</h3>
                     <div class="money">
-                        <p>你当前账户余额：<?php echo $myuser->getCoins() ?>金币（<?php echo ($myuser->getCoins()/100) ?>元）</p>
-                        <p>可以提现：<?php echo ($myuser->getCoins()/100) ?>元</p>
-                        <p>提现&nbsp;<input type="text" />&nbsp;元</p>
+                        <table class="cash_table">
+                        	<tr>
+                        		<td>你当前账户余额：</td>
+                        		<td><?php echo $myuser->getCoins() ?>金币（<?php echo ($myuser->getCoins()/100) ?>元）</td>
+                        	</tr>
+                        	<tr>
+                        		<td>可以提现：</td>
+                        		<td><?php echo ($myuser->getCoins()/100) ?>元</td>
+                        	</tr>
+                        	<tr>
+                        		<td>提现金额: </td>
+                        		<td><input type="radio" name="pull" value="1000"> 1000元</td>
+                        	</tr>
+                        	<tr>
+                        		<td></td>
+                        		<td><input type="radio" name="pull" value="500"> 500元</td>
+                        	</tr>
+                        	<tr>
+                        		<td></td>
+                        		<td><input type="radio" name="pull" value="200"> 200元</td>
+                        	</tr>
+                        	<tr>
+                        		<td></td>
+                        		<td><input type="radio" name="pull" value="100"> 100元</td>
+                        	</tr>
+                        	<tr>
+                        		<td></td>
+                        		<td><input type="radio" name="pull" value="50"> 50元</td>
+                        	</tr>
+                        	<tr>
+                        		<td></td>
+                        		<td><input type="radio" name="pull" value="30"> 30元</td>
+                        	</tr>
+                        </table>
                     </div>
                     <p class="submitBar">
                         <input class="btnPurple" type="submit" value="申请提现" />

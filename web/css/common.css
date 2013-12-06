@@ -51,7 +51,7 @@ body{ background:url(../images/body_bg.jpg) 0 0 repeat-x}
 
 .footerNav{width:516px;margin:0 auto}
 .footerNav li{float:left;display:inline;margin:0 15px;}
-.cpr{text-align:center;margin-top:30px}
+.cpr{text-align:center;}
 
 
 .pages {margin:20px; text-align: center } 
