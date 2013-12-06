@@ -28,7 +28,7 @@
 	<?php foreach($article as $one):?>
 		<li>
 			<a href="<?php echo url_for('article/details?id='.$one->getId()) ?>">
-			<?php echo $one->getTitle() ?>
+			<marquee direction="right"><?php echo $one->getTitle() ?></marquee> 
 			</a>
 		</li>
 	<?php endforeach;?>
