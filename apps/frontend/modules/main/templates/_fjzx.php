@@ -7,17 +7,15 @@
 <ul class="clearfix">
 	<?php foreach($fjzxa1 as $one):?>
 	<li>
-		<a href="<?php echo url_for('article/details?id='.$one->getId()) ?>" class="w125"> 
-			<?php echo image_tag('../uploads/article/'.$one->getImgOne()) ?>
-			<span><?php echo lx::get_substr($one->getTitle(), '15') ?></span>
+		<a href="<?php echo lx::getUrl($one->getUrl()); ?>" class="w125"> 
+			<?php echo image_tag($one->getPicture('true')) ?>
 		</a>
 	</li>
 	<?php endforeach; ?>
 	<?php foreach($fjzxa2 as $one):?>
 	<li>
-		<a href="<?php echo url_for('article/details?id='.$one->getId()) ?>" class="w125"> 
-			<?php echo image_tag('../uploads/article/'.$one->getImgOne()) ?>
-			<span><?php echo lx::get_substr($one->getTitle(), '15') ?></span>
+		<a href="<?php echo lx::getUrl($one->getUrl()); ?>" class="w125"> 
+			<?php echo image_tag($one->getPicture('true')) ?>
 		</a>
 	</li>
 	<?php endforeach; ?>
@@ -28,7 +26,7 @@
 	<?php foreach($article as $one):?>
 		<li>
 			<a href="<?php echo url_for('article/details?id='.$one->getId()) ?>">
-			<marquee direction="right"><?php echo $one->getTitle() ?></marquee> 
+			<?php echo $one->getTitle() ?> 
 			</a>
 		</li>
 	<?php endforeach;?>

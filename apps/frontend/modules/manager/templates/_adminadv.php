@@ -36,14 +36,22 @@
 		<td>推荐文章</td>
 		<td>开始日</td>
 		<td>结束日</td>
+		<td>链接网址</td>
+		<td>上传图片</td>
 		<td>操作</td>
 	</tr>
 	<?php foreach($recommend as $one): ?>
 	<tr>
 		<td><?php echo $one->getRType() ?></td>
-		<td><?php echo $one->getArticle()->getTitle() ?></td>
+		<td><?php echo $one->getTitle() ?></td>
 		<td><?php echo $one->getStartDate() ?></td>
 		<td><?php echo $one->getEndDate() ?></td>
+		<td><?php echo $one->getUrl() ?></td>
+		<td>
+		<?php if($one->getImage() != '' ) {?>
+		<?php echo image_tag('../uploads/recommend/'.$one['image'],array('style'=>"width:50%;height:auto;")) ?>
+		<?php } ?>
+		</td>
 		<td><a href="<?php echo url_for('recommend/edit?id='.$one->getId())?>">修改</a></td>
 	</tr>
 	<?php endforeach; ?>

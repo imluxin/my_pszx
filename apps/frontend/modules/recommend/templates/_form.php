@@ -20,8 +20,13 @@
 	<tbody>
 	<?php echo $form->renderGlobalErrors() ?>
 		<tr>
-			<th><?php echo $form['r_id']->renderLabel() ?></th>
-			<td><?php echo $form['r_id']->renderError() ?> <?php echo $form['r_id'] ?>
+			<th>广告位置: </th>
+			<td><?php echo $form->getObject()->getRType() ?>
+			</td>
+		</tr>
+		<tr>
+			<th><?php echo $form['title']->renderLabel() ?></th>
+			<td><?php echo $form['title']->renderError() ?> <?php echo $form['title'] ?>
 			</td>
 		</tr>
 		<tr>
@@ -32,6 +37,16 @@
 		<tr>
 			<th><?php echo $form['end_date']->renderLabel() ?></th>
 			<td><?php echo $form['end_date']->renderError() ?> <?php echo $form['end_date'] ?>
+			</td>
+		</tr>
+		<tr>
+			<th><?php echo $form['url']->renderLabel() ?></th>
+			<td><?php echo $form['url']->renderError() ?> <?php echo $form['url'] ?>
+			</td>
+		</tr>
+		<tr>
+			<th><?php echo $form['image']->renderLabel() ?></th>
+			<td><?php echo $form['image']->renderError() ?> <?php echo $form['image'] ?>
 			</td>
 		</tr>
 	</tbody>

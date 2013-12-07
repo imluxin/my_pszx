@@ -11,6 +11,7 @@ BunddlaHall:
     user_name: { type: string(255) }
     name: { type: string(255), notnull: true }
     images: { type: string(255), notnull: true }
+    zhuozi: { type: string(255), notnull: true }
     description: { type: text, notnull: true }
     is_rejected: { type: boolean, default: false}
     is_approved: { type: boolean, default: false }
@@ -218,6 +219,7 @@ Article:
     content: { type: text, notnull: true }
     is_rejected: { type: boolean, default: false}
     is_approved: { type: boolean, default: false }
+    is_homepage: { type: boolean, default: false }
     last_modify: { type: string(255) }
   relations:
       sfGuardUser:  { onDelete: CASCADE, local: user_id, foreign: id }
@@ -308,12 +310,12 @@ Recommend:
   actAs: 
     Timestampable: ~ 
   columns: 
-    r_type: { type: string(255) }
-    r_id: { type: integer }
-    start_date:          { type: string(255) }
-    end_date:          { type: string(255) }
-  relations:
-      Article:  { onDelete: CASCADE, local: r_id, foreign: id }
+    r_type:       { type: string(255) }
+    title:        { type: string(255) }
+    start_date:   { type: string(255) }
+    end_date:     { type: string(255) }
+    image:        string(255)
+    url:          string(255)
 
 # 祈福词语
 PrayWords: 

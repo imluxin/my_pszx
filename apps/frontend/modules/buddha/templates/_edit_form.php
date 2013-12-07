@@ -34,6 +34,13 @@
         <td style="color: red;"><?php echo $form['images']->renderError() ?></td>
       </tr>
       <tr>
+        <th><?php echo $form['zhuozi']->renderLabel() ?></th>
+        <td id="buddha_img">
+        <?php echo $form['zhuozi'] ?> 
+        </td>
+        <td style="color: red;"><?php echo $form['zhuozi']->renderError() ?></td>
+      </tr>
+      <tr>
         <th><?php echo $form['description']->renderLabel() ?></th>
         <td>&nbsp;</td>
         <td style="color: red;"><?php echo $form['description']->renderError() ?></td>

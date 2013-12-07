@@ -9,7 +9,7 @@
 <div class="main fr">
 <div class="cont">
 <h3 class="subTitle">修改首页推荐</h3>
-<div class="buildForm">
+<div class="buildForm fix-img-160">
 <?php include_partial('form', array('form' => $form)) ?>
 </div>
 </div>

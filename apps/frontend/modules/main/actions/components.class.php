@@ -22,104 +22,49 @@ class mainComponents extends sfComponents {
 	}
 
 	public function executeFjzx(sfWebRequest $request) {
-		$this->fjzxa1 = $this->getRecommendResult('佛教资讯A1','Article');
-		$this->fjzxa2 = $this->getRecommendResult('佛教资讯A2','Article');
+		$this->fjzxa1 = $this->getRecommendResult('佛教资讯A1');
+		$this->fjzxa2 = $this->getRecommendResult('佛教资讯A2');
 		
-		$tmp = array();
-		
-		if($this->fjzxa1) {
-			foreach($this->fjzxa1 as $one) {
-				$tmp[] = $one->getId();
-			}
-		}
-		if($this->fjzxa2) {
-			foreach($this->fjzxa2 as $one) {
-				$tmp[] = $one->getId();
-			}
-		}
-		$this->article = Doctrine_Core::getTable('Article')->getIndexArticle(1,$tmp);
+		$this->article = Doctrine_Core::getTable('Article')->getIndexArticle(1);
 	}
 
 	public function executeCsjz(sfWebRequest $request) {
-		$this->csjza3 = $this->getRecommendResult('慈善救助A3','Article');
-		$this->csjza4 = $this->getRecommendResult('慈善救助A4','Article');
+		$this->csjza3 = $this->getRecommendResult('慈善救助A3');
+		$this->csjza4 = $this->getRecommendResult('慈善救助A4');
 
-		$tmp = array();
-		
-		if($this->csjza3) {
-			foreach($this->csjza3 as $one) {
-				$tmp[] = $one->getId();
-			}
-		}
-		if($this->csjza4) {
-			foreach($this->csjza4 as $one) {
-				$tmp[] = $one->getId();
-			}
-		}
-		$this->article = Doctrine_Core::getTable('Article')->getIndexArticle(3,$tmp);
+		$this->article = Doctrine_Core::getTable('Article')->getIndexArticle(3);
 	}
 	
 	public function executeZyjw(sfWebRequest $request) {
-		$this->zyjwa5 = $this->getRecommendResult('追忆祭文A5','Article');
-		$this->zyjwa6 = $this->getRecommendResult('追忆祭文A6','Article');
+		$this->zyjwa5 = $this->getRecommendResult('追忆祭文A5');
+		$this->zyjwa6 = $this->getRecommendResult('追忆祭文A6');
 		
-		$tmp = array();
-		
-		if($this->zyjwa5) {
-			foreach($this->zyjwa5 as $one) {
-				$tmp[] = $one->getId();
-			}
-		}
-		if($this->zyjwa6) {
-			foreach($this->zyjwa6 as $one) {
-				$tmp[] = $one->getId();
-			}
-		}
-		
-		$this->article = Doctrine_Core::getTable('Article')->getIndexArticle(5,$tmp);
+		$this->article = Doctrine_Core::getTable('Article')->getIndexArticle(5);
 	}
 
 	public function executeTchd(sfWebRequest $request) {
-		$this->tchda7 = $this->getRecommendResult('同城活动A7','Article');
-		$this->tchda8 = $this->getRecommendResult('同城活动A8','Article');
+		$this->tchda7 = $this->getRecommendResult('同城活动A7');
+		$this->tchda8 = $this->getRecommendResult('同城活动A8');
 		
-		$tmp = array();
-		
-		if($this->tchda7) {
-			foreach($this->tchda7 as $one) {
-				$tmp[] = $one->getId();
-			}
-		}
-		if($this->tchda8) {
-			foreach($this->tchda8 as $one) {
-				$tmp[] = $one->getId();
-			}
-		}
-		
-		$this->article = Doctrine_Core::getTable('Article')->getIndexArticle(4,$tmp);
+		$this->article = Doctrine_Core::getTable('Article')->getIndexArticle(4);
 	}
 
-	protected function getRecommendResult($type,$model='') {
-		if($model == '')
-		$model = $type;
-			
+	protected function getRecommendResult($type,$model='') 
+	{			
 		$query = Doctrine_Core::getTable('Recommend')->createQuery('r');
-		$query->select("r.r_id")
-				->where("STR_TO_DATE(r.start_date, '%Y/%m/%d') <= DATE(now()) and STR_TO_DATE(r.end_date, '%Y/%m/%d') >= DATE(now())")
+		$query->where("STR_TO_DATE(r.start_date, '%Y/%m/%d') <= DATE(now()) and STR_TO_DATE(r.end_date, '%Y/%m/%d') >= DATE(now())")
 				->where('r.r_type=?',$type);
-		$recommend = $query->fetchArray();
-		//var_dump($recommend);die();
-		$tmp = array();
-		foreach($recommend as $k => $one) {
-			$tmp[] = $one['r_id'];
-		}
-		
-		if(count($tmp) >= 1) { 
-			$query = Doctrine_Core::getTable($model)->createQuery();
-			$query->whereIn('id', $tmp);
-			return $query->execute();
-		}
-		
-		return array();
+		$recommend = $query->execute();
+				
+		return $recommend;
+	}
+	
+	public function executeObls(sfWebRequest $request)
+	{
+		$this->list = Doctrine_Core::getTable('Oblation')->createQuery()
+						->where('is_rejected = ?', false)
+						->andWhere('is_approved = ?', true)
+						->execute();
+		$this->cats = Doctrine_Core::getTable('OblationCategory')->findAll();
 	}
 }

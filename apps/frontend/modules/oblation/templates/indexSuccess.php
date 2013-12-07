@@ -46,7 +46,7 @@
                         <?php foreach($result as $one):?>
                             <li>
                             	<div class="shopList_img">
-                                	<?php echo image_tag('../uploads/oblation/'.$one['images']) ?>
+                                	<?php echo image_tag($one->getPicture(true)) ?>
                                 </div>
                                 <div class="shopList_info">
                                 	<table>

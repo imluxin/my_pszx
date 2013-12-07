@@ -12,5 +12,27 @@
  */
 class Recommend extends BaseRecommend
 {
+	static public function getFileDir() {
+		return sfConfig::get('sf_upload_dir') . '/recommend';
+	}
 
+	public function getPublicFileLocation() {
+		return self::getFileDir() . '/' . $this->getImage();
+	}
+	
+	public function getPicture($full = false)
+	{
+		$image = $this->getImage();
+		$match = preg_match('^(http|https)://^', $image);
+		if ($match){
+			return $image;
+		}else {
+			if ($full){
+				return '/uploads/recommend/'.$image;
+			}
+			else {
+				return $image;
+			}
+		}
+	}
 }

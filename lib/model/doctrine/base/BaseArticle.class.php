@@ -18,11 +18,11 @@
  * @property text $content
  * @property boolean $is_rejected
  * @property boolean $is_approved
+ * @property boolean $is_homepage
  * @property string $last_modify
  * @property sfGuardUser $sfGuardUser
  * @property ArticleCategory $ArticleCategory
  * @property Doctrine_Collection $Comment
- * @property Doctrine_Collection $Recommend
  * 
  * @method integer             getUserId()          Returns the current record's "user_id" value
  * @method string              getUserName()        Returns the current record's "user_name" value
@@ -37,11 +37,11 @@
  * @method text                getContent()         Returns the current record's "content" value
  * @method boolean             getIsRejected()      Returns the current record's "is_rejected" value
  * @method boolean             getIsApproved()      Returns the current record's "is_approved" value
+ * @method boolean             getIsHomepage()      Returns the current record's "is_homepage" value
  * @method string              getLastModify()      Returns the current record's "last_modify" value
  * @method sfGuardUser         getSfGuardUser()     Returns the current record's "sfGuardUser" value
  * @method ArticleCategory     getArticleCategory() Returns the current record's "ArticleCategory" value
  * @method Doctrine_Collection getComment()         Returns the current record's "Comment" collection
- * @method Doctrine_Collection getRecommend()       Returns the current record's "Recommend" collection
  * @method Article             setUserId()          Sets the current record's "user_id" value
  * @method Article             setUserName()        Sets the current record's "user_name" value
  * @method Article             setCategoryId()      Sets the current record's "category_id" value
@@ -55,11 +55,11 @@
  * @method Article             setContent()         Sets the current record's "content" value
  * @method Article             setIsRejected()      Sets the current record's "is_rejected" value
  * @method Article             setIsApproved()      Sets the current record's "is_approved" value
+ * @method Article             setIsHomepage()      Sets the current record's "is_homepage" value
  * @method Article             setLastModify()      Sets the current record's "last_modify" value
  * @method Article             setSfGuardUser()     Sets the current record's "sfGuardUser" value
  * @method Article             setArticleCategory() Sets the current record's "ArticleCategory" value
  * @method Article             setComment()         Sets the current record's "Comment" collection
- * @method Article             setRecommend()       Sets the current record's "Recommend" collection
  * 
  * @package    symfonymodel
  * @subpackage model
@@ -124,6 +124,10 @@ abstract class BaseArticle extends sfDoctrineRecord
              'type' => 'boolean',
              'default' => false,
              ));
+        $this->hasColumn('is_homepage', 'boolean', null, array(
+             'type' => 'boolean',
+             'default' => false,
+             ));
         $this->hasColumn('last_modify', 'string', 255, array(
              'type' => 'string',
              'length' => 255,
@@ -150,10 +154,6 @@ abstract class BaseArticle extends sfDoctrineRecord
         $this->hasMany('Comment', array(
              'local' => 'id',
              'foreign' => 'article_id'));
-
-        $this->hasMany('Recommend', array(
-             'local' => 'id',
-             'foreign' => 'r_id'));
 
         $timestampable0 = new Doctrine_Template_Timestampable();
         $this->actAs($timestampable0);

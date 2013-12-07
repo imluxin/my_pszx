@@ -214,4 +214,33 @@ class ajaxActions extends sfActions {
 
 		return $this->renderText(0);
 	}
+	
+	public function executeGetObls(sfWebRequest $request)
+	{
+		$cid = $request->getParameter('cid');
+		
+		if (empty($cid)) {
+			return $this->renderText(json_encode(array('status'=>'ko', 'message'=>'没有获得相当祭品分类.')));
+		}
+		
+		$obls = Doctrine_Core::getTable('Oblation')->createQuery()
+						->select('id, name, price')
+						->where('category_id = ?', $cid)
+						->andWhere('is_rejected = ?', false)
+						->andWhere('is_approved = ?', true)
+						->fetchArray();
+		
+		if (count($obls) == '0') {
+			return $this->renderText(json_encode(array('status'=>'ko', 'message'=>'当前分类下没有祭品.')));
+		}
+		
+		$html = $this->getPartial('obls', array('obls' => $obls));
+		
+		return $this->renderText(json_encode(array('status'=>'ok',
+												'message' => '成功获得祭品列表.',
+												'html' => $html
+											)));
+		
+		
+	}
 }

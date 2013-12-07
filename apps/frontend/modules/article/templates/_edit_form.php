@@ -20,6 +20,13 @@
     <tbody>
       <?php echo $form->renderGlobalErrors() ?>
       <tr>
+        <th><?php echo $form['is_homepage']->renderLabel() ?></th>
+        <td>
+          <?php echo $form['is_homepage']->renderError() ?>
+          <?php echo $form['is_homepage'] ?>
+        </td>
+      </tr>
+      <tr>
         <th><?php echo $form['title']->renderLabel() ?></th>
         <td>
           <?php echo $form['title']->renderError() ?>

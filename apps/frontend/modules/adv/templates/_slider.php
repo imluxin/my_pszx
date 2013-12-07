@@ -3,14 +3,8 @@
 
 <?php foreach($advs as $one):?>
 	<?php $u = $one->getUrl();
-	$match = preg_match('^(http|https)://^', $u);
-	if ($match){
-		$url = $u;
-	}else {
-		$url = 'http://'.$u;
-	}
 	?>
-	<a href="<?php echo $url ?>" title="<?php echo $one->getTitle() ?>" rel="external">
+	<a href="<?php echo lx::getUrl($u); ?>" title="<?php echo $one->getTitle() ?>" rel="external">
 	<?php echo image_tag('../uploads/adv/'.$one['images'],array('alt'=> $one->getTitle())) ?>
 	</a>
 <?php endforeach;?>

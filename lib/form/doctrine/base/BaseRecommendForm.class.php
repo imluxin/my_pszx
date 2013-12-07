@@ -17,9 +17,11 @@ abstract class BaseRecommendForm extends BaseFormDoctrine
     $this->setWidgets(array(
       'id'         => new sfWidgetFormInputHidden(),
       'r_type'     => new sfWidgetFormInputText(),
-      'r_id'       => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('Article'), 'add_empty' => true)),
+      'title'      => new sfWidgetFormInputText(),
       'start_date' => new sfWidgetFormInputText(),
       'end_date'   => new sfWidgetFormInputText(),
+      'image'      => new sfWidgetFormInputText(),
+      'url'        => new sfWidgetFormInputText(),
       'created_at' => new sfWidgetFormDateTime(),
       'updated_at' => new sfWidgetFormDateTime(),
     ));
@@ -27,9 +29,11 @@ abstract class BaseRecommendForm extends BaseFormDoctrine
     $this->setValidators(array(
       'id'         => new sfValidatorChoice(array('choices' => array($this->getObject()->get('id')), 'empty_value' => $this->getObject()->get('id'), 'required' => false)),
       'r_type'     => new sfValidatorString(array('max_length' => 255, 'required' => false)),
-      'r_id'       => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('Article'), 'required' => false)),
+      'title'      => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'start_date' => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'end_date'   => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'image'      => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'url'        => new sfValidatorString(array('max_length' => 255, 'required' => false)),
       'created_at' => new sfValidatorDateTime(),
       'updated_at' => new sfValidatorDateTime(),
     ));

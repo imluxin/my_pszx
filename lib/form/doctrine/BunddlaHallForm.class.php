@@ -33,16 +33,18 @@ class BunddlaHallForm extends BaseBunddlaHallForm
 						//'required'=>'菩萨动画图片不能为空。'
 					)
 				);
+		
+		$this->configureImages('zhuozi', '桌子图片', 'buddha');
 				
 		$this->widgetSchema['description'] = new sfWidgetFormTextarea();
 		
 		$this->validatorSchema['name'] = new sfValidatorString(
 									array('required'=>true),
-									array('required'=>'菩萨名称不能为空。')
+									array('required'=>'佛殿名称不能为空。')
 									);
 		$this->validatorSchema['description'] = new sfValidatorString(
 									array('required'=>true),
-									array('required'=>'菩萨介绍不能为空。')
+									array('required'=>'佛殿介绍不能为空。')
 									);
 		$this->widgetSchema['description'] = new sfWidgetFormTextareaTinyMCE(array(
 		  'width'  => 680,
@@ -50,9 +52,9 @@ class BunddlaHallForm extends BaseBunddlaHallForm
 		  'config' => 'theme_advanced_disable: "anchor,image,cleanup,help",forced_root_block:false',
 		));
 		$this->widgetSchema->setLabels(array(
-		  'name' => '菩萨名称：',
-		  'images' => '菩萨动画图片：',
-		  'description' => '菩萨介绍：',
+		  'name' => '佛殿名称：',
+		  'images' => '佛殿动画图片：',
+		  'description' => '佛殿介绍：',
 		));
 	}
 }

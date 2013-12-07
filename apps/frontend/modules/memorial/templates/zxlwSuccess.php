@@ -21,6 +21,10 @@
 		return '<?php echo '/uploads/memorial/'.$memorial->getDiePhotoOne() ?>';
 	}
 	
+	function getDeskInfo() {
+		return ['<?php echo lx::getZhuozi() ?>', 300, 320];
+	}
+	
 	function getInitUrl() {
 		return '<?php echo url_for('owtr/zxlwinit?mid='.$memorial->getId())?>';
 	}
@@ -43,31 +47,21 @@
 
 <!--/flash-->
 </div>
-<div>
-	许愿描述：<textarea id="wish" style="width:1000px;"></textarea>(输入您的许愿描述，然后点击下方的按钮。)
-	<ul class="function_bar">
-		<li><a href="javascript:owtr('1');">我要供烛</a></li>
-		<li><a href="javascript:owtr('2')">我要供香</a></li>
-		<li><a href="javascript:owtr('3')">我要供果</a></li>
-		<li><a href="javascript:owtr('4')">我要供茶</a></li>
-		<li><a href="javascript:owtr('5')">我要供花</a></li>
-		<li><a href="javascript:owtr('6')">祈福许愿</a></li>
-		<li><a href="javascript:owtr('7')">拜佛捐赠</a></li>
-		<li><a href="javascript:owtr('8')">香火不断</a></li>
-	</ul>
-</div>
+
+<?php include_component('main', 'obls');?>
 <script>
 function owtr(g) {
 	<?php if(!$sf_user) {echo 'alert("请登录后再来进贡。");location.href="'.url_for('@sf_guard_signin').'"';} ?>
 
 	var wish = $('#wish').val();
 	if(wish == '') {alert('请输入您的许愿描述'); $('#wish').focus(); return false; }
-	var url = '<?php echo url_for('owtr/zxlw')?>?type='+g+'&txt='+wish+'&mid=<?php echo $memorial->getId()?>';
+	var url = '<?php echo url_for('owtr/zxlw')?>?oid='+g+'&txt='+wish+'&mid=<?php echo $memorial->getId()?>';
 
 	$.ajax({
 		type: "post",
 		url: url,
 		beforeSend: function(XMLHttpRequest){
+			$( "#dialog" ).dialog( "close" );
 		},
 		success: function(data, textStatus){
 			var result = eval ("(" + data + ")");

@@ -18,5 +18,30 @@ class RecommendForm extends BaseRecommendForm
 		$this['updated_at']
 		);
 		
+  		$this->configureImages('image', '上传图片', 'recommend');
+
+// 		$this->widgetSchema['image'] = new sfWidgetFormInputFileEditable(array(
+// 		    'file_src' => $this->getObject()->getPublicFileLocation(),
+// 		    'is_image' => true,
+// 		    'with_delete' => false,
+// 		    'edit_mode' => !$this->isNew() && $this->getObject()->getImage()
+// 		));
+
+// 		$this->validatorSchema['image'] = new sfValidatorFile(array(
+// 				    'mime_types' => 'web_images',
+// 				    'path' => $this->getObject()->getFileDir(),
+// 					'required' => false
+// 		),array()
+// 		);
+
+		$this->widgetSchema->setLabels(array(
+			//'r_type' => '广告位置：',
+		  	'title' => '广告标题：',
+			'start_date' => '开始日：',
+			'end_date' => '结束日：',
+			'url' => '链接网址：',
+			'image' => '上传图片：',
+		));
+		
 	}
 }

@@ -15,6 +15,18 @@
                     <td><?php echo $one->gettitle() ?></td>
                     <td><span title="<?php echo strip_tags($one->getRaw('content')) ?>" style="cursor: default;">(鼠标移上查看)</span></td>
                     <td>
+                    
+                    <?php if(!$one->getIsHomepage()) {?>
+                    	<?php echo jq_link_to_remote('推荐', 
+											array(
+												'url' => 'articlemanager/homepage?id='.$one->getId(),
+												'confirm' => '确定要同意吗？',
+												'success' => 'if(data == 1) { location.reload() } else { alert(data); }'
+											), array())?>
+                    <?php }else {
+                    	echo '已推荐';
+                    } ?>
+                    
                     <?php if(!$one->getIsApproved()) {?>
                     	<?php echo jq_link_to_remote('同意', 
 											array(

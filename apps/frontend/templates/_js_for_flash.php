@@ -7,10 +7,6 @@
 	function getSid() {
 		return '1';
 	}
-	
-	function getDeskInfo() {
-		return ['<?php echo lx::getZhuozi() ?>', 300, 320];
-	}
 
 	function getDragRectangle(){
 		return [ 300, 200, 500, 300 ];

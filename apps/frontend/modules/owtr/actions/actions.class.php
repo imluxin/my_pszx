@@ -1,6 +1,12 @@
 <?php
 
 class owtrActions extends sfActions {
+	
+	public function getOblation($id)
+	{
+		return Doctrine_Core::getTable('Oblation')->find($id);
+	}
+	
 	//****************buddha***************/
 	public function executeBuddha(sfWebRequest $request) {
 		$this->forward404Unless($request->isMethod(sfRequest::POST));
@@ -17,10 +23,14 @@ class owtrActions extends sfActions {
 
 		// 佛祖id
 		$id = $request->getParameter('bid',-1);
+		
 		// 功能类别标识
-		$type = $request->getParameter('type');
+		$oid = $request->getParameter('oid');
+		$obl = $this->getOblation($oid);
+		$coins = $obl->getPrice();
+		$o_pic = $obl->getPicture(true);
+		
 		$txt = $request->getParameter('txt');
-		$coins = $request->getParameter('coins');
 		$gain = sfConfig::get('gain',0.1);
 
 		$buddha = Doctrine_Core::getTable('BunddlaHall')->findOneById($id);
@@ -31,18 +41,6 @@ class owtrActions extends sfActions {
 		}
 		$buddha_owner = $buddha->getSfGuardUser();
 		
-		if($type < 7 && $type >= 1) {
-			$coins = 30;
-		} else if($type == '7') {
-			$coins = $request->getParameter('coins',30);
-		}else if($type == '8') {
-			$coins = 1000;
-		} else {
-			$result['error'] = 'ERROR: 功能类别不正确!!';
-			echo json_encode($result);
-			exit;
-		}
-
 		$u_coins = $user->getCoins();
 		$c = $u_coins - $coins;
 
@@ -52,9 +50,9 @@ class owtrActions extends sfActions {
 			$bh->setUserId($user->getId());
 			$bh->setCoins($coins);
 			$bh->setTxt($txt);
-			$bh->setGType(sfConfig::get('app_site_domain').'/uploads/oblation/'.$type.'.jpg');
-			$bh->setPointX('320');
-			$bh->setPointY('330');
+			$bh->setGType($o_pic);
+			$bh->setPointX(rand('320', '420'));
+			$bh->setPointY(rand('330', '350'));
 			$bh->save();
 
 			$user->setCoins($c);
@@ -156,9 +154,14 @@ class owtrActions extends sfActions {
 		// temple id
 		$id = $request->getParameter('tid',-1);
 		// 功能类别标识
-		$type = $request->getParameter('type');
+		$oid = $request->getParameter('oid');
+		$obl = $this->getOblation($oid);
+		$coins = $obl->getPrice();
+		$o_pic = $obl->getPicture(true);
+		//$type = $request->getParameter('type');
+		
 		$txt = $request->getParameter('txt');
-		$coins = $request->getParameter('coins');
+		//$coins = $request->getParameter('coins');
 		$gain = sfConfig::get('gain',0.1);
 
 		$temple = Doctrine_Core::getTable('Temple')->findOneById($id);
@@ -169,18 +172,6 @@ class owtrActions extends sfActions {
 		}
 		$temple_owner = $temple->getSfGuardUser();
 		
-		if($type < 7 && $type >= 1) {
-			$coins = 30;
-		} else if($type == '7') {
-			$coins = $request->getParameter('coins',30);
-		}else if($type == '8') {
-			$coins = 1000;
-		} else {
-			$result['error'] = 'ERROR: 功能类别不正确!!';
-			echo json_encode($result);
-			exit;
-		}
-
 		$u_coins = $user->getCoins();
 		$c = $u_coins - $coins;
 
@@ -190,9 +181,9 @@ class owtrActions extends sfActions {
 			$th->setUserId($user->getId());
 			$th->setCoins($coins);
 			$th->setTxt($txt);
-			$th->setGType(sfConfig::get('app_site_domain').'/uploads/oblation/'.$type.'.jpg');
-			$th->setPointX('320');
-			$th->setPointY('330');
+			$th->setGType($o_pic);
+			$th->setPointX(rand('320', '420'));
+			$th->setPointY(rand('330', '350'));
 			$th->save();
 
 			$user->setCoins($c);
@@ -292,10 +283,16 @@ class owtrActions extends sfActions {
 		}
 
 		$id = $request->getParameter('mid',-1);
+		
 		// 功能类别标识
-		$type = $request->getParameter('type');
+		$oid = $request->getParameter('oid');
+		$obl = $this->getOblation($oid);
+		$coins = $obl->getPrice();
+		$o_pic = $obl->getPicture(true);
+		//$type = $request->getParameter('type');
+		
 		$txt = $request->getParameter('txt');
-		$coins = $request->getParameter('coins');
+		//$coins = $request->getParameter('coins');
 		$gain = sfConfig::get('gain',0.1);
 
 		$memorial = Doctrine_Core::getTable('Memorial')->findOneById($id);
@@ -306,18 +303,6 @@ class owtrActions extends sfActions {
 		}
 		$memorial_owner = $memorial->getSfGuardUser();
 		
-		if($type < 7 && $type >= 1) {
-			$coins = 30;
-		} else if($type == '7') {
-			$coins = $request->getParameter('coins',30);
-		}else if($type == '8') {
-			$coins = 1000;
-		} else {
-			$result['error'] = 'ERROR: 功能类别不正确!!';
-			echo json_encode($result);
-			exit;
-		}
-
 		$u_coins = $user->getCoins();
 		$c = $u_coins - $coins;
 
@@ -328,10 +313,9 @@ class owtrActions extends sfActions {
 			$mh->setUserId($user->getId());
 			$mh->setCoins($coins);
 			$mh->setTxt($txt);
-			//$mh->setGType('http://localhost/pszx/web/uploads/oblation/'.$type.'.jpg');
-			$mh->setGType(sfConfig::get('app_site_domain').'/uploads/oblation/'.$type.'.jpg');
-			$mh->setPointX('320');
-			$mh->setPointY('330');
+			$mh->setGType($o_pic);
+			$mh->setPointX(rand('320', '420'));
+			$mh->setPointY(rand('330', '350'));
 			$mh->save();
 
 			$user->setCoins($c);
@@ -431,10 +415,16 @@ class owtrActions extends sfActions {
 		}
 
 		$id = $request->getParameter('mid',-1);
+		
 		// 功能类别标识
-		$type = $request->getParameter('type');
+		$oid = $request->getParameter('oid');
+		$obl = $this->getOblation($oid);
+		$coins = $obl->getPrice();
+		$o_pic = $obl->getPicture(true);
+		
+		//$type = $request->getParameter('type');
 		$txt = $request->getParameter('txt');
-		$coins = $request->getParameter('coins');
+		//$coins = $request->getParameter('coins');
 		$gain = sfConfig::get('gain',0.1);
 
 		$memorial = Doctrine_Core::getTable('Memorial')->findOneById($id);
@@ -444,18 +434,6 @@ class owtrActions extends sfActions {
 			exit;
 		}
 		$memorial_owner = $memorial->getSfGuardUser();
-		
-		if($type < 7 && $type >= 1) {
-			$coins = 30;
-		} else if($type == '7') {
-			$coins = $request->getParameter('coins',30);
-		}else if($type == '8') {
-			$coins = 1000;
-		} else {
-			$result['error'] = 'ERROR: 功能类别不正确!!';
-			echo json_encode($result);
-			exit;
-		}
 
 		$u_coins = $user->getCoins();
 		$c = $u_coins - $coins;
@@ -467,10 +445,9 @@ class owtrActions extends sfActions {
 			$mh->setUserId($user->getId());
 			$mh->setCoins($coins);
 			$mh->setTxt($txt);
-			//$mh->setGType('http://localhost/pszx/web/uploads/oblation/'.$type.'.jpg');
-			$mh->setGType(sfConfig::get('app_site_domain').'/uploads/oblation/'.$type.'.jpg');
-			$mh->setPointX('320');
-			$mh->setPointY('330');
+			$mh->setGType($o_pic);
+			$mh->setPointX(rand('320', '420'));
+			$mh->setPointY(rand('330', '350'));
 			$mh->save();
 
 			$user->setCoins($c);

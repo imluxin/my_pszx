@@ -28,6 +28,7 @@ class ArticleTable extends Doctrine_Table
 		->andWhereNotIn('a.id', $notin)
 		->andWhere('a.is_approved=1')
 		->andWhere('a.is_rejected=0')
+		->andWhere('a.is_homepage=1')
 		->orderBy('a.id DESC')->limit($limit);
 		return $query->execute();
 	}

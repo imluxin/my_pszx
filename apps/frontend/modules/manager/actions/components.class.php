@@ -169,7 +169,7 @@ class managerComponents extends sfComponents {
 		$q->orderBy('id DESC');
 		// $this->cols=$q->execute();
 		//分页
-		$this->pg= new sfDoctrinePager('Oblation',1);
+		$this->pg= new sfDoctrinePager('Oblation',15);
 		$this->pg->setQuery($q);
 		$this->pg->setPage($page);
 		$this->pg->init();

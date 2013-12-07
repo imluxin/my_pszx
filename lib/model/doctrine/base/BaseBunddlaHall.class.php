@@ -9,6 +9,7 @@
  * @property string $user_name
  * @property string $name
  * @property string $images
+ * @property string $zhuozi
  * @property text $description
  * @property boolean $is_rejected
  * @property boolean $is_approved
@@ -20,6 +21,7 @@
  * @method string              getUserName()           Returns the current record's "user_name" value
  * @method string              getName()               Returns the current record's "name" value
  * @method string              getImages()             Returns the current record's "images" value
+ * @method string              getZhuozi()             Returns the current record's "zhuozi" value
  * @method text                getDescription()        Returns the current record's "description" value
  * @method boolean             getIsRejected()         Returns the current record's "is_rejected" value
  * @method boolean             getIsApproved()         Returns the current record's "is_approved" value
@@ -30,6 +32,7 @@
  * @method BunddlaHall         setUserName()           Sets the current record's "user_name" value
  * @method BunddlaHall         setName()               Sets the current record's "name" value
  * @method BunddlaHall         setImages()             Sets the current record's "images" value
+ * @method BunddlaHall         setZhuozi()             Sets the current record's "zhuozi" value
  * @method BunddlaHall         setDescription()        Sets the current record's "description" value
  * @method BunddlaHall         setIsRejected()         Sets the current record's "is_rejected" value
  * @method BunddlaHall         setIsApproved()         Sets the current record's "is_approved" value
@@ -61,6 +64,11 @@ abstract class BaseBunddlaHall extends sfDoctrineRecord
              'length' => 255,
              ));
         $this->hasColumn('images', 'string', 255, array(
+             'type' => 'string',
+             'notnull' => true,
+             'length' => 255,
+             ));
+        $this->hasColumn('zhuozi', 'string', 255, array(
              'type' => 'string',
              'notnull' => true,
              'length' => 255,

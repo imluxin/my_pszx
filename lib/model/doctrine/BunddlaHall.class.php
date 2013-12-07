@@ -40,4 +40,20 @@ class BunddlaHall extends BaseBunddlaHall
 			
 		return parent::delete($conn);
 	}
+	
+	public function getPicture($field, $full = false)
+	{
+		$image = $this->get($field);
+		$match = preg_match('^(http|https)://^', $image);
+		if ($match){
+			return $image;
+		}else {
+			if ($full){
+				return '/uploads/buddha/'.$image;
+			}
+			else {
+				return $image;
+			}
+		}
+	}
 }

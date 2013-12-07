@@ -22,6 +22,22 @@ class Oblation extends BaseOblation {
 	{
 		return str_replace(sfConfig::get('sf_web_dir'), '', self::getFileDir()) . '/' . $this->getImages();
 	}
+	
+	public function getPicture($full = false)
+	{
+		$image = $this->getImages();
+		$match = preg_match('^(http|https)://^', $image);
+		if ($match){
+			return $image;
+		}else {
+			if ($full){
+				return '/uploads/oblation/'.$image;
+			}
+			else {
+				return $image;
+			}
+		}
+	}
 
 	public function save( Doctrine_Connection $conn = null ) {
 		$user = sfContext::getInstance()->getUser()->getGuardUser();

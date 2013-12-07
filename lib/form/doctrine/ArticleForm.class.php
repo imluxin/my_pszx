@@ -19,6 +19,7 @@ class ArticleForm extends BaseArticleForm
 			$this['updated_at']
 		);
 		
+		$this->getWidget('title')->setAttribute('size', '67');
 		$this->validatorSchema['title'] = new sfValidatorString(array(),array(
 			'required'=>'请输入帖子标题。'
 		));
@@ -77,6 +78,7 @@ class ArticleForm extends BaseArticleForm
 				);		
 		
 		$this->widgetSchema->setLabels(array(
+		  'is_homepage' => '是否首页推荐?',
 		  'title' => '帖子标题：',
 		  'category_id' => '帖子分类：',
 		  'img_one' => '分享图片1：',
