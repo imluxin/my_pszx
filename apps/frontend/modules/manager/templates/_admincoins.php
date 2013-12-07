@@ -42,7 +42,7 @@
 	function editCoins(uid) {
 		if(confirm('确认修改？')) {
 			var coins = $('#coins_'+uid).val();
-			var url = '<?php echo url_for("ajax/EditCoins") ?>?uid='+uid+'&coins='+coins;
+			var url = '<?php echo url_for("ajax/EditCoins") ?>?uid='+uid+'&coins='+coins+'&u=<?php echo $sf_user->getUsername();?>';
 			
 			$.ajax({
 				type: "post",

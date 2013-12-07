@@ -167,9 +167,12 @@ class ajaxActions extends sfActions {
 
 		if($user) {
 			$u_coins = $user->getCoins();
-			$tmp = $coins + $u_coins;
+			
+			$tmp = $coins + (int)$u_coins;
+			
 			$user->setCoins($tmp);
-			$user->setLastModify($this->getUser()->getGuardUser()->getUsername());
+			$n = $request->getParameter('u');
+			$user->setLastModify($n);
 			$user->save();
 
 			return $this->renderText(1);
