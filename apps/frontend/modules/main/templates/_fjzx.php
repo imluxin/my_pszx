@@ -26,7 +26,7 @@
 	<?php foreach($article as $one):?>
 		<li>
 			<a href="<?php echo url_for('article/details?id='.$one->getId()) ?>">
-				<?php echo mb_substr($one->getTitle(), 0, 18, 'UTF-8').'...' ?>
+				<?php echo mb_substr($one->getTitle(), 0, 17, 'UTF-8').'...' ?>
 			</a>
 		</li>
 	<?php endforeach;?>
