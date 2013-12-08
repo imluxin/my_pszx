@@ -20,7 +20,9 @@
                         	<ul>
                         		<?php foreach($all as $a): ?>
                             	<li>
-                                	<a href="<?php echo url_for('article/details?id='.$a->getId()) ?>"><?php echo $a['title']?></a>
+                                	<a href="<?php echo url_for('article/details?id='.$a->getId()) ?>">
+										<?php echo mb_substr($a['title'], 0, 18, 'UTF-8').'...' ?>
+                                	</a>
                                 </li>
                                 <?php endforeach;?>
                             </ul>
