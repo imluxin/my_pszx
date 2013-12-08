@@ -91,7 +91,14 @@ class managerComponents extends sfComponents {
 		$this->article_page = $request->getParameter('article_page',1);        //默认第1页
 		$q = Doctrine_Core::getTable('Article')->getListOnPage($this->article_page,30); //第页显示n条
 		$q->Where('user_id='.$this->myuser->getId());
+		
+		$cid = $request->getParameter('cid');
+		if (!empty($cid)) {
+			$q->addWhere('category_id = ?', $cid);
+		}
+		
 		$this->cols=$q->execute();
+		
 		//分页
 		$this->article_pg= new sfDoctrinePager('DealList',30);
 		$this->article_pg->setQuery($q);
@@ -99,6 +106,7 @@ class managerComponents extends sfComponents {
 		$this->article_pg->init();
 
 		$this->article_result = $this->article_pg->getResults();
+		$this->cats = Doctrine_Core::getTable('ArticleCategory')->findAll();
 	}
 
 	public function executeAdminbuddha(sfWebRequest $request) {
@@ -189,6 +197,12 @@ class managerComponents extends sfComponents {
 
 		$page= $request->getParameter('page',1);        //默认第1页
 		$q = Doctrine_Core::getTable('Article')->getListOnPage($page,30); //第页显示n条
+		
+		$cid = $request->getParameter('cid');
+		if (!empty($cid)) {
+			$q->addWhere('category_id = ?', $cid);
+		}
+		
 		$q->orderBy('id DESC');
 		// $this->cols=$q->execute();
 		//分页
@@ -198,6 +212,7 @@ class managerComponents extends sfComponents {
 		$this->pg->init();
 
 		$this->result = $this->pg->getResults();
+		$this->cats = Doctrine_Core::getTable('ArticleCategory')->findAll();
 
 	}
 

@@ -5,8 +5,10 @@
 <span style="font-size:14px;text-decoration: underline;"><?php echo link_to('发表帖子','article/new')?></span>
 </div>
 <div class="cont">
+<?php include_partial('article/filter', array('url'=>url_for('manager/article'), 'cats' => $cats )); ?>
 <table class="table">
 	<tr>
+		<td>文章分类</td>
 		<td>文章/讣告标题</td>
 		<td>发表时间</td>
 		<td>修改</td>
@@ -14,6 +16,7 @@
 	</tr>
 	<?php foreach($article_result as $one): ?>
 	<tr>
+		<td><?php echo $one->getArticleCategory() ?></td>
 		<td><?php echo $one->getTitle() ?></td>
 		<td><?php echo $one->getCreatedAt() ?></td>
 		<td><a href="<?php echo url_for('article/edit?article_page='.$article_page.'&id='.$one->getId()) ?>">修改</a></td>

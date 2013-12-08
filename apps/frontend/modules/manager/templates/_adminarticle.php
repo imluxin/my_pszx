@@ -2,9 +2,13 @@
 <div class="admin_shop_price admin_box">
 	<div class="subTitle">文章讣告管理</div>
 	<div class="cont">
+	
+<?php include_partial('article/filter', array('url'=>url_for('manager/marticle'), 'cats' => $cats )); ?>
+	
 		<table class="table">
 				<tr>
 					<td>序号</td>
+					<td>文章分类</td>
 					<td>标题</td>
 					<td>内容</td>
 					<td>操作</td>
@@ -12,6 +16,7 @@
                 <?php foreach($result as $one):?>
                 <tr>
                 	<td><?php echo $one->getId() ?></td>
+					<td><?php echo $one->getArticleCategory() ?></td>
                     <td><?php echo $one->gettitle() ?></td>
                     <td><span title="<?php echo strip_tags($one->getRaw('content')) ?>" style="cursor: default;">(鼠标移上查看)</span></td>
                     <td>
