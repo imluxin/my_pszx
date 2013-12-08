@@ -238,11 +238,10 @@ class ajaxActions extends sfActions {
 		}
 		
 		$obls = Doctrine_Core::getTable('Oblation')->createQuery()
-						->select('id, name, price')
 						->where('category_id = ?', $cid)
 						->andWhere('is_rejected = ?', false)
 						->andWhere('is_approved = ?', true)
-						->fetchArray();
+						->execute();
 		
 		if (count($obls) == '0') {
 			return $this->renderText(json_encode(array('status'=>'ko', 'message'=>'当前分类下没有祭品.')));

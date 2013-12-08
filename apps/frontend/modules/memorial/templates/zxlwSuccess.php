@@ -22,7 +22,7 @@
 	}
 	
 	function getDeskInfo() {
-		return ['<?php echo lx::getZhuozi() ?>', 300, 320];
+		return ['<?php echo $memorial->getPicture('die_photo_one', true); ?>', 430, 120];
 	}
 	
 	function getInitUrl() {

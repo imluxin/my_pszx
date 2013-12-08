@@ -26,7 +26,7 @@ $(document).ready(function() {
         	effect: "explode",
         	duration: 300
       	},
-      	width: 600,
+      	width: 1000,
       	close: function(event, ui){$(this).text(' ');},
 		buttons: [
 					{

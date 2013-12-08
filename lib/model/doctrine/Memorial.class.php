@@ -26,6 +26,22 @@ class Memorial extends BaseMemorial
 	{
 		return str_replace(sfConfig::get('sf_web_dir'), '', self::getFileDir()) . '/' . $this->getDiePhotoTwo();
 	}
+	
+	public function getPicture($field, $full = false)
+	{
+		$image = $this->get($field);
+		$match = preg_match('^(http|https)://^', $image);
+		if ($match){
+			return $image;
+		}else {
+			if ($full){
+				return '/uploads/memorial/'.$image;
+			}
+			else {
+				return $image;
+			}
+		}
+	}
 
 	public function save( Doctrine_Connection $conn = null ) {
 		$user = sfContext::getInstance()->getUser()->getGuardUser();
