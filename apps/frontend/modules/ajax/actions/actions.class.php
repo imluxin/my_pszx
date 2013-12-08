@@ -152,6 +152,17 @@ class ajaxActions extends sfActions {
 
 		return $this->renderText(1);
 	}
+	public function executeDelMtemplate(sfWebRequest $request) {
+		$this->forward404Unless($request->isMethod(sfRequest::POST));
+
+		$id = $request->getParameter('id');
+		$res = Doctrine_Core::getTable('MemorialTemplate')->findOneById($id);
+		if($res) {
+			$res->delete();
+		}
+
+		return $this->renderText(1);
+	}
 	/**************** manager: memorial end**************************/
 
 	public function executeEditCoins(sfWebRequest $request) {

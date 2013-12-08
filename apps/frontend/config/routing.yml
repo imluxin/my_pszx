@@ -10,6 +10,10 @@ sf_guard_password:
   url:   /request_password
   param: { module: sfGuardAuth, action: password }
   
+memorial_upgrade:
+  url:  /memorial/upgrade
+  param: { module: memorial, action: upgrade }
+  
 # default rules
 homepage:
   url:   /

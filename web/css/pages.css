@@ -163,7 +163,11 @@
 
 .static-border{border: 1px solid #800080;border-radius: 12px;margin-top:15px;}
 
-.fix-img-400 img{width:400px;}
-.fix-img-160 img{width:160px;}
+.fix-img-400 img{width:400px !important;height: auto !important;}
+.fix-img-160 img{width:160px !important;height: auto !important;}
 
 
+object{
+	position:relative; 
+    z-index:0
+}

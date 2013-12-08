@@ -40,6 +40,7 @@ abstract class BaseMemorialForm extends BaseFormDoctrine
       'is_rejected'      => new sfWidgetFormInputCheckbox(),
       'is_approved'      => new sfWidgetFormInputCheckbox(),
       'last_modify'      => new sfWidgetFormInputText(),
+      'template_id'      => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('MemorialTemplate'), 'add_empty' => true)),
       'created_at'       => new sfWidgetFormDateTime(),
       'updated_at'       => new sfWidgetFormDateTime(),
     ));
@@ -70,6 +71,7 @@ abstract class BaseMemorialForm extends BaseFormDoctrine
       'is_rejected'      => new sfValidatorBoolean(array('required' => false)),
       'is_approved'      => new sfValidatorBoolean(array('required' => false)),
       'last_modify'      => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'template_id'      => new sfValidatorDoctrineChoice(array('model' => $this->getRelatedModelName('MemorialTemplate'), 'required' => false)),
       'created_at'       => new sfValidatorDateTime(),
       'updated_at'       => new sfValidatorDateTime(),
     ));

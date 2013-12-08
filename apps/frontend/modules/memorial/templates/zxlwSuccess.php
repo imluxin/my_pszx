@@ -18,7 +18,7 @@
 <script type="text/javascript">
 
 	function getScene() {
-		return '<?php echo '/uploads/memorial/'.$memorial->getDiePhotoOne() ?>';
+		return '<?php echo $memorial->getMemorialTemplate()->getPicture('lw_path', true); ?>';
 	}
 	
 	function getDeskInfo() {

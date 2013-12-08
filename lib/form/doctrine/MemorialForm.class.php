@@ -106,6 +106,8 @@ class MemorialForm extends BaseMemorialForm
 		  'config' => 'theme_advanced_disable: "anchor,image,cleanup,help",forced_root_block:false',
 		));
 		
+		$this->getWidget('template_id')->setOption('method', 'getNameWithPrice');
+		
 		$this->widgetSchema->setLabels(array(
 		  'm_name' => '纪念馆名称：',
 		  'category_id' => '纪念馆分类： ',
@@ -124,7 +126,8 @@ class MemorialForm extends BaseMemorialForm
 		  'die_die_two' => '忌日：',
 		  'die_nickname_two' => '称呼：',
 		  'die_photo_two' => '逝者头像：',
-		  'description' => '生平介绍：'
+		  'description' => '生平介绍：',
+		  'template_id' => '纪念馆模板'
 		));
 	}
 }

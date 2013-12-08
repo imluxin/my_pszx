@@ -10,7 +10,7 @@
 <div class="main fr">
 <div class="cont">
 <h3 class="subTitle">修改纪念馆</h3>
-<div class="buildForm fix-img-400"><?php include_partial('edit_form', array('form' => $form,'memorial'=> $memorial)) ?>
+<div class="buildForm fix-img-160"><?php include_partial('edit_form', array('form' => $form,'memorial'=> $memorial)) ?>
 </div>
 </div>
 </div>

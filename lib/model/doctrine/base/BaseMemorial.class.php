@@ -29,8 +29,10 @@
  * @property boolean $is_rejected
  * @property boolean $is_approved
  * @property string $last_modify
+ * @property integer $template_id
  * @property sfGuardUser $sfGuardUser
  * @property MemorialCategory $MemorialCategory
+ * @property MemorialTemplate $MemorialTemplate
  * @property Doctrine_Collection $MemorialHistory
  * 
  * @method integer             getUserId()           Returns the current record's "user_id" value
@@ -57,8 +59,10 @@
  * @method boolean             getIsRejected()       Returns the current record's "is_rejected" value
  * @method boolean             getIsApproved()       Returns the current record's "is_approved" value
  * @method string              getLastModify()       Returns the current record's "last_modify" value
+ * @method integer             getTemplateId()       Returns the current record's "template_id" value
  * @method sfGuardUser         getSfGuardUser()      Returns the current record's "sfGuardUser" value
  * @method MemorialCategory    getMemorialCategory() Returns the current record's "MemorialCategory" value
+ * @method MemorialTemplate    getMemorialTemplate() Returns the current record's "MemorialTemplate" value
  * @method Doctrine_Collection getMemorialHistory()  Returns the current record's "MemorialHistory" collection
  * @method Memorial            setUserId()           Sets the current record's "user_id" value
  * @method Memorial            setUserName()         Sets the current record's "user_name" value
@@ -84,8 +88,10 @@
  * @method Memorial            setIsRejected()       Sets the current record's "is_rejected" value
  * @method Memorial            setIsApproved()       Sets the current record's "is_approved" value
  * @method Memorial            setLastModify()       Sets the current record's "last_modify" value
+ * @method Memorial            setTemplateId()       Sets the current record's "template_id" value
  * @method Memorial            setSfGuardUser()      Sets the current record's "sfGuardUser" value
  * @method Memorial            setMemorialCategory() Sets the current record's "MemorialCategory" value
+ * @method Memorial            setMemorialTemplate() Sets the current record's "MemorialTemplate" value
  * @method Memorial            setMemorialHistory()  Sets the current record's "MemorialHistory" collection
  * 
  * @package    symfonymodel
@@ -192,6 +198,9 @@ abstract class BaseMemorial extends sfDoctrineRecord
              'type' => 'string',
              'length' => 255,
              ));
+        $this->hasColumn('template_id', 'integer', null, array(
+             'type' => 'integer',
+             ));
 
         $this->option('type', 'MyISAM');
         $this->option('collate', 'utf8_unicode_ci');
@@ -210,6 +219,11 @@ abstract class BaseMemorial extends sfDoctrineRecord
              'local' => 'category_id',
              'foreign' => 'id',
              'onDelete' => 'CASCADE'));
+
+        $this->hasOne('MemorialTemplate', array(
+             'local' => 'template_id',
+             'foreign' => 'id',
+             'onDelete' => 'SET NULL'));
 
         $this->hasMany('MemorialHistory', array(
              'local' => 'id',

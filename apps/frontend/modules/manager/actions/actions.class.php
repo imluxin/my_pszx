@@ -55,6 +55,11 @@ class managerActions extends sfActions
 		$this->form = new FileUploadForm();
 	}
 
+	public function executeMtemplate(sfWebRequest $request) {
+		$this->myuser = $this->getUser()->getGuardUser();
+		$this->form = new FileUploadForm();
+	}
+
 	public function executeArticle(sfWebRequest $request) {
 		$this->myuser = $this->getUser()->getGuardUser();
 		$this->form = new FileUploadForm();

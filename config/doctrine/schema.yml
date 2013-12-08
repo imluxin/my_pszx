@@ -120,9 +120,31 @@ Memorial:
     is_rejected: { type: boolean, default: false}
     is_approved: { type: boolean, default: false }
     last_modify: { type: string(255) }
+    template_id: integer
   relations:
       sfGuardUser:  { onDelete: CASCADE, local: user_id, foreign: id }
       MemorialCategory:  { onDelete: CASCADE, local: category_id, foreign: id }
+      MemorialTemplate:  { onDelete: SET NULL, local: template_id, foreign: id }
+      
+
+#纪念馆模板
+MemorialTemplate:
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+  actAs: 
+    Timestampable: ~ 
+  columns: 
+    name:     string(255)
+    price:    { type: integer, notnull: true, default: '0' }
+    is_free:  { type: boolean, default: true }
+    jng_path: { type: string(255), notnull: true }
+    lw_name:  { type: string(255), notnull: true }
+    lw_path:  { type: string(255), notnull: true }
+    gm_name:  { type: string(255), notnull: true }
+    gm_path:  { type: string(255), notnull: true }
+    
 
 #纪念馆分类
 MemorialCategory: 

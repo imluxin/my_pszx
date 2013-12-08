@@ -12,6 +12,7 @@
  */
 class Memorial extends BaseMemorial
 {
+	
 	static public function getFileDir()
 	{
 		return sfConfig::get('sf_upload_dir') . '/memorial';

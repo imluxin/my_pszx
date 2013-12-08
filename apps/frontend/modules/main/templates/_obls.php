@@ -8,7 +8,7 @@
 		<?php endforeach; ?>
 	</div>
 	
-	<div id="dialog" title="祭品列表">
+	<div id="dialog" title="祭品列表" style="z-index: 9999;">
   		
 	</div>
 	
@@ -50,7 +50,7 @@ function getObls(c_id){
 		url: url,
 		dataType: 'json',
 		beforeSend: function(XMLHttpRequest){
-			$( "#dialog" ).append("<div id='loader' class='shopSort'><img src='/images/ajax-loader.gif' /></div>").dialog('open');
+			$( "#dialog" ).text(' ').append("<div id='loader' class='shopSort'><img src='/images/ajax-loader.gif' /></div>").dialog('open');
 		},
 		success: function(data){
 			$('#loader').hide();

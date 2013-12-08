@@ -78,6 +78,13 @@ class managerComponents extends sfComponents {
 		$this->reject_memorial = $query->execute();
 	}
 
+	public function executeMtemplate() {
+		$this->myuser = $this->getUser()->getGuardUser();
+
+		$res = Doctrine_Core::getTable('MemorialTemplate')->findAll();
+		$this->res = $res;
+	}
+
 	public function executeArticle(sfWebRequest $request) {
 		$this->myuser = $this->getUser()->getGuardUser();
 

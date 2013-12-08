@@ -30,7 +30,7 @@
 
 </script>
 
-<div id="flashContent">
+<div id="flashContent" style="z-index: 0;">
 	<p>
         To view this page ensure that Adobe Flash Player version 
 		11.6.0 or greater is installed. 

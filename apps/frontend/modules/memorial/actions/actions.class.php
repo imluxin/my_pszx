@@ -157,7 +157,9 @@ class memorialActions extends sfActions
 		{
 			$form->getObject()->setSfGuardUser($myuser);
 			$memorial = $form->save();
-			
+		
+			$t = Doctrine_Core::getTable('MemorialTemplate')->findOneBy('is_free', true);
+			$memorial->setTemplateId($t->getId());
 			$memorial->setUserId($myuser->getId());
 			$memorial->setUserName($myuser->getUsername());
 			$memorial->save();
@@ -178,9 +180,37 @@ class memorialActions extends sfActions
 		}
 	}
 	
-	public function executeDetail(sfWebRequest $request) {
+	public function executeDetail(sfWebRequest $request) 
+	{
 		$this->forward404Unless($this->memorial = Doctrine_Core::getTable('Memorial')->find(array($request->getParameter('id'))), sprintf('纪念馆不存在，ID： (%s).', $request->getParameter('id')));
+		$this->t_list = Doctrine_Core::getTable('MemorialTemplate')->createQuery()
+							->where('is_free = ?', false)
+							->execute();
 		$this->myuser = $this->getUser()->getGuardUser();
+	}
+	
+	public function executeUpgrade(sfWebRequest $request)
+	{
+		$mid = $request->getParameter('mid');
+		$tid = $request->getParameter('tid');
+		$this->forward404Unless($memorial = Doctrine_Core::getTable('Memorial')->find($mid), sprintf('纪念馆不存在，ID： (%s).', $request->getParameter('id')));
+		$this->forward404Unless($t = Doctrine_Core::getTable('MemorialTemplate')->find($tid), sprintf('纪念馆模板不存在，ID： (%s).', $request->getParameter('id')));
+		
+		$user = $this->getUser()->getGuardUser();
+		
+		//upgrade memorial
+		$memorial->setTemplateId($tid);
+		$memorial->save();
+		
+		// update user coins
+		$old_coins = $user->getCoins();
+		$t_coins = $t->getPrice();
+		$new_coins = (int)$old_coins - (int)$t_coins;
+		$user->setCoins($new_coins);
+		$user->save();
+
+		return $this->renderText(1);
+		//$this->redirect('memorial/detail?id='.$memorial->getId());
 	}
 	
 	public function executeZxlw(sfWebRequest $request) {

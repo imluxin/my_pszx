@@ -27,6 +27,7 @@
     params.bgcolor = "#ffffff";
     params.allowscriptaccess = "sameDomain";
     params.allowfullscreen = "true";
+    params.wmode = "opaque";
     var attributes = {};
     attributes.id = "FO";
     attributes.name = "FO";
