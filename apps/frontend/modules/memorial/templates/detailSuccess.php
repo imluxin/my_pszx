@@ -35,7 +35,7 @@
 	                                <?php echo jq_link_to_remote('升级', 
 												array(
 													'url' => url_for('memorial_upgrade', array('mid'=>$mid, 'tid'=>$t->getId())),
-													'confirm' => '确定要同意吗？',
+													'confirm' => '确定要花费'.$t->getPrice().'金币升级此纪念馆吗？',
 													'success' => 'if(data == 1) { location.reload() } else { alert(data); }'
 												), array('class' => 'btnPurple upgrade'))?>
                                 <?php endif;?>

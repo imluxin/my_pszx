@@ -26,7 +26,7 @@
 	<?php foreach($article as $one):?>
 		<li>
 			<a href="<?php echo url_for('article/details?id='.$one->getId()) ?>">
-			<?php echo $one->getTitle() ?>
+				<?php echo substr($one->getTitle(), 0, 50).'...' ?>
 			</a>
 		</li>
 	<?php endforeach;?>

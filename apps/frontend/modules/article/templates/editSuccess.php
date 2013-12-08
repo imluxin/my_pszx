@@ -17,7 +17,7 @@
                     <h3 class="subTitle">
 					发帖
                     </h3>
-                    <div class="buildForm fix-img-400">
+                    <div class="buildForm fix-img-160">
                     <?php include_partial('article/edit_form', array('form' => $form,'article_page' => $article_page,'article' => $article)) ?>
                     </div>
                 </div>
