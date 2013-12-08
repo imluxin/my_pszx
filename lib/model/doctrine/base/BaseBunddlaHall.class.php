@@ -8,6 +8,7 @@
  * @property integer $user_id
  * @property string $user_name
  * @property string $name
+ * @property string $hp_img
  * @property string $images
  * @property string $zhuozi
  * @property text $description
@@ -20,6 +21,7 @@
  * @method integer             getUserId()             Returns the current record's "user_id" value
  * @method string              getUserName()           Returns the current record's "user_name" value
  * @method string              getName()               Returns the current record's "name" value
+ * @method string              getHpImg()              Returns the current record's "hp_img" value
  * @method string              getImages()             Returns the current record's "images" value
  * @method string              getZhuozi()             Returns the current record's "zhuozi" value
  * @method text                getDescription()        Returns the current record's "description" value
@@ -31,6 +33,7 @@
  * @method BunddlaHall         setUserId()             Sets the current record's "user_id" value
  * @method BunddlaHall         setUserName()           Sets the current record's "user_name" value
  * @method BunddlaHall         setName()               Sets the current record's "name" value
+ * @method BunddlaHall         setHpImg()              Sets the current record's "hp_img" value
  * @method BunddlaHall         setImages()             Sets the current record's "images" value
  * @method BunddlaHall         setZhuozi()             Sets the current record's "zhuozi" value
  * @method BunddlaHall         setDescription()        Sets the current record's "description" value
@@ -59,6 +62,11 @@ abstract class BaseBunddlaHall extends sfDoctrineRecord
              'length' => 255,
              ));
         $this->hasColumn('name', 'string', 255, array(
+             'type' => 'string',
+             'notnull' => true,
+             'length' => 255,
+             ));
+        $this->hasColumn('hp_img', 'string', 255, array(
              'type' => 'string',
              'notnull' => true,
              'length' => 255,

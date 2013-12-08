@@ -26,9 +26,23 @@
         <td style="color: red;"><?php echo $form['name']->renderError() ?></td>
       </tr>
       <tr>
+        <th><?php echo $form['hp_img']->renderLabel() ?></th>
+        <td id="buddha_img">
+        <?php echo $form['hp_img'] ?> 
+        </td>
+        <td style="color: red;"><?php echo $form['hp_img']->renderError() ?></td>
+      </tr>
+      <tr>
         <th><?php echo $form['images']->renderLabel() ?></th>
         <td><?php echo $form['images'] ?> </td>
         <td style="color: red;"><?php echo $form['images']->renderError() ?></td>
+      </tr>
+      <tr>
+        <th><?php echo $form['zhuozi']->renderLabel() ?></th>
+        <td id="buddha_img">
+        <?php echo $form['zhuozi'] ?> 
+        </td>
+        <td style="color: red;"><?php echo $form['zhuozi']->renderError() ?></td>
       </tr>
       <tr>
         <th><?php echo $form['description']->renderLabel() ?></th>

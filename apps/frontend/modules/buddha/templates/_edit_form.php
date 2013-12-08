@@ -1,7 +1,7 @@
 <?php use_stylesheets_for_form($form) ?>
 <?php use_javascripts_for_form($form) ?>
 
-<form action="<?php echo url_for('buddha/'.($form->getObject()->isNew() ? 'create' : 'update').(!$form->getObject()->isNew() ? '?id='.$form->getObject()->getId() : '')) ?>" method="post" <?php $form->isMultipart() and print 'enctype="multipart/form-data" ' ?>>
+<form action="<?php echo url_for('buddha/'.($form->getObject()->isNew() ? 'create' : 'update').(!$form->getObject()->isNew() ? '?id='.$form->getObject()->getId() : '')) ?>" class="fix-img-160" method="post" <?php $form->isMultipart() and print 'enctype="multipart/form-data" ' ?>>
 <?php if (!$form->getObject()->isNew()): ?>
 <input type="hidden" name="sf_method" value="put" />
 <?php endif; ?>
@@ -24,6 +24,13 @@
           <?php echo $form['name'] ?>
         </td>
         <td style="color: red;"><?php echo $form['name']->renderError() ?></td>
+      </tr>
+      <tr>
+        <th><?php echo $form['hp_img']->renderLabel() ?></th>
+        <td id="buddha_img">
+        <?php echo $form['hp_img'] ?> 
+        </td>
+        <td style="color: red;"><?php echo $form['hp_img']->renderError() ?></td>
       </tr>
       <tr>
         <th><?php echo $form['images']->renderLabel() ?></th>

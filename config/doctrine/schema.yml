@@ -10,6 +10,7 @@ BunddlaHall:
     user_id: { type: integer, notnull: true }
     user_name: { type: string(255) }
     name: { type: string(255), notnull: true }
+    hp_img: { type: string(255), notnull: true }
     images: { type: string(255), notnull: true }
     zhuozi: { type: string(255), notnull: true }
     description: { type: text, notnull: true }

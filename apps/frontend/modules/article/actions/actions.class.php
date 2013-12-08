@@ -20,7 +20,7 @@ class articleActions extends sfActions
 		$search_url = '';
 		
 		$page= $request->getParameter('page',1);        //默认第1页
-		$q = Doctrine_Core::getTable('Article')->getListOnPage($page,18); //第页显示n条
+		$q = Doctrine_Core::getTable('Article')->getListOnPage($page,6); //第页显示n条
 		$q->Where('is_approved=1 AND is_rejected=0');
 		
 		
@@ -34,12 +34,19 @@ class articleActions extends sfActions
 		$this->search_url .= urlencode($search_url);
 		
 		//分页
-		$this->pg= new sfDoctrinePager('Article',18);
+		$this->pg= new sfDoctrinePager('Article',6);
 		$this->pg->setQuery($q);
 		$this->pg->setPage($page);
 		$this->pg->init();
 
 		$this->result = $this->pg->getResults();
+		
+		$this->recommend = Doctrine_Core::getTable('Article')->createQuery()
+								->where('is_homepage = ?', true)
+								->andWhere('is_rejected = ?', false)
+								->andWhere('is_approved = ?', true)
+								->orderBy('rand()')->limit(3)
+								->execute();
 	}
 
 	public function executeNew(sfWebRequest $request)

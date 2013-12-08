@@ -42,7 +42,7 @@
                 	<?php include_partial('oblation/pager', array('pg'=>$pg,'search_url'=>$search_url))?>
                 </div>
             	<div class="shopList">
-                        <ul class="clearfix">
+                        <ul class="clearfix fix-w133-h133">
                         <?php foreach($result as $one):?>
                             <li>
                             	<div class="shopList_img">

@@ -7,12 +7,12 @@
 
 <div class="cont">
 <div class="subTitle">待审核</div>
-<ul class="imgList clearfix">
+<ul class="imgList clearfix fix-w160-h160">
 	<?php foreach($buddha as $one):?>
 	<li>
 	<table>
 		<tr>
-			<td><?php echo image_tag('../uploads/buddha/'.$one->getImages()) ?></td>
+			<td><img src="<?php echo $one->getPicture('hp_img', true) ?>" /></td>
 			<td>
 				<a href="<?php echo url_for('buddha/edit?id='.$one->getId()) ?>">修改</a>
 				&nbsp;
@@ -38,12 +38,12 @@
 
 <div class="cont">
 <div class="subTitle">打回</div>
-<ul class="imgList clearfix">
+<ul class="imgList clearfix fix-w160-h160">
 	<?php foreach($reject_buddha as $one):?>
 	<li>
 	<table>
 		<tr>
-			<td><?php echo image_tag('../uploads/buddha/'.$one->getImages()) ?></td>
+			<td><img src="<?php echo $one->getPicture('hp_img', true) ?>" /></td>
 			<td>
 				<a href="<?php echo url_for('buddha/edit?id='.$one->getId()) ?>">修改</a>
 				&nbsp;
@@ -69,12 +69,12 @@
 
 <div class="cont">
 <div class="subTitle">通过审核</div>
-<ul class="imgList clearfix">
+<ul class="imgList clearfix fix-w160-h160">
 	<?php foreach($approve_buddha as $one):?>
 	<li>
 	<table>
 		<tr>
-			<td><?php echo image_tag('../uploads/buddha/'.$one->getImages()) ?></td>
+			<td><img src="<?php echo $one->getPicture('hp_img', true) ?>" /></td>
 			<td>
 				<a href="<?php echo url_for('buddha/edit?id='.$one->getId()) ?>">修改</a>
 				&nbsp;

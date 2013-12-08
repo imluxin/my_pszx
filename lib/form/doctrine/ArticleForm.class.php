@@ -78,7 +78,7 @@ class ArticleForm extends BaseArticleForm
 				);		
 		
 		$this->widgetSchema->setLabels(array(
-		  'is_homepage' => '是否首页推荐?',
+		  'is_homepage' => '是否推荐?',
 		  'title' => '帖子标题：',
 		  'category_id' => '帖子分类：',
 		  'img_one' => '分享图片1：',

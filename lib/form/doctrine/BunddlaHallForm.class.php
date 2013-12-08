@@ -33,8 +33,9 @@ class BunddlaHallForm extends BaseBunddlaHallForm
 						//'required'=>'菩萨动画图片不能为空。'
 					)
 				);
-		
+
 		$this->configureImages('zhuozi', '桌子图片', 'buddha');
+		$this->configureImages('hp_img', '展示图片', 'buddha');
 				
 		$this->widgetSchema['description'] = new sfWidgetFormTextarea();
 		
@@ -54,7 +55,7 @@ class BunddlaHallForm extends BaseBunddlaHallForm
 		$this->widgetSchema->setLabels(array(
 		  'name' => '佛殿名称：',
 		  'images' => '佛殿动画图片：',
-		  'description' => '佛殿介绍：',
+		  'description' => '佛殿介绍：'
 		));
 	}
 }

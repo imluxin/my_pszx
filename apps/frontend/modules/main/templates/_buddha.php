@@ -8,7 +8,7 @@
 	<?php foreach($buddhas as $one): ?>
 	<li>
 	<a href="<?php echo url_for('buddha/detail?id='.$one->getId()) ?>"> 
-		<?php echo image_tag('../uploads/buddha/'.$one['images']) ?>
+		<?php echo image_tag($one->getPicture('hp_img', true)) ?>
 		<p><?php echo $one->getName() ?></p>
 	</a>
 	</li>

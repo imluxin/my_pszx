@@ -7,7 +7,7 @@
 	<li>
 	<table>
 		<tr>
-			<td><?php echo image_tag('../uploads/buddha/'.$one->getImages()) ?></td>
+			<td><img src="<?php echo $one->getPicture('hp_img', true) ?>" /></td>
 			<td>
 				<a href="#">浏览</a>
 				<?php echo jq_link_to_remote('同意', 
@@ -49,7 +49,7 @@
 	<li>
 	<table>
 		<tr>
-			<td><?php echo image_tag('../uploads/buddha/'.$one->getImages()) ?></td>
+			<td><img src="<?php echo $one->getPicture('hp_img', true) ?>" /></td>
 			<td>
 				<a href="#">浏览</a>
 				<?php echo jq_link_to_remote('删除', 
@@ -79,7 +79,7 @@
 	<li>
 	<table>
 		<tr>
-			<td><?php echo image_tag('../uploads/buddha/'.$one->getImages()) ?></td>
+			<td><img src="<?php echo $one->getPicture('hp_img', true) ?>" /></td>
 			<td>
 				<a href="#">浏览</a>
 				<?php echo jq_link_to_remote('打回', 

@@ -166,6 +166,10 @@
 .fix-img-400 img{width:400px !important;height: auto !important;}
 .fix-img-160 img{width:160px !important;height: auto !important;}
 
+.fix-w128-h128 img{width:128px !important;max-height: 128px !important;}
+.fix-w160-h160 img{width:160px !important;max-height: 160px !important;}
+.fix-w133-h133 img{width:133px !important;max-height: 133px !important;}
+
 
 object{
 	position:relative; 

@@ -4,7 +4,7 @@
 <a class="more" href="<?php echo url_for('oblation/index')?>">更多</a></div>
 <div class="cont">
 <div class="shopList">
-<ul class="clearfix">
+<ul class="clearfix fix-w133-h133">
 	<?php foreach($oblation as $one):?>
 	<li>
 	<div class="shopList_img">

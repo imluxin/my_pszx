@@ -2,7 +2,7 @@
 <div class="subTitle">祭品审核</div>
 <div class="cont">
 <div class="subTitle">待审核</div>
-<ul class="imgList clearfix">
+<ul class="imgList clearfix fix-w128-h128">
 	<?php foreach($oblation as $one):?>
 	<li>
 	<table>
@@ -44,7 +44,7 @@
 
 <div class="cont">
 <div class="subTitle">打回</div>
-<ul class="imgList clearfix">
+<ul class="imgList clearfix fix-w128-h128">
 	<?php foreach($reject_oblation as $one):?>
 	<li>
 	<table>
@@ -74,7 +74,7 @@
 
 <div class="cont">
 <div class="subTitle">通过审核</div>
-<ul class="imgList clearfix">
+<ul class="imgList clearfix fix-w160-h160">
 	<?php foreach($approve_oblation as $one):?>
 	<li>
 	<table>

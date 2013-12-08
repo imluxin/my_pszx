@@ -36,7 +36,7 @@
 <?php foreach($result as $one) { ?>
 	<li>
 		<a href="<?php echo url_for('buddha/detail?id='.$one['id']) ?>"> 
-			<?php echo image_tag('../uploads/buddha/'.$one['images']) ?>
+			<?php echo image_tag($one->getPicture('hp_img', true)) ?>
 			<p><?php echo $one['name'] ?></p>
 		</a>
 	</li>

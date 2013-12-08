@@ -65,30 +65,16 @@
                 	<h3 class="subTitle">推荐作品</h3>
                     <div class="newsList">
                     	<ul>
+                    		<?php foreach ($recommend as $r):?>
 							<li class="clearfix">
                             	<div class="newsList_img">
-                                	<img src="#" />
+                                	<img src="<?php echo $r->getPublicFileLocation1(); ?>" />
                                 </div>
                                 <div class="newsList_view">
-                                	<p>如来佛祖：神通广大法力无边，是西方极乐世界的最高统治者和最高法力神通的代表。</p>
+                                	<p><?php echo $r->getTitle(); ?></p>
                                 </div>
-                            </li>                        
-							<li class="clearfix">
-                            	<div class="newsList_img">
-                                	<img src="#" />
-                                </div>
-                                <div class="newsList_view">
-                                	<p>如来佛祖：神通广大法力无边，是西方极乐世界的最高统治者和最高法力神通的代表。</p>
-                                </div>
-                            </li>                        
-							<li class="clearfix">
-                            	<div class="newsList_img">
-                                	<img src="#" />
-                                </div>
-                                <div class="newsList_view">
-                                	<p>如来佛祖：神通广大法力无边，是西方极乐世界的最高统治者和最高法力神通的代表。</p>
-                                </div>
-                            </li>                        
+                            </li>                      
+                            <?php endforeach;?>
                         </ul>
                     </div>
                 </div>
