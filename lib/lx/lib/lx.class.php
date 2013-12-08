@@ -31,7 +31,6 @@ class lx
 	}
 	
 	
-	
 	public static function get_sort_choices($nb = '15')
 	{
 		$sort = array('');
