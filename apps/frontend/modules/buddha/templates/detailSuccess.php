@@ -21,7 +21,7 @@
 	}
 	
 	function getDeskInfo() {
-		return ['<?php echo $buddha->getPicture('zhuozi', true); ?>', 300, 220];
+		return ['<?php echo $buddha->getPicture('zhuozi', true); ?>', 150, 320];
 	}
 	
 	function getInitUrl() {

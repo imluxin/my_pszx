@@ -3,7 +3,9 @@
 class mainComponents extends sfComponents {
 
 	public function executeBuddha() {
-		$this->buddhas = Doctrine_Core::getTable('BunddlaHall')->findAll();//$this->getRecommendResult('BunddlaHall');
+		$this->buddhas = Doctrine_Core::getTable('BunddlaHall')->createQuery()
+								->where('is_approved = 1 and is_rejected = 0')
+								->execute();//$this->getRecommendResult('BunddlaHall');
 	}
 
 	public function executeTemple() {

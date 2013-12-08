@@ -67,11 +67,15 @@
                     	<ul>
                     		<?php foreach ($recommend as $r):?>
 							<li class="clearfix">
+								<?php $url = url_for('article/details?id='.$r->getId())?>
                             	<div class="newsList_img">
+                                	<a href="<?php echo $url?>">
                                 	<img src="<?php echo $r->getPublicFileLocation1(); ?>" />
+                                	</a>
                                 </div>
                                 <div class="newsList_view">
-                                	<p><?php echo $r->getTitle(); ?></p>
+                                	<p>
+                                	<a href="<?php echo $url?>"><?php echo $r->getTitle(); ?></a></p>
                                 </div>
                             </li>                      
                             <?php endforeach;?>
