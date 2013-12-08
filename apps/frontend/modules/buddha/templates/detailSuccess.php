@@ -10,6 +10,7 @@
 <a href="<?php echo url_for('buddha/description?id='.$buddha->getId()) ?>">佛主介绍</a> 
 <a href="#">在线佛乐</a>
 </h2>
+<?php include_partial('global/audio')?>
 </div>
 <!--flash-->
 <div class="flash">
@@ -21,7 +22,7 @@
 	}
 	
 	function getDeskInfo() {
-		return ['<?php echo $buddha->getPicture('zhuozi', true); ?>', 150, 320];
+		return ['<?php echo $buddha->getPicture('zhuozi', true); ?>', 150, 430];
 	}
 	
 	function getInitUrl() {

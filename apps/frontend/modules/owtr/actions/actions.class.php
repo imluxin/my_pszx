@@ -51,8 +51,8 @@ class owtrActions extends sfActions {
 			$bh->setCoins($coins);
 			$bh->setTxt($txt);
 			$bh->setGType($o_pic);
-			$bh->setPointX(rand('320', '420'));
-			$bh->setPointY(rand('350', '400'));
+			$bh->setPointX(rand('200', '700'));
+			$bh->setPointY(rand('400', '500'));
 			$bh->save();
 
 			$user->setCoins($c);
@@ -182,8 +182,8 @@ class owtrActions extends sfActions {
 			$th->setCoins($coins);
 			$th->setTxt($txt);
 			$th->setGType($o_pic);
-			$th->setPointX(rand('320', '420'));
-			$th->setPointY(rand('350', '400'));
+			$th->setPointX(rand('200', '700'));
+			$th->setPointY(rand('400', '500'));
 			$th->save();
 
 			$user->setCoins($c);
@@ -314,8 +314,8 @@ class owtrActions extends sfActions {
 			$mh->setCoins($coins);
 			$mh->setTxt($txt);
 			$mh->setGType($o_pic);
-			$mh->setPointX(rand('320', '420'));
-			$mh->setPointY(rand('350', '400'));
+			$mh->setPointX(rand('200', '700'));
+			$mh->setPointY(rand('400', '500'));
 			$mh->save();
 
 			$user->setCoins($c);
@@ -446,8 +446,8 @@ class owtrActions extends sfActions {
 			$mh->setCoins($coins);
 			$mh->setTxt($txt);
 			$mh->setGType($o_pic);
-			$mh->setPointX(rand('320', '420'));
-			$mh->setPointY(rand('350', '380'));
+			$mh->setPointX(rand('200', '700'));
+			$mh->setPointY(rand('400', '500'));
 			$mh->save();
 
 			$user->setCoins($c);

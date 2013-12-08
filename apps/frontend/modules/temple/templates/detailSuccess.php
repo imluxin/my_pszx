@@ -7,6 +7,7 @@
 <div class="titleBar">
 <h2 class="title"><a href="<?php echo url_for('temple/index')?>">拜佛首页</a> <a href="<?php echo url_for('temple/description') ?>">寺庙介绍</a> <a href="#">背景佛乐</a>
 </h2>
+<?php include_partial('global/audio')?>
 </div>
 <!--flash-->
 <div class="flash">

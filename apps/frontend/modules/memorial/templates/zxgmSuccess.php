@@ -6,6 +6,7 @@
 <div class="row box">
 <div class="titleBar">
 <?php include_partial('memorial/nav', array('memorial'=>$memorial))?>
+<?php include_partial('global/audio')?>
 </div>
 
 <div class="flash pr">
