@@ -183,7 +183,7 @@ class owtrActions extends sfActions {
 			$th->setTxt($txt);
 			$th->setGType($o_pic);
 			$th->setPointX(rand('320', '420'));
-			$bh->setPointY(rand('350', '400'));
+			$th->setPointY(rand('350', '400'));
 			$th->save();
 
 			$user->setCoins($c);
@@ -315,7 +315,7 @@ class owtrActions extends sfActions {
 			$mh->setTxt($txt);
 			$mh->setGType($o_pic);
 			$mh->setPointX(rand('320', '420'));
-			$bh->setPointY(rand('350', '400'));
+			$mh->setPointY(rand('350', '400'));
 			$mh->save();
 
 			$user->setCoins($c);
@@ -447,7 +447,7 @@ class owtrActions extends sfActions {
 			$mh->setTxt($txt);
 			$mh->setGType($o_pic);
 			$mh->setPointX(rand('320', '420'));
-			$mh->setPointY(rand('330', '350'));
+			$mh->setPointY(rand('350', '380'));
 			$mh->save();
 
 			$user->setCoins($c);

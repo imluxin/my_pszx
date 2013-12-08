@@ -19,7 +19,7 @@
 	}
 	
 	function getDeskInfo() {
-		return ['<?php echo lx::getZhuozi() ?>', 300, 320];
+		return ['<?php echo ''//lx::getZhuozi() ?>', 300, 320];
 	}
 	
 	function getInitUrl() {
