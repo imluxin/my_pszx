@@ -170,6 +170,8 @@
 .fix-w160-h160 img{width:160px !important;max-height: 160px !important;}
 .fix-w133-h133 img{width:133px !important;max-height: 133px !important;}
 
+.memorial-img img{ width:155px !important; height:179px !important; }
+
 
 object{
 	position:relative; 

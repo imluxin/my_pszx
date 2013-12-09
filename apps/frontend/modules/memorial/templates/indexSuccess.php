@@ -81,7 +81,7 @@
 <div class="cont">
 <div class="pages"><?php include_partial('memorial/pager', array('pg'=>$pg,'search_url'=>$search_url) ) ?></div>
 <div class="imgList">
-<ul class="clearfix">
+<ul class="clearfix memorial-img">
 <?php foreach($result as $one) { ?>
 	<li>
 		<a href="<?php echo url_for('memorial/detail?id='.$one['id']) ?>"> 
