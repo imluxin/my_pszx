@@ -9,7 +9,7 @@
 </h2>
 </div>
 	<div style="width:998px;margin:0px auto;margin-top:10px;text-align: center;margin-bottom:10px;">
-		<?php echo image_tag('../uploads/buddha/'.$bunddla_hall->getImages()) ?>
+		<?php echo image_tag($bunddla_hall->getPicture('hp_img', true), array('class'=>'w700')) ?>
 		<br /><br />
 		<p style="font-weight: bold;font-size:20px;"><?php echo $bunddla_hall->getName() ?></p>
 		<br /><br />

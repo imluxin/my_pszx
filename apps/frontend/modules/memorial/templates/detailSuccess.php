@@ -24,7 +24,14 @@
                 <div class="imgList">
                     <ul class="clearfix">
                     	<?php $show = $sf_request->getParameter('show', 'jng');?>
-                    	<?php $uid = $myuser->getId(); $m_uid = $memorial->getUserId();
+                    	<?php
+                    		if ($myuser) {
+                    			$uid = $myuser->getId();
+                    		}else{
+								$uid = '0';
+							}
+                    		
+                    		$m_uid = $memorial->getUserId();
                     		$m_tid = $memorial->getTemplateId();
                     	?>
                     	<?php foreach ($t_list as $t):?>

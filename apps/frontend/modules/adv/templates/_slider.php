@@ -15,7 +15,7 @@
 			width: 712,
 			height: 352,
 	        navigation: false,
-	        start: 3,
+	        start: 1,
 	        play: {
 	          auto: true
 	        }

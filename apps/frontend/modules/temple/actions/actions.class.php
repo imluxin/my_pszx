@@ -110,6 +110,12 @@ class templeActions extends sfActions {
 		$this->result = $this->pg->getResults();
 	}
 
+	public function executeDescription(sfWebRequest $request) {
+		$this->myuser = $this->getUser()->getGuardUser();
+		$this->forward404Unless($this->temple = Doctrine_Core::getTable('Temple')->find(array($request->getParameter('id'))), sprintf('没有找到对应的寺庙！寺庙ID： (%s).', $request->getParameter('id')));
+		
+	}
+
 	public function executeEdit(sfWebRequest $request) {
 		$this->forward404Unless($temple = Doctrine_Core::getTable('Temple')->find(array($request->getParameter('id'))), sprintf('Object temple does not exist (%s).', $request->getParameter('id')));
 		$this->temple = $temple;
