@@ -5,22 +5,36 @@ class mainComponents extends sfComponents {
 	public function executeBuddha() {
 		$this->buddhas = Doctrine_Core::getTable('BunddlaHall')->createQuery()
 								->where('is_approved = 1 and is_rejected = 0')
-								->execute();//$this->getRecommendResult('BunddlaHall');
+								->orderBy('rand()')
+								->limit(4)
+								->execute();
 	}
 
 	public function executeTemple() {
 		$this->temple = Doctrine_Core::getTable('Temple')->createQuery()
 								->where('is_approved = 1 and is_rejected = 0')
+								->orderBy('rand()')
+								->limit(12)
 								->execute()
 								;
 	}
 
 	public function executeOblation() {
-		$this->oblation = Doctrine_Core::getTable('Oblation')->findAll();//$this->getRecommendResult('Oblation');
+		$this->oblation = Doctrine_Core::getTable('Oblation')->createQuery()
+								->where('is_approved = 1 and is_rejected = 0')
+								->orderBy('rand()')
+								->limit(6)
+								->execute()
+								;
 	}
 
 	public function executeMemorial() {
-		$this->memorial = Doctrine_Core::getTable('Memorial')->findAll();//$this->getRecommendResult('Memorial');
+		$this->memorial = Doctrine_Core::getTable('Memorial')->createQuery()
+								->where('is_approved = 1 and is_rejected = 0')
+								->orderBy('rand()')
+								->limit(10)
+								->execute()
+								;
 	}
 
 	public function executeFjzx(sfWebRequest $request) {

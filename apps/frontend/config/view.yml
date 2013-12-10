@@ -9,9 +9,9 @@ default:
     #language:     en
     #robots:       index, follow
 
-  stylesheets:    [base.css, common.css, pages.css, slide.css,/css/jqueryui/themes/base/jquery-ui.css]
+  stylesheets:    [base.css, common.css,/css/jqueryui/themes/base/jquery-ui.css, pages.css, slide.css]
 
-  javascripts:    [jquery-1.9.1.min.js, slides.min.jquery.js, jplayer/jquery.jplayer.min.js]
+  javascripts:    [jquery-1.9.1.min.js, jquery.slides.min.js]
 
   has_layout:     true
   layout:         layout

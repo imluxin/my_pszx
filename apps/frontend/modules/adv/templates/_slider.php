@@ -1,5 +1,4 @@
 <div id="slides">
-<div class="slides_container">
 
 <?php foreach($advs as $one):?>
 	<?php $u = $one->getUrl();
@@ -10,16 +9,16 @@
 <?php endforeach;?>
 
 </div>
-</div>
 <script type="text/javascript">
 	$(function(){
-		$('#slides').slides({
- 			preload: true,
-			play: 5000,
-			pause: 2500,
-			hoverPause: true,
-			fadeSpeed: 350,
-			effect: 'fade'
+		$('#slides').slidesjs({
+			width: 712,
+			height: 352,
+	        navigation: false,
+	        start: 3,
+	        play: {
+	          auto: true
+	        }
             });
         });
 </script>

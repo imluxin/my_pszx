@@ -17,7 +17,7 @@
 	height: 352px;
 	display: block;
 }
-.pagination {
+.slidesjs-pagination {
 	position: absolute;
 	bottom:0;
 	z-index: 999;
@@ -28,21 +28,26 @@
 	width: 72px;
 	height: 14px;
 }
-.pagination li {
+.slidesjs-pagination li {
 	float: left;
 	margin: 0 4px;
 }
-.pagination li a {
+.slidesjs-pagination li a {
 	display: block;
-	width: 10px;
+	width: 13px;
 	height: 0;
-	padding-top: 10px;
-	background: url(../images/pagination_1.png) 0 0;
+	padding-top: 13px;
+	background: url(../images/pagination.png) 0 0;
 	float: left;
 	overflow: hidden;
 }
-.pagination li.current a {
-	background-position: 0 -10px;
-	_background-position: 0 -9px;
-}
+
+    .slidesjs-pagination li a.active,
+    .slidesjs-pagination li a:hover.active {
+      background-position: 0 -13px
+    }
+
+    .slidesjs-pagination li a:hover {
+      background-position: 0 -26px
+    }
 

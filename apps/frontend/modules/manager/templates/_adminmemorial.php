@@ -24,9 +24,9 @@
 											), array())?>
 				<?php echo jq_link_to_remote('删除', 
 											array(
-												'url' => 'ajax/DelMemorial?id='.$one->getId(),
+												'url' => 'ajax/delMemorial?id='.$one->getId(),
 												'confirm' => '确定要删除吗？',
-												'success' => 'if(data == 1) { location.reload() }'
+												'success' => 'if(data == 1) { location.reload() } else { alert(data); } }'
 											), array())?>
 			</td>
 		</tr>
@@ -54,9 +54,9 @@
 				<a href="#">浏览</a>
 				<?php echo jq_link_to_remote('删除', 
 											array(
-												'url' => 'ajax/Delmemorial?id='.$one->getId(),
+												'url' => 'ajax/delMemorial?id='.$one->getId(),
 												'confirm' => '确定要删除吗？',
-												'success' => 'if(data == 1) { location.reload() }'
+												'success' => 'if(data == 1) { location.reload() } else { alert(data); } }'
 											), array())?>
 			</td>
 		</tr>
@@ -90,9 +90,9 @@
 											), array())?>
 				<?php echo jq_link_to_remote('删除', 
 											array(
-												'url' => 'ajax/Delmemorial?id='.$one->getId(),
+												'url' => 'ajax/delMemorial?id='.$one->getId(),
 												'confirm' => '确定要删除吗？',
-												'success' => 'if(data == 1) { location.reload() }'
+												'success' => 'if(data == 1) { location.reload() } else { alert(data); } }'
 											), array())?>
 			</td>
 		</tr>
