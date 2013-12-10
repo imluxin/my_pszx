@@ -5,19 +5,19 @@
 	</tr>
 	<tr>
 		<td>姓名:</td>
-		<td><?php echo $memorial->getDieNameOne() ?></td>
+		<td><?php echo $memorial['die_name_'.$p] ?></td>
 	</tr>
 	<tr>
 		<td>生日:</td>
-		<td><?php $birth = new DateTime($memorial->getDieBirthOne()); echo $birth->format('Y-m-d'); ?></td>
+		<td><?php $birth = new DateTime($memorial['die_birth_'.$p]); echo $birth->format('Y-m-d'); ?></td>
 	</tr>
 	<tr>
 		<td>忌日:</td>
-		<td><?php $die = new DateTime($memorial->getDieDieOne()); echo $die->format('Y-m-d'); ?></td>
+		<td><?php $die = new DateTime($memorial['die_die_'.$p]); echo $die->format('Y-m-d'); ?></td>
 	</tr>
 	<tr>
 		<td>籍贯:</td>
-		<td><?php echo $memorial->getDieProvinceOne().$memorial->getDieCityOne() ?></td>
+		<td><?php echo $memorial['die_province_'.$p].$memorial['die_city_'.$p] ?></td>
 	</tr>
 	<tr>
 		<td>建馆人:</td>

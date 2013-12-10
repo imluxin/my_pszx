@@ -4,14 +4,9 @@
 <?php slot('title',$buddha->getName().'-菩萨在线') ?>
 <div id="content" class="build">
 <div class="row box">
-<div class="titleBar">
-<h2 class="title">
-<a href="<?php echo url_for('buddha/index')?>">拜佛首页</a> 
-<a href="<?php echo url_for('buddha/description?id='.$buddha->getId()) ?>">佛主介绍</a> 
-<a href="#">在线佛乐</a>
-</h2>
-<?php include_partial('global/audio')?>
-</div>
+
+	<?php include_partial('nav', array('buddha' => $buddha))?>
+
 <!--flash-->
 <div class="flash">
 <?php include_partial('global/js_for_flash', array('myuser'=>$myuser))?>

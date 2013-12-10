@@ -2,7 +2,7 @@
     <div id="content" class="jng">
     	<div class="row box">
         	<div class="titleBar">
-				<?php include_partial('memorial/nav', array('memorial'=>$memorial))?>
+				<?php include_partial('memorial/nav', array('id'=>$memorial->getId()))?>
             </div>
             <!--flash-->
             <div class="flash"></div>

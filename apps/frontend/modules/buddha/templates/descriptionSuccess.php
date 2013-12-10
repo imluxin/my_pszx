@@ -1,13 +1,8 @@
 <?php slot('title',$bunddla_hall->getName().'介绍-菩萨在线') ?>
 <div id="content" class="build">
 <div class="row box">
-<div class="titleBar">
-<h2 class="title">
-<a href="<?php echo url_for('buddha/index')?>">拜佛首页</a> 
-<a href="<?php echo url_for('buddha/description?id='.$bunddla_hall->getId()) ?>">佛主介绍</a> 
-<a href="#">在线佛乐</a>
-</h2>
-</div>
+
+	<?php include_partial('nav', array('buddha' => $bunddla_hall))?>
 	<div style="width:998px;margin:0px auto;margin-top:10px;text-align: center;margin-bottom:10px;">
 		<?php echo image_tag($bunddla_hall->getPicture('hp_img', true), array('class'=>'w700')) ?>
 		<br /><br />

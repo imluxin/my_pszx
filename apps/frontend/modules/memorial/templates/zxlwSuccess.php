@@ -5,8 +5,7 @@
 <div id="content" class="jng detail">
 <div class="row box">
 <div class="titleBar">
-<?php include_partial('memorial/nav', array('memorial'=>$memorial))?>
-<?php include_partial('global/audio')?>
+				<?php include_partial('memorial/nav', array('id'=>$memorial->getId()))?>
 </div>
 
 <div class="flash pr">
