@@ -26,7 +26,7 @@
 .index .row2 .cont{height:452px}
 .index .row3 .cont{height:383px}
 .index .row4 .cont{height:352px}
-.index .row5 .cont{height:auto;}
+.index .row5 .cont{height:590px;}
 .index .searchPeople .btnPurple{width:52px;height:52px}
 
 .title-ad{
@@ -54,7 +54,7 @@
 .buddha .side{height:348px}
 
 /* temple 名山名寺 */
-.temple .imgList li{width:320px}
+.temple .imgList li{width:320px;height: 260px;margin-right: 9px;}
 .temple .imgList img{width:320px; height: 194px;}
 .temple .imgList li a p {text-align: left;}
 .temple .side{height:348px}
