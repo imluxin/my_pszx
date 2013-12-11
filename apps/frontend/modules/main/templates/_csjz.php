@@ -1,6 +1,6 @@
 <div class="side fr box">
 <div class="titleBar">
-<h2 class="title">慈善救助</h2>
+<h2 class="title">风水科学</h2>
 </div>
 <div class="cont">
 <div class="imgList">

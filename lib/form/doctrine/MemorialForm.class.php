@@ -129,5 +129,7 @@ class MemorialForm extends BaseMemorialForm
 		  'description' => '生平介绍：',
 		  'template_id' => '纪念馆模板'
 		));
+		
+		$this->getWidget('category_id')->setOption('multiple', false)->setOption('expanded', true);
 	}
 }

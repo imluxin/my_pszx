@@ -73,10 +73,16 @@ sfGuardPermission:
     
 # 纪念馆分类
 MemorialCategory: 
-  single: 
-    name: 单人馆
-  double: 
-    name: 双人馆
+  mc1: 
+    name: 私人管
+  mc2: 
+    name: 名人馆
+  mc3:
+    name: 事件馆
+  mc4:
+    name: 公益馆
+  mc5:
+    name: 其它馆
 # 祭品分类
 OblationCategory: 
   c1: 

@@ -23,7 +23,7 @@ class mainComponents extends sfComponents {
 		$this->oblation = Doctrine_Core::getTable('Oblation')->createQuery()
 								->where('is_approved = 1 and is_rejected = 0')
 								->orderBy('rand()')
-								->limit(6)
+								->limit(8)
 								->execute()
 								;
 	}
@@ -81,6 +81,11 @@ class mainComponents extends sfComponents {
 						->where('is_rejected = ?', false)
 						->andWhere('is_approved = ?', true)
 						->execute();
-		$this->cats = Doctrine_Core::getTable('OblationCategory')->findAll();
+		
+			$this->cats_b = Doctrine_Core::getTable('OblationCategory')->createQuery()
+								->whereIn('id', array(1, 2, 3, 4))
+								->execute();
+			
+			$this->cats = Doctrine_Core::getTable('OblationCategory')->findAll();
 	}
 }

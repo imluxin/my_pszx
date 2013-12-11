@@ -47,7 +47,7 @@
 	<li>
 		<a href="<?php echo url_for('temple/detail?id='.$one['id']) ?>"> 
 			<?php echo image_tag('../uploads/temple/'.$one['img_one']) ?>
-			<p><?php $des = strip_tags($one->getDescription(ESC_RAW)); echo substr($des, 0, 160)."..." ?></p>
+			<p><?php $des = strip_tags($one->getDescription(ESC_RAW)); echo mb_substr($des, 0, 160)."..." ?></p>
 		</a>
 	</li>
 <?php }?>

@@ -1,6 +1,6 @@
 <div class="side fr box">
 <div class="titleBar">
-<h2 class="title">同城活动</h2>
+<h2 class="title">健康养生</h2>
 </div>
 <div class="cont">
 <div class="imgList">

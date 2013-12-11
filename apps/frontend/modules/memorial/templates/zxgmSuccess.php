@@ -136,7 +136,7 @@ function move(sid,ggid,uid,x,y,sx,sy) {
 		<td><?php echo $one->getSfGuardUser()->getGender() == 1 ? '男':'女' ?></td>
 		<td><?php echo $one->getSfGuardUser()->getAge() ?></td>
 		<td><?php echo $one->getSfGuardUser()->getProvince().','.$one->getSfGuardUser()->getCity() ?></td>
-		<td><?php echo $one->getTxt() ?></td>
+		<td class="table-fix"><?php echo $one->getTxt() ?></td>
 		<td><?php echo $one->getCreatedAt() ?></td>
 	</tr>
 	<?php endforeach;?>

@@ -3,6 +3,11 @@
 <div>
 	许愿描述：<textarea id="wish" style="width:1000px;"></textarea>(输入您的许愿描述，然后点击下方的按钮。)
 	<div class="shopSort">
+		<?php $m = $sf_params->get('module'); 
+			if ($m == 'buddha') {
+				$cats = $cats_b;
+			}
+		?>
 		<?php foreach ($cats as $c):?>
 			<a href="javascript:getObls('<?php echo $c['id']?>');"><?php echo $c['name']?></a>
 		<?php endforeach; ?>

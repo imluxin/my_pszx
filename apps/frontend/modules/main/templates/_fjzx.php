@@ -1,6 +1,6 @@
 <div class="side fr box">
 <div class="titleBar">
-<h2 class="title">佛教资讯</h2>
+<h2 class="title">宗教资讯</h2>
 </div>
 <div class="cont">
 <div class="imgList">

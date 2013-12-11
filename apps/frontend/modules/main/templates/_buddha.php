@@ -1,7 +1,14 @@
 <div class="main fl box index_buddha">
 <div class="titleBar">
-<h2 class="title"><a href="<?php echo url_for('buddha/index')?>">网上礼佛</a></h2>
-<a class="more" href="<?php echo url_for('buddha/index')?>">更多</a></div>
+<h2 class="title">
+	<a href="<?php echo url_for('buddha/index')?>">网上礼佛</a>
+</h2>
+
+<span class="title-ad">上网见佛是福音  &nbsp;&nbsp;诚心拜祭有喜讯</span>
+
+<a class="more" href="<?php echo url_for('buddha/index')?>">更多</a>
+
+</div>
 <div class="cont">
 <div class="imgList">
 <ul class="clearfix">

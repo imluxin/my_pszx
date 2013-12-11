@@ -1,6 +1,8 @@
 <div class="main fl box index_shop">
 <div class="titleBar">
 <h2 class="title"><a href="<?php echo url_for('oblation/index')?>">祭品商店</a></h2>
+
+<span class="title-ad">让住在天堂的亲人也分享美好的生活</span>
 <a class="more" href="<?php echo url_for('oblation/index')?>">更多</a></div>
 <div class="cont">
 <div class="shopList">

@@ -1,6 +1,8 @@
 <div class="main fl box index_memorial">
 <div class="titleBar">
 <h2 class="title"><a href="temple/index.html">在线纪念</a></h2>
+
+<span class="title-ad">菩萨守护的天堂 &nbsp;&nbsp;是每个逝者的最好家园</span>
 <a class="more" href="temple/index.html">更多</a></div>
 <div class="cont">
 <div class="imgList">
