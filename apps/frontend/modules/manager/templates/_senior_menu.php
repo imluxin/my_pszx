@@ -8,10 +8,10 @@
 <li><a class="btnGray" href="#">祭祀用品管理</a></li>
 <li><a class="btnGray" href="#">广告管理</a></li>
 */?>
-<li><a class="btnGray" href="#">关于我们</a></li>
-<li><a class="btnGray" href="#">网站动态</a></li>
-<li><a class="btnGray" href="#">免责条款</a></li>
-<li><a class="btnGray" href="#">广告服务</a></li>
-<li><a class="btnGray" href="#">诚聘人才</a></li>
-<li><a class="btnGray" href="#">联系我们</a></li>
+<li><a class="btnGray" href="<?php echo url_for('pages/edit?id=1');?>">关于我们</a></li>
+<li><a class="btnGray" href="<?php echo url_for('pages/edit?id=2');?>">网站动态</a></li>
+<li><a class="btnGray" href="<?php echo url_for('pages/edit?id=3');?>">免责条款</a></li>
+<li><a class="btnGray" href="<?php echo url_for('pages/edit?id=4');?>">广告服务</a></li>
+<li><a class="btnGray" href="<?php echo url_for('pages/edit?id=5');?>">诚聘人才</a></li>
+<li><a class="btnGray" href="<?php echo url_for('pages/edit?id=6');?>">联系我们</a></li>
 <li><a class="btnGray" href="">网站账号管理</a></li>

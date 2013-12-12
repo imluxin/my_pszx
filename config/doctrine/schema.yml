@@ -220,6 +220,18 @@ OblationCategory:
     Timestampable: ~ 
   columns: 
     name: { type: string(255) }
+    
+#帖子
+Pages: 
+  options:
+    type: MyISAM
+    collate: utf8_unicode_ci
+    charset: utf8
+  columns: 
+    title: { type: string(255) }
+    content: { type: string, notnull: true }
+    
+    
 #帖子
 Article: 
   options:

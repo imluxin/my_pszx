@@ -45,12 +45,12 @@
 		<div id="footer">
 			<div class="footerNav">
 				<ul class="clearfix">
-					<li><a href="#">关于我们</a></li>
-					<li><a href="#">网站动态</a></li>
-					<li><a href="#">免责条款</a></li>
-					<li><a href="#">广告服务</a></li>
-					<li><a href="#">诚聘人才</a></li>
-					<li><a href="#">联系我们</a></li>
+					<li><a href="<?php echo url_for('pages/view?id=1');?>">关于我们</a></li>
+					<li><a href="<?php echo url_for('pages/view?id=2');?>">网站动态</a></li>
+					<li><a href="<?php echo url_for('pages/view?id=3');?>">免责条款</a></li>
+					<li><a href="<?php echo url_for('pages/view?id=4');?>">广告服务</a></li>
+					<li><a href="<?php echo url_for('pages/view?id=5');?>">诚聘人才</a></li>
+					<li><a href="<?php echo url_for('pages/view?id=6');?>">联系我们</a></li>
 				</ul>
 			</div>
 			<div class="cpr mt20 mb20">
