@@ -38,15 +38,15 @@ class mainComponents extends sfComponents {
 	}
 
 	public function executeFjzx(sfWebRequest $request) {
-		$this->fjzxa1 = $this->getRecommendResult('佛教资讯A1');
-		$this->fjzxa2 = $this->getRecommendResult('佛教资讯A2');
+		$this->fjzxa1 = $this->getRecommendResult('宗教资讯A1');
+		$this->fjzxa2 = $this->getRecommendResult('宗教资讯A2');
 		
 		$this->article = Doctrine_Core::getTable('Article')->getIndexArticle(1);
 	}
 
 	public function executeCsjz(sfWebRequest $request) {
-		$this->csjza3 = $this->getRecommendResult('慈善救助A3');
-		$this->csjza4 = $this->getRecommendResult('慈善救助A4');
+		$this->csjza3 = $this->getRecommendResult('风水科学A3');
+		$this->csjza4 = $this->getRecommendResult('风水科学A4');
 
 		$this->article = Doctrine_Core::getTable('Article')->getIndexArticle(3);
 	}
@@ -59,8 +59,8 @@ class mainComponents extends sfComponents {
 	}
 
 	public function executeTchd(sfWebRequest $request) {
-		$this->tchda7 = $this->getRecommendResult('同城活动A7');
-		$this->tchda8 = $this->getRecommendResult('同城活动A8');
+		$this->tchda7 = $this->getRecommendResult('健康养生A7');
+		$this->tchda8 = $this->getRecommendResult('健康养生A8');
 		
 		$this->article = Doctrine_Core::getTable('Article')->getIndexArticle(4);
 	}
