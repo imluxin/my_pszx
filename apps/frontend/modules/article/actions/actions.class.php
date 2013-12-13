@@ -20,8 +20,8 @@ class articleActions extends sfActions
 		$search_url = '';
 		
 		$page= $request->getParameter('page',1);        //默认第1页
-		$q = Doctrine_Core::getTable('Article')->getListOnPage($page,6); //第页显示n条
-		$q->Where('is_approved=1 AND is_rejected=0');
+		$q = Doctrine_Core::getTable('Article')->createQuery();//->getListOnPage($page,6); //第页显示n条
+		$q->Where('is_approved=1 AND is_rejected=0')->orderBy('created_at DESC');
 		
 		
 		$this->category_id = $request->getParameter('category');

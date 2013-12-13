@@ -29,14 +29,6 @@
                         		<td></td>
                         		<td><input type="radio" name="push" value="100"> 100元</td>
                         	</tr>
-                        	<tr>
-                        		<td></td>
-                        		<td><input type="radio" name="push" value="50"> 50元</td>
-                        	</tr>
-                        	<tr>
-                        		<td></td>
-                        		<td><input type="radio" name="push" value="30"> 30元</td>
-                        	</tr>
                         </table>
                         </p>
                     </div>
@@ -88,14 +80,6 @@
                         	<tr>
                         		<td></td>
                         		<td><input type="radio" name="pull" value="100"> 100元</td>
-                        	</tr>
-                        	<tr>
-                        		<td></td>
-                        		<td><input type="radio" name="pull" value="50"> 50元</td>
-                        	</tr>
-                        	<tr>
-                        		<td></td>
-                        		<td><input type="radio" name="pull" value="30"> 30元</td>
                         	</tr>
                         </table>
                     </div>
