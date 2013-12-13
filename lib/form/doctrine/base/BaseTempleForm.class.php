@@ -29,6 +29,8 @@ abstract class BaseTempleForm extends BaseFormDoctrine
       'is_approved' => new sfWidgetFormInputCheckbox(),
       'description' => new sfWidgetFormInputText(),
       'last_modify' => new sfWidgetFormInputText(),
+      'view'        => new sfWidgetFormInputText(),
+      'xh'          => new sfWidgetFormInputText(),
       'created_at'  => new sfWidgetFormDateTime(),
       'updated_at'  => new sfWidgetFormDateTime(),
     ));
@@ -48,6 +50,8 @@ abstract class BaseTempleForm extends BaseFormDoctrine
       'is_approved' => new sfValidatorBoolean(array('required' => false)),
       'description' => new sfValidatorPass(array('required' => false)),
       'last_modify' => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'view'        => new sfValidatorInteger(array('required' => false)),
+      'xh'          => new sfValidatorInteger(array('required' => false)),
       'created_at'  => new sfValidatorDateTime(),
       'updated_at'  => new sfValidatorDateTime(),
     ));

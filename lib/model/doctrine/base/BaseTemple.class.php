@@ -18,6 +18,8 @@
  * @property boolean $is_approved
  * @property text $description
  * @property string $last_modify
+ * @property integer $view
+ * @property integer $xh
  * @property sfGuardUser $sfGuardUser
  * @property Doctrine_Collection $TempleHistory
  * 
@@ -34,6 +36,8 @@
  * @method boolean             getIsApproved()    Returns the current record's "is_approved" value
  * @method text                getDescription()   Returns the current record's "description" value
  * @method string              getLastModify()    Returns the current record's "last_modify" value
+ * @method integer             getView()          Returns the current record's "view" value
+ * @method integer             getXh()            Returns the current record's "xh" value
  * @method sfGuardUser         getSfGuardUser()   Returns the current record's "sfGuardUser" value
  * @method Doctrine_Collection getTempleHistory() Returns the current record's "TempleHistory" collection
  * @method Temple              setUserId()        Sets the current record's "user_id" value
@@ -49,6 +53,8 @@
  * @method Temple              setIsApproved()    Sets the current record's "is_approved" value
  * @method Temple              setDescription()   Sets the current record's "description" value
  * @method Temple              setLastModify()    Sets the current record's "last_modify" value
+ * @method Temple              setView()          Sets the current record's "view" value
+ * @method Temple              setXh()            Sets the current record's "xh" value
  * @method Temple              setSfGuardUser()   Sets the current record's "sfGuardUser" value
  * @method Temple              setTempleHistory() Sets the current record's "TempleHistory" collection
  * 
@@ -116,6 +122,12 @@ abstract class BaseTemple extends sfDoctrineRecord
         $this->hasColumn('last_modify', 'string', 255, array(
              'type' => 'string',
              'length' => 255,
+             ));
+        $this->hasColumn('view', 'integer', null, array(
+             'type' => 'integer',
+             ));
+        $this->hasColumn('xh', 'integer', null, array(
+             'type' => 'integer',
              ));
 
         $this->option('type', 'MyISAM');

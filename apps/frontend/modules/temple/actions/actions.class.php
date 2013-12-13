@@ -55,8 +55,10 @@ class templeActions extends sfActions {
 		}
 
 		if($this->rq != 'no') {
+			$q->orderBy('view DESC');
 
 		} else if($this->xh != 'no') {
+			$q->orderBy('xh DESC');
 
 		} else if($this->last != 'no') {
 			$q->orderBy('id DESC');
@@ -94,7 +96,15 @@ class templeActions extends sfActions {
 	public function executeDetail(sfWebRequest $request) {
 		$this->myuser = $this->getUser()->getGuardUser();
 		$id = $request->getParameter('id');
-		$this->temple = Doctrine_Core::getTable('Temple')->findOneById($id);
+		$temple = Doctrine_Core::getTable('Temple')->findOneById($id);
+		
+		// update view
+		$ov = $temple->getView();
+		$nv = (int)$ov + 1;
+		
+		$temple->set('view', $nv);
+		$temple->save();
+		$this->temple = $temple;
 
 		$page= $request->getParameter('page',1);        //默认第1页
 		$query = Doctrine_Core::getTable('TempleHistory')->getListOnPage($page,30);

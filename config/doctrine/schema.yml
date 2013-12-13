@@ -63,6 +63,8 @@ Temple:
     is_approved: { type: boolean, default: false }
     description: { type: text}
     last_modify: { type: string(255) }
+    view:   integer
+    xh:     integer
   relations:
       sfGuardUser:  { onDelete: CASCADE, local: user_id, foreign: id }
 

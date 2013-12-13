@@ -176,6 +176,15 @@ class owtrActions extends sfActions {
 		$c = $u_coins - $coins;
 
 		if($c >= 0) {
+			
+			// update xh
+			$ov = $temple->getXh();
+			$nv = (int)$ov + 1;
+			
+			$temple->set('xh', $nv);
+			$temple->save();
+			
+			
 			$th = new TempleHistory();
 			$th->setTId($id);
 			$th->setUserId($user->getId());

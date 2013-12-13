@@ -23,7 +23,7 @@
 <div class="row box">
 <div class="titleBar">
 	<a class="btnWhite" href="<?php echo url_for('temple/index?xh=yes'.urldecode($search_url)) ?>">香火最旺</a>
-	<a class="btnWhite" href="<?php echo url_for('temple/rq=yes'.urldecode($search_url)) ?>">人气最旺</a>
+	<a class="btnWhite" href="<?php echo url_for('temple/index?rq=yes'.urldecode($search_url)) ?>">人气最旺</a>
 	<a class="btnWhite" href="<?php echo url_for('temple/index?last=yes'.urldecode($search_url)) ?>">最新创建</a>
 <div class="search fr">
 <form method="GET" action="<?php echo url_for('temple/index') ?>">
