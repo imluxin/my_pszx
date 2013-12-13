@@ -37,7 +37,6 @@
                         		<td></td>
                         		<td><input type="radio" name="pull" value="30"> 30元</td>
                         	</tr>
-                        	
                         </table>
                         </p>
                     </div>
