@@ -55,14 +55,14 @@ class mainComponents extends sfComponents {
 		$this->zyjwa5 = $this->getRecommendResult('追忆祭文A5');
 		$this->zyjwa6 = $this->getRecommendResult('追忆祭文A6');
 		
-		$this->article = Doctrine_Core::getTable('Article')->getIndexArticle(5);
+		$this->article = Doctrine_Core::getTable('Article')->getIndexArticle(5, array(), 10);
 	}
 
 	public function executeTchd(sfWebRequest $request) {
 		$this->tchda7 = $this->getRecommendResult('健康养生A7');
 		$this->tchda8 = $this->getRecommendResult('健康养生A8');
 		
-		$this->article = Doctrine_Core::getTable('Article')->getIndexArticle(4);
+		$this->article = Doctrine_Core::getTable('Article')->getIndexArticle(4, array(), 18);
 	}
 
 	protected function getRecommendResult($type,$model='') 
