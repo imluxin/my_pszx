@@ -75,10 +75,10 @@ class memorialActions extends sfActions
 		}
 
 		if($this->rq != 'no') {
-			
+			$q->orderBy('view DESC');
 		}
 		if($this->xh != 'no') {
-
+			$q->orderBy('xh DESC');
 		}
 		if($this->last != 'no') {
 			$q->orderBy('m.id DESC');
@@ -183,6 +183,14 @@ class memorialActions extends sfActions
 	public function executeDetail(sfWebRequest $request) 
 	{
 		$this->forward404Unless($this->memorial = Doctrine_Core::getTable('Memorial')->find(array($request->getParameter('id'))), sprintf('纪念馆不存在，ID： (%s).', $request->getParameter('id')));
+		
+		// update view
+		$ov = $this->memorial->getView();
+		$nv = (int)$ov + 1;
+		
+		$this->memorial->set('view', $nv);
+		$this->memorial->save();
+		
 		$this->t_list = Doctrine_Core::getTable('MemorialTemplate')->createQuery()
 							->where('is_free = ?', false)
 							->execute();

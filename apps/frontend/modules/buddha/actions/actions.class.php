@@ -27,11 +27,11 @@ class buddhaActions extends sfActions
 		$q->Where('is_approved=1 AND is_rejected=0');
 
 		if($this->rq != 'no') {
-
+			$q->orderBy('view DESC');
 		}
 
 		if($this->xh != 'no') {
-
+			$q->orderBy('xh DESC');
 		}
 
 		if($this->last != 'no') {
@@ -74,7 +74,16 @@ class buddhaActions extends sfActions
 	public function executeDetail(sfWebRequest $request) {
 		$this->myuser = $this->getUser()->getGuardUser();
 		$id = $request->getParameter('id');
-		$this->buddha = Doctrine_Core::getTable('BunddlaHall')->findOneById($id);
+		$buddha = Doctrine_Core::getTable('BunddlaHall')->findOneById($id);
+
+		// update view
+		$ov = $buddha->getView();
+		$nv = (int)$ov + 1;
+		
+		$buddha->set('view', $nv);
+		$buddha->save();
+		
+		$this->buddha = $buddha;
 
 		$page= $request->getParameter('page',1);        //默认第1页
 		$query = Doctrine_Core::getTable('BunddlaHallHistory')->getListOnPage($page,30);

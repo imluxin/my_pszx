@@ -17,6 +17,8 @@ BunddlaHall:
     is_rejected: { type: boolean, default: false}
     is_approved: { type: boolean, default: false }
     last_modify: { type: string(255) }
+    view:   { type: integer, default: '0' }
+    xh:     { type: integer, default: '0' }
   relations:
       sfGuardUser:  { onDelete: CASCADE, local: user_id, foreign: id }
 #礼佛记录
@@ -124,6 +126,8 @@ Memorial:
     is_approved: { type: boolean, default: false }
     last_modify: { type: string(255) }
     template_id: integer
+    view:   { type: integer, default: '0' }
+    xh:     { type: integer, default: '0' }
   relations:
       sfGuardUser:  { onDelete: CASCADE, local: user_id, foreign: id }
       MemorialCategory:  { onDelete: CASCADE, local: category_id, foreign: id }

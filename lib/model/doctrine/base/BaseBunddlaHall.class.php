@@ -15,6 +15,8 @@
  * @property boolean $is_rejected
  * @property boolean $is_approved
  * @property string $last_modify
+ * @property integer $view
+ * @property integer $xh
  * @property sfGuardUser $sfGuardUser
  * @property Doctrine_Collection $BunddlaHallHistory
  * 
@@ -28,6 +30,8 @@
  * @method boolean             getIsRejected()         Returns the current record's "is_rejected" value
  * @method boolean             getIsApproved()         Returns the current record's "is_approved" value
  * @method string              getLastModify()         Returns the current record's "last_modify" value
+ * @method integer             getView()               Returns the current record's "view" value
+ * @method integer             getXh()                 Returns the current record's "xh" value
  * @method sfGuardUser         getSfGuardUser()        Returns the current record's "sfGuardUser" value
  * @method Doctrine_Collection getBunddlaHallHistory() Returns the current record's "BunddlaHallHistory" collection
  * @method BunddlaHall         setUserId()             Sets the current record's "user_id" value
@@ -40,6 +44,8 @@
  * @method BunddlaHall         setIsRejected()         Sets the current record's "is_rejected" value
  * @method BunddlaHall         setIsApproved()         Sets the current record's "is_approved" value
  * @method BunddlaHall         setLastModify()         Sets the current record's "last_modify" value
+ * @method BunddlaHall         setView()               Sets the current record's "view" value
+ * @method BunddlaHall         setXh()                 Sets the current record's "xh" value
  * @method BunddlaHall         setSfGuardUser()        Sets the current record's "sfGuardUser" value
  * @method BunddlaHall         setBunddlaHallHistory() Sets the current record's "BunddlaHallHistory" collection
  * 
@@ -96,6 +102,14 @@ abstract class BaseBunddlaHall extends sfDoctrineRecord
         $this->hasColumn('last_modify', 'string', 255, array(
              'type' => 'string',
              'length' => 255,
+             ));
+        $this->hasColumn('view', 'integer', null, array(
+             'type' => 'integer',
+             'default' => '0',
+             ));
+        $this->hasColumn('xh', 'integer', null, array(
+             'type' => 'integer',
+             'default' => '0',
              ));
 
         $this->option('type', 'MyISAM');

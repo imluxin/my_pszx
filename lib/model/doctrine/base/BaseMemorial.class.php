@@ -30,6 +30,8 @@
  * @property boolean $is_approved
  * @property string $last_modify
  * @property integer $template_id
+ * @property integer $view
+ * @property integer $xh
  * @property sfGuardUser $sfGuardUser
  * @property MemorialCategory $MemorialCategory
  * @property MemorialTemplate $MemorialTemplate
@@ -61,6 +63,8 @@
  * @method boolean             getIsApproved()       Returns the current record's "is_approved" value
  * @method string              getLastModify()       Returns the current record's "last_modify" value
  * @method integer             getTemplateId()       Returns the current record's "template_id" value
+ * @method integer             getView()             Returns the current record's "view" value
+ * @method integer             getXh()               Returns the current record's "xh" value
  * @method sfGuardUser         getSfGuardUser()      Returns the current record's "sfGuardUser" value
  * @method MemorialCategory    getMemorialCategory() Returns the current record's "MemorialCategory" value
  * @method MemorialTemplate    getMemorialTemplate() Returns the current record's "MemorialTemplate" value
@@ -91,6 +95,8 @@
  * @method Memorial            setIsApproved()       Sets the current record's "is_approved" value
  * @method Memorial            setLastModify()       Sets the current record's "last_modify" value
  * @method Memorial            setTemplateId()       Sets the current record's "template_id" value
+ * @method Memorial            setView()             Sets the current record's "view" value
+ * @method Memorial            setXh()               Sets the current record's "xh" value
  * @method Memorial            setSfGuardUser()      Sets the current record's "sfGuardUser" value
  * @method Memorial            setMemorialCategory() Sets the current record's "MemorialCategory" value
  * @method Memorial            setMemorialTemplate() Sets the current record's "MemorialTemplate" value
@@ -203,6 +209,14 @@ abstract class BaseMemorial extends sfDoctrineRecord
              ));
         $this->hasColumn('template_id', 'integer', null, array(
              'type' => 'integer',
+             ));
+        $this->hasColumn('view', 'integer', null, array(
+             'type' => 'integer',
+             'default' => '0',
+             ));
+        $this->hasColumn('xh', 'integer', null, array(
+             'type' => 'integer',
+             'default' => '0',
              ));
 
         $this->option('type', 'MyISAM');

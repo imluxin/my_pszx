@@ -45,6 +45,14 @@ class owtrActions extends sfActions {
 		$c = $u_coins - $coins;
 
 		if($c >= 0) {
+			
+			// update xh
+			$ov = $buddha->getXh();
+			$nv = (int)$ov + 1;
+			
+			$buddha->set('xh', $nv);
+			$buddha->save();
+			
 			$bh = new BunddlaHallHistory();
 			$bh->setBhId($id);
 			$bh->setUserId($user->getId());
@@ -316,6 +324,14 @@ class owtrActions extends sfActions {
 		$c = $u_coins - $coins;
 
 		if($c >= 0) {
+			
+			// update xh
+			$ov = $memorial->getXh();
+			$nv = (int)$ov + 1;
+			
+			$memorial->set('xh', $nv);
+			$memorial->save();
+			
 			$mh = new MemorialHistory();
 			$mh->setModule('zxlw');
 			$mh->setMId($id);
@@ -448,6 +464,14 @@ class owtrActions extends sfActions {
 		$c = $u_coins - $coins;
 
 		if($c >= 0) {
+			
+			// update xh
+			$ov = $memorial->getXh();
+			$nv = (int)$ov + 1;
+			
+			$memorial->set('xh', $nv);
+			$memorial->save();
+			
 			$mh = new MemorialHistory();
 			$mh->setModule('zxgm');
 			$mh->setMId($id);

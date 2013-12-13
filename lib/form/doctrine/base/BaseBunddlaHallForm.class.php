@@ -26,6 +26,8 @@ abstract class BaseBunddlaHallForm extends BaseFormDoctrine
       'is_rejected' => new sfWidgetFormInputCheckbox(),
       'is_approved' => new sfWidgetFormInputCheckbox(),
       'last_modify' => new sfWidgetFormInputText(),
+      'view'        => new sfWidgetFormInputText(),
+      'xh'          => new sfWidgetFormInputText(),
       'created_at'  => new sfWidgetFormDateTime(),
       'updated_at'  => new sfWidgetFormDateTime(),
     ));
@@ -42,6 +44,8 @@ abstract class BaseBunddlaHallForm extends BaseFormDoctrine
       'is_rejected' => new sfValidatorBoolean(array('required' => false)),
       'is_approved' => new sfValidatorBoolean(array('required' => false)),
       'last_modify' => new sfValidatorString(array('max_length' => 255, 'required' => false)),
+      'view'        => new sfValidatorInteger(array('required' => false)),
+      'xh'          => new sfValidatorInteger(array('required' => false)),
       'created_at'  => new sfValidatorDateTime(),
       'updated_at'  => new sfValidatorDateTime(),
     ));

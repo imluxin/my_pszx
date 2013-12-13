@@ -38,6 +38,8 @@ abstract class BaseMemorialFormFilter extends BaseFormFilterDoctrine
       'is_approved'      => new sfWidgetFormChoice(array('choices' => array('' => 'yes or no', 1 => 'yes', 0 => 'no'))),
       'last_modify'      => new sfWidgetFormFilterInput(),
       'template_id'      => new sfWidgetFormDoctrineChoice(array('model' => $this->getRelatedModelName('MemorialTemplate'), 'add_empty' => true)),
+      'view'             => new sfWidgetFormFilterInput(),
+      'xh'               => new sfWidgetFormFilterInput(),
       'created_at'       => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
       'updated_at'       => new sfWidgetFormFilterDate(array('from_date' => new sfWidgetFormDate(), 'to_date' => new sfWidgetFormDate(), 'with_empty' => false)),
     ));
@@ -68,6 +70,8 @@ abstract class BaseMemorialFormFilter extends BaseFormFilterDoctrine
       'is_approved'      => new sfValidatorChoice(array('required' => false, 'choices' => array('', 1, 0))),
       'last_modify'      => new sfValidatorPass(array('required' => false)),
       'template_id'      => new sfValidatorDoctrineChoice(array('required' => false, 'model' => $this->getRelatedModelName('MemorialTemplate'), 'column' => 'id')),
+      'view'             => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
+      'xh'               => new sfValidatorSchemaFilter('text', new sfValidatorInteger(array('required' => false))),
       'created_at'       => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
       'updated_at'       => new sfValidatorDateRange(array('required' => false, 'from_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 00:00:00')), 'to_date' => new sfValidatorDateTime(array('required' => false, 'datetime_output' => 'Y-m-d 23:59:59')))),
     ));
@@ -115,6 +119,8 @@ abstract class BaseMemorialFormFilter extends BaseFormFilterDoctrine
       'is_approved'      => 'Boolean',
       'last_modify'      => 'Text',
       'template_id'      => 'ForeignKey',
+      'view'             => 'Number',
+      'xh'               => 'Number',
       'created_at'       => 'Date',
       'updated_at'       => 'Date',
     );
