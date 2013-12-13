@@ -200,3 +200,11 @@ object{
 	white-space: normal;
 	width: 320px;
 }
+.mmsg{
+	padding: 6px 20px;
+	border-bottom: #eee 1px dotted;
+	background: #f2f2f2;
+	font-size: 14px;
+	font-weight: normal;
+	color: #000;
+}

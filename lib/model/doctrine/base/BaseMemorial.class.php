@@ -33,6 +33,7 @@
  * @property sfGuardUser $sfGuardUser
  * @property MemorialCategory $MemorialCategory
  * @property MemorialTemplate $MemorialTemplate
+ * @property Doctrine_Collection $MemorialMessage
  * @property Doctrine_Collection $MemorialHistory
  * 
  * @method integer             getUserId()           Returns the current record's "user_id" value
@@ -63,6 +64,7 @@
  * @method sfGuardUser         getSfGuardUser()      Returns the current record's "sfGuardUser" value
  * @method MemorialCategory    getMemorialCategory() Returns the current record's "MemorialCategory" value
  * @method MemorialTemplate    getMemorialTemplate() Returns the current record's "MemorialTemplate" value
+ * @method Doctrine_Collection getMemorialMessage()  Returns the current record's "MemorialMessage" collection
  * @method Doctrine_Collection getMemorialHistory()  Returns the current record's "MemorialHistory" collection
  * @method Memorial            setUserId()           Sets the current record's "user_id" value
  * @method Memorial            setUserName()         Sets the current record's "user_name" value
@@ -92,6 +94,7 @@
  * @method Memorial            setSfGuardUser()      Sets the current record's "sfGuardUser" value
  * @method Memorial            setMemorialCategory() Sets the current record's "MemorialCategory" value
  * @method Memorial            setMemorialTemplate() Sets the current record's "MemorialTemplate" value
+ * @method Memorial            setMemorialMessage()  Sets the current record's "MemorialMessage" collection
  * @method Memorial            setMemorialHistory()  Sets the current record's "MemorialHistory" collection
  * 
  * @package    symfonymodel
@@ -224,6 +227,10 @@ abstract class BaseMemorial extends sfDoctrineRecord
              'local' => 'template_id',
              'foreign' => 'id',
              'onDelete' => 'SET NULL'));
+
+        $this->hasMany('MemorialMessage', array(
+             'local' => 'id',
+             'foreign' => 'memorial_id'));
 
         $this->hasMany('MemorialHistory', array(
              'local' => 'id',

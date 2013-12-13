@@ -99,7 +99,7 @@ class TempleForm extends BaseTempleForm
 					)
 				);		
 
-		$this->widgetSchema['description'] = new sfWidgetFormTextarea();
+// 		$this->widgetSchema['description'] = new sfWidgetFormTextarea();
 		
 		$this->validatorSchema['name'] = new sfValidatorString(
 									array('required'=>true),
@@ -110,11 +110,12 @@ class TempleForm extends BaseTempleForm
 									array('required'=>'菩萨介绍不能为空。')
 									);
 
-		$this->widgetSchema['description'] = new sfWidgetFormTextareaTinyMCE(array(
-		  'width'  => 680,
-		  'height' => 350,
-		  'config' => 'theme_advanced_disable: "anchor,image,cleanup,help",forced_root_block:false',
-		));
+// 		$this->widgetSchema['description'] = new sfWidgetFormTextareaTinyMCE(array(
+// 		  'width'  => 680,
+// 		  'height' => 350,
+// 		  'config' => 'theme_advanced_disable: "anchor,image,cleanup,help",forced_root_block:false',
+// 		));
+		$this->widgetSchema['description'] = new sfWidgetFormTextarea(array(), array('class'=>'ckeditor'));
 		
 		$this->widgetSchema->setLabels(array(
 		  'name' => '名山寺庙名称：',

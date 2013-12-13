@@ -47,11 +47,8 @@ class BunddlaHallForm extends BaseBunddlaHallForm
 									array('required'=>true),
 									array('required'=>'佛殿介绍不能为空。')
 									);
-		$this->widgetSchema['description'] = new sfWidgetFormTextareaTinyMCE(array(
-		  'width'  => 680,
-		  'height' => 350,
-		  'config' => 'theme_advanced_disable: "anchor,image,cleanup,help",forced_root_block:false',
-		));
+		$this->widgetSchema['description'] = new sfWidgetFormTextarea(array(), array('class'=>'ckeditor'));
+		
 		$this->widgetSchema->setLabels(array(
 		  'name' => '佛殿名称：',
 		  'images' => '佛殿动画图片：',

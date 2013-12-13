@@ -24,11 +24,12 @@ class ArticleForm extends BaseArticleForm
 			'required'=>'请输入帖子标题。'
 		));
 		
-		$this->widgetSchema['content'] = new sfWidgetFormTextareaTinyMCE(array(
-		  'width'  => 680,
-		  'height' => 350,
-		  'config' => 'theme_advanced_disable: "anchor,image,cleanup,help",forced_root_block:false',
-		));
+// 		$this->widgetSchema['content'] = new sfWidgetFormTextareaTinyMCE(array(
+// 		  'width'  => 680,
+// 		  'height' => 350,
+// 		  'config' => 'theme_advanced_disable: "anchor,image,cleanup,help",forced_root_block:false',
+// 		));
+		$this->widgetSchema['content'] = new sfWidgetFormTextarea(array(), array('class'=>'ckeditor'));
 		
 		$this->widgetSchema['img_one'] = new sfWidgetFormInputFileEditable(array(
 		    'file_src' => $this->getObject()->getPublicFileLocation1(),

@@ -260,4 +260,30 @@ class memorialActions extends sfActions
 		$this->forward404Unless($this->memorial = Doctrine_Core::getTable('Memorial')->find(array($request->getParameter('id'))), sprintf('纪念馆不存在，ID： (%s).', $request->getParameter('id')));
 		$this->myuser = $this->getUser()->getGuardUser();
 	}
+	
+	public function executeMessage(sfWebRequest $request)
+	{
+		$mid = $request->getParameter('id');
+		$this->forward404Unless($this->memorial = Doctrine_Core::getTable('Memorial')->find($mid), sprintf('纪念馆不存在，ID： (%s).', $mid));
+		$this->myuser = $this->getUser()->getGuardUser();
+		
+		$this->ms = MemorialMessageTable::getInstance()->createQuery()
+							->where('memorial_id = ?', $mid)
+							->orderBy('created_at DESC')
+							->execute();
+	}
+	
+	public function executeMessageAdd(sfWebRequest $request)
+	{
+		$mid = $request->getParameter('mid');
+		$name = $request->getParameter('name');
+		$content = $request->getParameter('content');
+		
+		$m = new MemorialMessage();
+		$m->setName($name)->setContent($content)->setMemorialId($mid);
+		$m->save();
+		
+		$this->redirect('memorial/message?id='.$mid);
+	}
+	
 }

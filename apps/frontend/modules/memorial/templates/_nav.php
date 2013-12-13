@@ -5,7 +5,7 @@
 		<a href="<?php echo url_for('memorial/lifetime?id='.$id) ?>">生平</a>
 		<a href="<?php echo url_for('memorial/photo?id='.$id) ?>">照片</a>
 		<a href="<?php echo url_for('memorial/lifetime?id='.$id) ?>">视频</a>
-		<a href="<?php echo url_for('memorial/lifetime?id='.$id) ?>">留言</a>
+		<a href="<?php echo url_for('memorial/message?id='.$id) ?>">留言</a>
 		<a href="<?php echo url_for('memorial/lifetime?id='.$id) ?>">追忆祭文</a>
 		<a href="#">背景音乐</a>
 		<?php include_partial('global/audio')?>

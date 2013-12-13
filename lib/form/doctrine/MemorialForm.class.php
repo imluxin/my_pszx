@@ -100,11 +100,7 @@ class MemorialForm extends BaseMemorialForm
 			'required'=>'请输入纪念馆名称。'
 		));
 		
-		$this->widgetSchema['description'] = new sfWidgetFormTextareaTinyMCE(array(
-		  'width'  => 680,
-		  'height' => 350,
-		  'config' => 'theme_advanced_disable: "anchor,image,cleanup,help",forced_root_block:false',
-		));
+		$this->widgetSchema['description'] = new sfWidgetFormTextarea(array(), array('class'=>'ckeditor'));
 		
 		$this->getWidget('template_id')->setOption('method', 'getNameWithPrice');
 		
