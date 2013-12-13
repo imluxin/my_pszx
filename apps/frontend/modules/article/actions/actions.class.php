@@ -8,7 +8,7 @@
  * @author     Mia
  * @version    SVN: $Id: actions.class.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
-class articleActions extends sfActions
+class articleActions extends lxActions
 {
 	public function executeIndex(sfWebRequest $request)
 	{
@@ -146,7 +146,11 @@ class articleActions extends sfActions
 			$article->setUserId($myuser->getId());
 			$article->setUserName($myuser->getUsername());
 			$article->save();
-			$this->redirect('article/edit?id='.$article->getId());
+			
+			$this->flashAddSuccess();
+			
+			//$this->redirect('article/edit?id='.$article->getId());
+			$this->redirect('manager/article?article_page=1');
 		}
 	}
 	
@@ -156,7 +160,7 @@ class articleActions extends sfActions
 		if ($form->isValid())
 		{
 			$article = $form->save();
-
+			$this->flashEditSuccess();
 			$this->redirect('manager/article?article_page='.$article_page);
 		}
 	}

@@ -8,7 +8,7 @@
  * @author     Your name here
  * @version    SVN: $Id: actions.class.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
-class templeActions extends sfActions {
+class templeActions extends lxActions {
 	public function executeIndex(sfWebRequest $request) {
 		$this->myuser = $this->getUser()->getGuardUser();
 
@@ -167,7 +167,9 @@ class templeActions extends sfActions {
 			$temple->setUserId($myuser->getId());
 			$temple->setUserName($myuser->getUsername());
 			$temple->save();
-			$this->redirect('temple/edit?id='.$temple->getId());
+			$this->flashAddSuccess();
+			$this->redirect('manager/temple');
+			//$this->redirect('temple/edit?id='.$temple->getId());
 		}
 	}
 
@@ -176,7 +178,8 @@ class templeActions extends sfActions {
 		if ($form->isValid())
 		{
 			$temple = $form->save();
-
+			
+			$this->flashEditSuccess();
 			$this->redirect('manager/temple');
 		}
 	}

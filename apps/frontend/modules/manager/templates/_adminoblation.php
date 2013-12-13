@@ -1,6 +1,9 @@
 <div class="admin_oblation_audit admin_box">
 <div class="subTitle">祭品审核</div>
 <div class="cont">
+
+<?php include_partial('global/notice'); ?>
+
 <div class="subTitle">待审核</div>
 <ul class="imgList clearfix fix-w128-h128">
 	<?php foreach($oblation as $one):?>

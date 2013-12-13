@@ -8,7 +8,7 @@
  * @author     Mia
  * @version    SVN: $Id: actions.class.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
-class memorialActions extends sfActions
+class memorialActions extends lxActions
 {
 	public function executeIndex(sfWebRequest $request)
 	{
@@ -163,6 +163,7 @@ class memorialActions extends sfActions
 			$memorial->setUserId($myuser->getId());
 			$memorial->setUserName($myuser->getUsername());
 			$memorial->save();
+			$this->flashAddSuccess();
 			$this->redirect('memorial/edit?id='.$memorial->getId());
 		}
 	}
@@ -176,6 +177,7 @@ class memorialActions extends sfActions
 			$memorial->setIsRejected(false);
 			$memorial->setIsApproved(false);
 			$memorial->save();
+			$this->flashEditSuccess();
 			$this->redirect('memorial/edit?id='.$memorial->getId());
 		}
 	}

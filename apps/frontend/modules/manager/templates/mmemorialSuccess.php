@@ -9,6 +9,7 @@
       </div>
       <div class="main box fr">
         <div class="cont">
+        	
           <?php include_component('manager', 'adminmemorial')?>
         </div>
       </div>

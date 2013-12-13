@@ -6,7 +6,7 @@
  * @author Mia
  *
  */
-class ajaxActions extends sfActions {
+class ajaxActions extends lxActions {
 
 	public function executeTest(sfWebRequest $request) {
 		exit;
@@ -92,6 +92,7 @@ class ajaxActions extends sfActions {
 		$buddha = Doctrine_Core::getTable('BunddlaHall')->findOneById($id);
 		if($buddha) {
 			$buddha->delete();
+			$this->flashDelSuccess();
 		}
 
 		return $this->renderText(1);
@@ -106,6 +107,7 @@ class ajaxActions extends sfActions {
 		$temple = Doctrine_Core::getTable('Temple')->findOneById($id);
 		if($temple) {
 			$temple->delete();
+			$this->flashDelSuccess();
 		}
 
 		return $this->renderText(1);
@@ -120,6 +122,7 @@ class ajaxActions extends sfActions {
 		$oblation = Doctrine_Core::getTable('Oblation')->findOneById($id);
 		if($oblation) {
 			$oblation->delete();
+			$this->flashDelSuccess();
 		}
 
 		return $this->renderText(1);
@@ -134,6 +137,7 @@ class ajaxActions extends sfActions {
 		$article = Doctrine_Core::getTable('Article')->findOneById($id);
 		if($article) {
 			$article->delete();
+			$this->flashDelSuccess();
 		}
 
 		return $this->renderText(1);
@@ -148,6 +152,7 @@ class ajaxActions extends sfActions {
 		$memorial = Doctrine_Core::getTable('Memorial')->findOneById($id);
 		if($memorial) {
 			$memorial->delete();
+			$this->flashDelSuccess();
 		}
 
 		return $this->renderText(1);
@@ -159,6 +164,7 @@ class ajaxActions extends sfActions {
 		$res = Doctrine_Core::getTable('MemorialTemplate')->findOneById($id);
 		if($res) {
 			$res->delete();
+			$this->flashDelSuccess();
 		}
 
 		return $this->renderText(1);

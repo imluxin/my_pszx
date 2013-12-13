@@ -4,7 +4,11 @@
 -
 <span style="font-size:14px;text-decoration: underline;"><?php echo link_to('创建寺庙','temple/new')?></span>
 </div>
+
 <div class="cont">
+
+<?php include_partial('global/notice')?>
+
 <div class="subTitle">待审核</div>
 <p>
 <ul class="imgList clearfix">

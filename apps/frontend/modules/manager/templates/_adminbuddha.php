@@ -1,6 +1,9 @@
 <div class="admin_temple_audit admin_box">
 <div class="subTitle">佛殿审核</div>
 <div class="cont">
+
+<?php include_partial('global/notice'); ?>
+
 <div class="subTitle">待审核</div>
 <ul class="imgList clearfix">
 	<?php foreach($buddha as $one):?>

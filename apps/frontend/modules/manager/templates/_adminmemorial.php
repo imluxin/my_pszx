@@ -1,6 +1,7 @@
 <div class="admin_memorial_audit admin_box">
 <div class="subTitle">纪念馆审核</div>
 <div class="cont">
+<?php include_partial('global/notice')?>
 <div class="subTitle">待审核</div>
 <ul class="imgList clearfix memorial-img">
 	<?php foreach($memorial as $one):?>

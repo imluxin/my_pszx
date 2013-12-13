@@ -6,6 +6,10 @@
 </div>
 
 <div class="cont">
+
+
+<?php include_partial('global/notice')?>
+
 <div class="subTitle">待审核</div>
 <ul class="imgList clearfix fix-w160-h160">
 	<?php foreach($buddha as $one):?>

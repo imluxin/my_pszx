@@ -9,6 +9,9 @@
 <div class="main fr">
 <div class="cont">
 <h3 class="subTitle">修改文章</h3>
+
+<?php include_partial('global/notice')?>
+
 <div class="buildForm fix-img-400">
 	<?php include_partial('pages/form', array('form'=>$form))?>
 </div>

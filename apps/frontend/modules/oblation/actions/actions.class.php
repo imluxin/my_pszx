@@ -8,7 +8,7 @@
  * @author     Your name here
  * @version    SVN: $Id: actions.class.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
-class oblationActions extends sfActions
+class oblationActions extends lxActions
 {
 	public function executeIndex(sfWebRequest $request)
 	{
@@ -127,7 +127,11 @@ class oblationActions extends sfActions
 			$oblation->setUserId($myuser->getId());
 			$oblation->setUserName($myuser->getUsername());
 			$oblation->save();
-			$this->redirect('oblation/edit?id='.$oblation->getId());
+			
+			$this->flashAddSuccess();
+
+			$this->redirect('manager/oblation');
+			//$this->redirect('oblation/edit?id='.$oblation->getId());
 		}
 	}
 	
@@ -148,6 +152,9 @@ class oblationActions extends sfActions
 				$oblation->setPrice($price);
 			}
 			$oblation->save();
+			
+			$this->flashEditSuccess();
+			
 			$this->redirect('manager/oblation');
 		}
 	}

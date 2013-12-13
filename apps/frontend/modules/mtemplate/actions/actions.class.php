@@ -8,7 +8,7 @@
  * @author     Mia
  * @version    SVN: $Id: actions.class.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
-class mtemplateActions extends sfActions
+class mtemplateActions extends lxActions
 {
 
 	public function executeNew(sfWebRequest $request)
@@ -51,37 +51,16 @@ class mtemplateActions extends sfActions
 		$this->setTemplate('edit');
 	}
 
-	/*	public function executeDelete(sfWebRequest $request)
-	 {
-		$request->checkCSRFProtection();
-
-		$this->forward404Unless($memorial = Doctrine_Core::getTable('Memorial')->find(array($request->getParameter('id'))), sprintf('Object memorial does not exist (%s).', $request->getParameter('id')));
-		$memorial->delete();
-
-		$this->redirect('memorial/index');
-		}*/
-
 	protected function processForm(sfWebRequest $request, sfForm $form)
 	{
 		$form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
 		if ($form->isValid())
 		{
 			$memorial = $form->save();
-			
-			$this->redirect('mtemplate/edit?id='.$memorial->getId());
+			$this->flashSuccess();
+			//$this->redirect('mtemplate/edit?id='.$memorial->getId());
+			$this->redirect('manager/mtemplate');
 		}
 	}
 
-// 	protected function processEditForm(sfWebRequest $request, sfForm $form)
-// 	{
-// 		$form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
-// 		if ($form->isValid())
-// 		{
-// 			$memorial = $form->save();
-// 			$memorial->setIsRejected(false);
-// 			$memorial->setIsApproved(false);
-// 			$memorial->save();
-// 			$this->redirect('mtemplate/edit?id='.$memorial->getId());
-// 		}
-// 	}
 }

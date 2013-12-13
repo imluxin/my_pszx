@@ -5,6 +5,7 @@
 <span style="font-size:14px;text-decoration: underline;"><?php echo link_to('创建祭品','oblation/new')?></span>
 </div>
 <div class="cont">
+<?php include_partial('global/notice')?>
 <div class="subTitle">待审核</div>
 <ul class="imgList clearfix">
 	<?php foreach ($oblation as $one):?>

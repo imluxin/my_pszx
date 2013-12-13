@@ -5,6 +5,7 @@
 <span style="font-size:14px;text-decoration: underline;"><?php echo link_to('建馆','memorial/new')?></span>
 </div>
 <div class="cont">
+<?php include_partial('global/notice')?>
 <div class="subTitle">待审核</div>
 <ul class="imgList clearfix memorial-img">
 	<?php foreach($memorial as $one): ?>

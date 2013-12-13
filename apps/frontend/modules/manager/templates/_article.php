@@ -5,6 +5,7 @@
 <span style="font-size:14px;text-decoration: underline;"><?php echo link_to('发表帖子','article/new')?></span>
 </div>
 <div class="cont">
+<?php include_partial('global/notice'); ?>
 <?php include_partial('article/filter', array('url'=>url_for('manager/article'), 'cats' => $cats )); ?>
 <table class="table">
 	<tr>

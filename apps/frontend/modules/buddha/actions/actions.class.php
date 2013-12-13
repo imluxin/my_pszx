@@ -8,7 +8,7 @@
  * @author     Your name here
  * @version    SVN: $Id: actions.class.php 23810 2009-11-12 11:07:44Z Kris.Wallsmith $
  */
-class buddhaActions extends sfActions
+class buddhaActions extends lxActions
 {
 
 	public function executeIndex(sfWebRequest $request)
@@ -145,7 +145,9 @@ class buddhaActions extends sfActions
 			$bunddla_hall->setUserId($myuser->getId());
 			$bunddla_hall->setUserName($myuser->getUsername());
 			$bunddla_hall->save();
-			$this->redirect('buddha/edit?id='.$bunddla_hall->getId());
+			$this->flashAddSuccess();
+			$this->redirect('manager/buddha');
+			//$this->redirect('buddha/edit?id='.$bunddla_hall->getId());
 		}
 	}
 
@@ -160,7 +162,8 @@ class buddhaActions extends sfActions
 			$bunddla_hall->setIsApproved(false);
 			$bunddla_hall->setIsRejected(false);
 			$bunddla_hall->save();
-
+			
+			$this->flashEditSuccess();
 			$this->redirect('manager/buddha');
 			// $this->redirect('buddha/edit?id='.$bunddla_hall->getId());
 		}

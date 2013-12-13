@@ -2,6 +2,9 @@
 <div class="admin_shop_price admin_box">
 	<div class="subTitle">文章讣告管理</div>
 	<div class="cont">
+
+<?php include_partial('global/notice'); ?>
+	
 	
 <?php include_partial('article/filter', array('url'=>url_for('manager/marticle'), 'cats' => $cats )); ?>
 	

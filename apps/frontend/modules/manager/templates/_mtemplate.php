@@ -5,6 +5,9 @@
 <span style="font-size:14px;text-decoration: underline;"><?php echo link_to('建立模板','mtemplate/new')?></span>
 </div>
 <div class="cont">
+
+<?php include_partial('global/notice')?>
+
 <ul class="imgList clearfix  fix-img-160">
 	<?php foreach($res as $one): ?>
 	<li>
