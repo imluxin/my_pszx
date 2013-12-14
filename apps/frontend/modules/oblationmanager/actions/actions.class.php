@@ -27,8 +27,9 @@ class oblationmanagerActions extends sfActions {
 	public function executeModifyprice(sfWebRequest $request) {
 		$this->forward404Unless($request->isMethod(sfRequest::POST) || $request->isMethod(sfRequest::PUT));
 		$this->forward404Unless($oblation = Doctrine_Core::getTable('Oblation')->find(array($request->getParameter('id'))), sprintf('找不到对应的记录，ID： (%s).', $request->getParameter('id')));
-		
+
 		$oblation->setPrice($request->getParameter('price'));
+		$oblation->setTimes($request->getParameter('time'));
 		$oblation->setCanModify(true);
 		$oblation->save();
 		

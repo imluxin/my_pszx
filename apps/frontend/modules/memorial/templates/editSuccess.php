@@ -11,7 +11,7 @@
 <div class="cont">
 <h3 class="subTitle">修改纪念馆</h3>
 <?php include_partial('global/notice')?>
-<div class="buildForm fix-img-160"><?php include_partial('edit_form', array('form' => $form,'memorial'=> $memorial)) ?>
+<div class="buildForm fix-img-160"><?php include_partial('form', array('form' => $form,'memorial'=> $memorial)) ?>
 </div>
 </div>
 </div>

@@ -112,65 +112,67 @@
       	<td>&nbsp;</td>
       	<td>&nbsp;</td>
       </tr>
-      <tr>
-      	<td rowspan="6">
-      		逝者信息B
-      	</td>
-        <th><?php echo $form['die_name_two']->renderLabel() ?></th>
-        <td>
-          <?php echo $form['die_name_two'] ?>
-        </td>
-        <td>
-          <?php echo $form['die_name_two']->renderError() ?>
-        </td>
-      </tr>
-      <tr>
-        <th><?php echo $form['die_province_two']->renderLabel() ?></th>
-        <td>
-          <?php echo $form['die_province_two'] ?>
-          <?php echo $form['die_city_two'] ?>
-        </td>
-        <td>
-          <?php echo $form['die_province_two']->renderError() ?>
-          <?php echo $form['die_city_two']->renderError() ?>
-        </td>
-      </tr>
-      <tr>
-        <th><?php echo $form['die_birth_two']->renderLabel() ?></th>
-        <td>
-          <?php echo $form['die_birth_two'] ?>
-        </td>
-        <td>
-          <?php echo $form['die_birth_two']->renderError() ?>
-        </td>
-      </tr>
-      <tr>
-        <th><?php echo $form['die_die_two']->renderLabel() ?></th>
-        <td>
-          <?php echo $form['die_die_two'] ?>
-        </td>
-        <td>
-          <?php echo $form['die_die_two']->renderError() ?>
-        </td>
-      </tr>
-      <tr>
-        <th><?php echo $form['die_nickname_two']->renderLabel() ?></th>
-        <td>
-          <?php echo $form['die_nickname_two'] ?>
-        </td>
-        <td>
-          <?php echo $form['die_nickname_two']->renderError() ?>
-        </td>
-      </tr>
-      <tr>
-        <th><?php echo $form['die_photo_two']->renderLabel() ?></th>
-        <td>
-          <?php echo $form['die_photo_two'] ?>
-        </td>
-        <td>
-          <?php echo $form['die_photo_two']->renderError() ?>
-        </td>
-      </tr>
+      <tbody id="die-two">
+	      <tr>
+	      	<td rowspan="6">
+	      		逝者信息B
+	      	</td>
+	        <th><?php echo $form['die_name_two']->renderLabel() ?></th>
+	        <td>
+	          <?php echo $form['die_name_two'] ?>
+	        </td>
+	        <td>
+	          <?php echo $form['die_name_two']->renderError() ?>
+	        </td>
+	      </tr>
+	      <tr>
+	        <th><?php echo $form['die_province_two']->renderLabel() ?></th>
+	        <td>
+	          <?php echo $form['die_province_two'] ?>
+	          <?php echo $form['die_city_two'] ?>
+	        </td>
+	        <td>
+	          <?php echo $form['die_province_two']->renderError() ?>
+	          <?php echo $form['die_city_two']->renderError() ?>
+	        </td>
+	      </tr>
+	      <tr>
+	        <th><?php echo $form['die_birth_two']->renderLabel() ?></th>
+	        <td>
+	          <?php echo $form['die_birth_two'] ?>
+	        </td>
+	        <td>
+	          <?php echo $form['die_birth_two']->renderError() ?>
+	        </td>
+	      </tr>
+	      <tr>
+	        <th><?php echo $form['die_die_two']->renderLabel() ?></th>
+	        <td>
+	          <?php echo $form['die_die_two'] ?>
+	        </td>
+	        <td>
+	          <?php echo $form['die_die_two']->renderError() ?>
+	        </td>
+	      </tr>
+	      <tr>
+	        <th><?php echo $form['die_nickname_two']->renderLabel() ?></th>
+	        <td>
+	          <?php echo $form['die_nickname_two'] ?>
+	        </td>
+	        <td>
+	          <?php echo $form['die_nickname_two']->renderError() ?>
+	        </td>
+	      </tr>
+	      <tr>
+	        <th><?php echo $form['die_photo_two']->renderLabel() ?></th>
+	        <td>
+	          <?php echo $form['die_photo_two'] ?>
+	        </td>
+	        <td>
+	          <?php echo $form['die_photo_two']->renderError() ?>
+	        </td>
+	      </tr>
+      </tbody>
       <tr>
         <th><?php echo $form['description']->renderLabel() ?></th>
         <td>
@@ -186,27 +188,50 @@
    <?php echo $form['description'] ?>
    </div>
   <br />
-   <input class="btnPurple" type="submit" value="确认创建" />
+   <input class="btnPurple" type="submit" value="确认" />
+   <input class="btnPurple" type="button" value="返回管理中心" onclick="location.href='<?php echo url_for('manager/memorial') ?>'" />
 </form>
 <select style="display:none" id="area_id"></select>
 <script>
 
 $(function() {
+	var cat = $("input[name='memorial[category_id]']").val();
+
+	if(cat == '7'){
+		$('#die-two').show();
+	}else{
+		$('#die-two').hide();
+	}
+
+	$("input[name='memorial[category_id]']").click(function(){
+		var cat = $(this).val();
+		if (cat == '7'){
+			$('#die-two').show();
+		}else{
+			$('#die-two').hide();
+		}
+	});
+
+	
 	$( "#memorial_die_birth_one" ).datepicker({
 		changeMonth: true,
-		changeYear: true
+		changeYear: true,
+		yearRange: "-100:+0"
 	});
 	$( "#memorial_die_die_one" ).datepicker({
 		changeMonth: true,
-		changeYear: true
+		changeYear: true,
+		yearRange: "-100:+0"
 	});
 	$( "#memorial_die_birth_two" ).datepicker({
 		changeMonth: true,
-		changeYear: true
+		changeYear: true,
+		yearRange: "-100:+0"
 	});
 	$( "#memorial_die_die_two" ).datepicker({
 		changeMonth: true,
-		changeYear: true
+		changeYear: true,
+		yearRange: "-100:+0"
 	});
 });
 

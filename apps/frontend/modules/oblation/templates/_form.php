@@ -45,7 +45,7 @@
         <th><?php echo $form['times']->renderLabel() ?></th>
         <td>
           <?php echo $form['times']->renderError() ?>
-          <?php echo $form['times'] ?>&nbsp; 小时
+          <?php echo $form['times'] ?>&nbsp; 天
         </td>
       </tr>
       <tr>

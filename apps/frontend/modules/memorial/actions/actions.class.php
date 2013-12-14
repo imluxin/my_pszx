@@ -135,7 +135,7 @@ class memorialActions extends lxActions
 		$this->memorial = $memorial;
 		$this->form = new MemorialForm($memorial);
 
-		$this->processEditForm($request, $this->form);
+		$this->processForm($request, $this->form, $this->myuser);
 
 		$this->setTemplate('edit');
 	}
@@ -152,18 +152,26 @@ class memorialActions extends lxActions
 
 	protected function processForm(sfWebRequest $request, sfForm $form,$myuser)
 	{
+		$isnew = $form->isNew();
 		$form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
 		if ($form->isValid())
 		{
 			$form->getObject()->setSfGuardUser($myuser);
 			$memorial = $form->save();
-		
-			$t = Doctrine_Core::getTable('MemorialTemplate')->findOneBy('is_free', true);
-			$memorial->setTemplateId($t->getId());
-			$memorial->setUserId($myuser->getId());
-			$memorial->setUserName($myuser->getUsername());
-			$memorial->save();
-			$this->flashAddSuccess();
+			
+			if ($isnew) {
+				$t = Doctrine_Core::getTable('MemorialTemplate')->findOneBy('is_free', true);
+				$memorial->setTemplateId($t->getId());
+				$memorial->setUserId($myuser->getId());
+				$memorial->setUserName($myuser->getUsername());
+				$memorial->save();
+				$this->flashAddSuccess();
+			}else{
+				$memorial->setIsRejected(false);
+				$memorial->setIsApproved(false);
+				$memorial->save();
+				$this->flashEditSuccess();
+			}
 			$this->redirect('memorial/edit?id='.$memorial->getId());
 		}
 	}

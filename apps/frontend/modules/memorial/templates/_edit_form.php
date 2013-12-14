@@ -203,19 +203,23 @@ $(function() {
 	
 	$( "#memorial_die_birth_one" ).datepicker({
 		changeMonth: true,
-		changeYear: true
+		changeYear: true,
+		yearRange: "-100:+0"
 	});
 	$( "#memorial_die_die_one" ).datepicker({
 		changeMonth: true,
-		changeYear: true
+		changeYear: true,
+		yearRange: "-100:+0"
 	});
 	$( "#memorial_die_birth_two" ).datepicker({
 		changeMonth: true,
-		changeYear: true
+		changeYear: true,
+		yearRange: "-100:+0"
 	});
 	$( "#memorial_die_die_two" ).datepicker({
 		changeMonth: true,
-		changeYear: true
+		changeYear: true,
+		yearRange: "-100:+0" 
 	});
 });
 

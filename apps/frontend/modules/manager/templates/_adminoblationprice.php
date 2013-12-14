@@ -2,7 +2,7 @@
 <div class="admin_shop_price admin_box">
 	<div class="subTitle">祭品价格表</div>
 	<div class="cont">
-		<table class="table">
+		<table class="table fix-w128-h128">
 				<tr>
 					<td>序号</td>
 					<td>名称</td>
@@ -16,8 +16,8 @@
                 	<td><?php echo $one->getId() ?></td>
                     <td><?php echo $one->getName() ?></td>
                     <td><?php echo image_tag('../uploads/oblation/'.$one->getImages()) ?></td>
-                    <td><input id="price_<?php echo $one->getId() ?>" style="width:80px;" type="text" value="<?php echo $one->getPrice() ?>" /></td>
-                    <td><?php echo $one->getTimes() ?></td>
+                    <td><input id="price_<?php echo $one->getId() ?>" size="5" type="text" value="<?php echo $one->getPrice() ?>" /></td>
+                    <td><input id="time_<?php echo $one->getId() ?>" size="5" type="text" value="<?php echo $one->getTimes() ?>" /> 天</td>
                     <td><a href="javascript:" onclick="modifyPrice(<?php echo $one->getId() ?>);">确认</a></td>
                 </tr>
                 <?php endforeach; ?>
@@ -65,13 +65,14 @@
 		}
 
 		var price = $('#price_'+id).val();
+		var time = $('#time_'+id).val();
 
 		if(price < 0) {
 			alert('请输入正确的价格');
 			return false;
 		}
 		
-		var url = '<?php echo url_for('oblationmanager/modifyprice')?>?id='+id+'&price='+price;
+		var url = '<?php echo url_for('oblationmanager/modifyprice')?>?id='+id+'&price='+price+'&time='+time;
 		
 		$.ajax({
 			type: "post",
