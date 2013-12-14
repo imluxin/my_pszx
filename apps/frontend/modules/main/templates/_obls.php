@@ -11,7 +11,7 @@
 			<a href="javascript:getObls('<?php echo $c['id']?>');"><?php echo $c['name']?></a>
 		<?php endforeach; ?>
 	</div>
-	许愿描述：<textarea id="wish" style="width:1000px;"></textarea>(输入您的许愿描述，然后点击下方的按钮。)
+	许愿描述：<textarea id="wish" style="width:1000px;">身体健康</textarea>(输入您的许愿描述，然后点击下方的按钮。)
 	
 	<div id="dialog" title="祭品列表" style="z-index: 9999;">
   		
