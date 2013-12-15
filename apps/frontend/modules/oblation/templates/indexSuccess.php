@@ -42,32 +42,17 @@
                 	<?php include_partial('oblation/pager', array('pg'=>$pg,'search_url'=>$search_url))?>
                 </div>
             	<div class="shopList">
-                        <ul class="clearfix fix-w133-h133">
+                        <ul class="clearfix fix-w120-h120">
                         <?php foreach($result as $one):?>
                             <li>
                             	<div class="shopList_img">
                                 	<?php echo image_tag($one->getPicture(true)) ?>
                                 </div>
                                 <div class="shopList_info">
-                                	<table>
-                                    	<tr>
-                                        	<td>名称：</td>
-                                            <td><?php echo $one['name']?></td>
-                                        </tr>
-                                        <tr>
-                                        	<td>价格：</td>
-                                            <td><?php echo $one['price']?>金币</td>
-                                        </tr>
-                                        <tr>
-                                        	<td>时间：</td>
-                                            <td><?php echo $one['times']?>小时</td>
-                                        </tr>
-                                        <tr>
-                                        	<td colspan="2">
-                                            	<a class="btnPurple" href="#">购买</a>
-                                            </td>
-                                        </tr>
-                                    </table>
+                                	<p>名称：<?php echo $one['name']?></p>
+                                	<p>价格：<?php echo $one['price']?></p>
+                                	<p>时间：<?php echo $one['times']?></p>
+                                	<p><a class="btnPurple" href="#">购买</a></p>
                                 </div>
                             </li>
                             <?php endforeach; ?>

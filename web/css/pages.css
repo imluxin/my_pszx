@@ -168,7 +168,8 @@
 	margin-bottom: 20px;
 }
 
-.static-border{border: 1px solid #800080;border-radius: 12px;margin-top:15px;}
+.static-border{border: 1px solid #800080;border-radius: 12px;font-size:18px;}
+.bannerNote{ font-size: 14px;line-height:22px; }
 
 .fix-img-400 img{width:400px !important;height: auto !important;}
 .fix-img-160 img{width:160px !important;height: auto !important;}
@@ -176,6 +177,8 @@
 .fix-w128-h128 img{width:128px !important;height: 128px !important;}
 .fix-w160-h160 img{width:160px !important;height: 160px !important;}
 .fix-w133-h133 img{width:133px !important;height: 133px !important;}
+.fix-w160-h107 img{width:160px !important;height: 107px !important;}
+.fix-w120-h120 img{width:120px !important;height: 120px !important;}
 
 .memorial-img img{ width:155px !important; height:179px !important; }
 

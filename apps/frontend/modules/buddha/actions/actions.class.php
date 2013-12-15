@@ -23,7 +23,7 @@ class buddhaActions extends lxActions
 		$search_url = '';
 
 		$page= $request->getParameter('page',1);        //默认第1页
-		$q = Doctrine_Core::getTable('BunddlaHall')->getListOnPage($page,6); //第页显示n条
+		$q = Doctrine_Core::getTable('BunddlaHall')->getListOnPage($page,12); //第页显示n条
 		$q->Where('is_approved=1 AND is_rejected=0');
 
 		if($this->rq != 'no') {
@@ -42,7 +42,7 @@ class buddhaActions extends lxActions
 		$this->search_url = urlencode($search_url);
 
 		//分页
-		$this->pg= new sfDoctrinePager('BunddlaHall',6);
+		$this->pg= new sfDoctrinePager('BunddlaHall',12);
 		$this->pg->setQuery($q);
 		$this->pg->setPage($page);
 		$this->pg->init();

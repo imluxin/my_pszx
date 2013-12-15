@@ -8,7 +8,7 @@
 
 <?php include_partial('global/notice')?>
 
-<ul class="imgList clearfix  fix-img-160">
+<ul class="imgList clearfix  fix-w160-h107">
 	<?php foreach($res as $one): ?>
 	<li>
 	<table>
