@@ -44,7 +44,7 @@ body{ background:url(../images/body_bg.jpg) 0 0 repeat-x}
 
 .shopList{margin:0 -10px -10px 0;}
 .shopList li{float:left;display:inline;margin:0 10px 10px 0;border:#eee 1px solid; width: 235px;}
-.shopList_img,.shopList_info{float:left;display:inline;margin-left:5px;}
+.shopList_img,.shopList_info{float:left;display:inline;margin-left:5px;font-size: 12px;}
 
 .banner img{width:710px;height:350px}
 .bannerTip{padding:10px;font-size:18px;color:#800080;}
