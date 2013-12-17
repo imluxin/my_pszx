@@ -179,6 +179,7 @@
 .fix-w133-h133 img{width:133px !important;height: 133px !important;}
 .fix-w160-h107 img{width:160px !important;height: 107px !important;}
 .fix-w120-h120 img{width:120px !important;height: 120px !important;}
+.fix-w320-h179 img{width:320px !important;height: 179px !important;}
 
 .memorial-img img{ width:155px !important; height:179px !important; }
 
@@ -232,4 +233,18 @@ object{
 	color: #468847;
 	background-color: #dff0d8;
 	border-color: #d6e9c6;
+}
+
+.pr{
+	position: relative;
+}
+#die-name-in-pic{
+	width: 100%;
+	position: absolute;
+	text-align: center;
+	top: 10px;
+	left: 0;
+	font-size: 15px;
+	font-weight: bold;
+	z-index: 9999;
 }

@@ -3,6 +3,10 @@ all:
   site:
     domain: http://pushazaixian.3s5s.com
 
+  sfImageTransformPlugin:
+    mime_type:
+      auto_detect: true
+      library: fileinfo
 dev: 
   gain: 0.1
   site:

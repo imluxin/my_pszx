@@ -10,7 +10,10 @@
         </div>
         <div class="row box">
             <div class="cont">
-            	<div>
+            	<div class="pr">
+            		<div id="die-name-in-pic">
+            			<span><?php echo $memorial['die_name_one'].' '.$memorial['die_name_two'].' 之墓'?></span>
+            		</div>
             		<img class="w" alt="" src="<?php echo $memorial->getMemorialTemplate()->getPicture('jng_path', true);?>">
             	</div>
             	
@@ -22,7 +25,7 @@
 	            </div>
 	            
                 <div class="imgList">
-                    <ul class="clearfix">
+                    <ul class="clearfix fix-w320-h179">
                     	<?php $show = $sf_request->getParameter('show', 'jng');?>
                     	<?php
                     		if ($myuser) {
