@@ -11,6 +11,7 @@
         <div class="row box">
             <div class="cont">
 			<h3 class="subTitle mb20">照片</h3>
+								<?php echo image_tag($memorial->getThumbnail('die_photo_one')) ?>
 	            
                 <div class="imgList">
                     <ul class="clearfix">

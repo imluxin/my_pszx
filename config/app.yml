@@ -3,6 +3,10 @@ all:
   site:
     domain: http://www.pusazaixian.com/
 
+  sfImageTransformPlugin:
+    mime_type:
+      auto_detect: true
+      library: fileinfo
 dev: 
   gain: 0.1
   site:

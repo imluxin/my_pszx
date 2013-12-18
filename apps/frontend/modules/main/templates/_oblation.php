@@ -24,7 +24,7 @@
 		</tr>
 		<tr>
 			<td>时间：</td>
-			<td><?php echo $one->getTimes()?>小时</td>
+			<td><?php echo $one->getTimes()?>天</td>
 		</tr>
 		<tr>
 			<td colspan="2"><a class="btnPurple" href="#">购买</a></td>

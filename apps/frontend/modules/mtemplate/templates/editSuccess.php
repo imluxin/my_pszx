@@ -5,7 +5,7 @@
 <?php use_javascript("tiny_mce/tiny_mce.js")?>
 <div id="content" class="build">
 <div class="row box clearfix">
-<div class="side fl"><?php include_partial('temple/user_info', array('myuser'=>$myuser))?>
+<div class="side fl"><?php include_partial('mtemplate/user_info', array('myuser'=>$myuser))?>
 </div>
 <div class="main fr">
 <div class="cont">

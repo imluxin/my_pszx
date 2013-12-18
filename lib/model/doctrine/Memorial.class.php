@@ -42,6 +42,38 @@ class Memorial extends BaseMemorial
 			}
 		}
 	}
+    
+    public function getUniqueName($field)
+    {
+    	$path = $this->_get($field);
+    	return substr($path, 0, 10);
+    }
+
+	public function getThumbnail($field, $w = 75, $h = 90)
+	{
+		if (!file_exists(sfConfig::get('sf_upload_dir').'/memorial') ||
+		!file_exists(sfConfig::get('sf_upload_dir').'/memorial/thumbs/'.$this->getUniqueName($field))){
+			mkdir(sfConfig::get('sf_upload_dir').'/memorial/thumbs/'.$this->getUniqueName($field), 0777, true);
+		}
+	
+		$savepath = sfConfig::get('sf_upload_dir').'/memorial/thumbs/'.$this->getUniqueName($field).'/'.$w.'-'.$h.'.jpg';
+	
+		if (file_exists($savepath)){
+			return '/'.strstr($savepath, 'uploads');
+		}
+		$image = $this->getPicture($field, false);
+		$image_path = sfConfig::get('sf_upload_dir').'/memorial/'.$image;
+	
+		if (is_file($image_path)){
+			$thumber = new sfImage($image_path);
+			
+			$thumber->thumbnail($w, $h, 'center');
+			$thumber->saveAs($savepath);
+			return '/'.strstr($savepath, 'uploads');
+		}else{
+			return ' ';
+		}
+	}
 
 	public function save( Doctrine_Connection $conn = null ) {
 		$user = sfContext::getInstance()->getUser()->getGuardUser();
