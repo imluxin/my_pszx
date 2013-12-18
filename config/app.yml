@@ -1,7 +1,7 @@
 all: 
   gain: 0.1
   site:
-    domain: http://pushazaixian.3s5s.com
+    domain: http://www.pusazaixian.com/
 
 dev: 
   gain: 0.1
