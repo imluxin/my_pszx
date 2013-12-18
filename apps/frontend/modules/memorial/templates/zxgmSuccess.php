@@ -21,24 +21,24 @@
 		return '<?php echo $memorial->getMemorialTemplate()->getPicture('gm_path', true); ?>';
 	}
 	
-// 	function getDeskInfo() {
-//		return ['<?php //echo $memorial->getPicture('die_photo_one', true); ?>', 430, 280];
-// 	}
+	function getDeskInfo() {
+		return null;
+	}
 
 	function getTitle(){
-		return [null, null];
+		return null;
 	}
 	function getPhotos(){
-		<?php if ($memorial->getCategoryId() == '2'): 
+		<?php if ($memorial->getCategoryId() == sfConfig::get('app_site_mcat2')): //7
 				$imageOne = $memorial->getThumbnail('die_photo_one');
 				$imageTwo = $memorial->getThumbnail('die_photo_two');
 		?>
-			return ['<?php echo $imageOne ?>', '<?php echo $imageTwo; ?>', 100, 50, 150, 50];
+			return ['<?php echo $imageOne ?>', 466, 325, '<?php echo $imageTwo; ?>', 506, 325];
 		<?php else:
 			$imageOne = $memorial->getThumbnail('die_photo_one');
 			$imageTwo = '';
 		?>
-			return ['<?php echo $imageOne ?>', '<?php echo $imageTwo; ?>', 100, 50, 150, 50];
+			return ['<?php echo $imageOne ?>', 485, 325, '<?php echo $imageTwo; ?>', 150, 50];
 		<?php endif;?>
 		
 	}

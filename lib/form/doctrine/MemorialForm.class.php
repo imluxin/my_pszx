@@ -16,7 +16,8 @@ class MemorialForm extends BaseMemorialForm
 			$this['user_name'],
 			$this['created_at'],
 			$this['updated_at'],
-			$this['is_single']
+			$this['is_single'],
+			$this['template_id']
 		);
 		
 		$this->widgetSchema['die_province_one'] = new sfWidgetFormChoice(array(
@@ -102,7 +103,7 @@ class MemorialForm extends BaseMemorialForm
 		
 		$this->widgetSchema['description'] = new sfWidgetFormTextarea(array(), array('class'=>'ckeditor'));
 		
-		$this->getWidget('template_id')->setOption('method', 'getNameWithPrice');
+		//$this->getWidget('template_id')->setOption('method', 'getNameWithPrice');
 		
 		$this->widgetSchema->setLabels(array(
 		  'm_name' => '纪念馆名称：',
@@ -123,7 +124,7 @@ class MemorialForm extends BaseMemorialForm
 		  'die_nickname_two' => '称呼：',
 		  'die_photo_two' => '逝者头像：',
 		  'description' => '生平介绍：',
-		  'template_id' => '纪念馆模板'
+		  //'template_id' => '纪念馆模板'
 		));
 		
 		$this->getWidget('category_id')->setOption('multiple', false)->setOption('expanded', true);

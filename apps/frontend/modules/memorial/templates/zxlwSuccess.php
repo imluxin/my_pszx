@@ -22,7 +22,25 @@
 	}
 	
 	function getDeskInfo() {
-		return ['<?php echo $memorial->getPicture('die_photo_one', true); ?>', 430, 120];
+		return null;
+	}
+
+	function getTitle(){
+		return ['<?php echo $memorial->getDieName().'灵位' ?>', null ];
+	}
+	function getPhotos(){
+		<?php if ($memorial->getCategoryId() ==  sfConfig::get('app_site_mcat2')): //7
+				$imageOne = $memorial->getThumbnail('die_photo_one', 113, 131);
+				$imageTwo = $memorial->getThumbnail('die_photo_two', 113, 131);
+		?>
+			return ['<?php echo $imageOne ?>', 385, 124, '<?php echo $imageTwo; ?>', 500, 124];
+		<?php else:
+			$imageOne = $memorial->getThumbnail('die_photo_one', 113, 131);
+			$imageTwo = '';
+		?>
+			return ['<?php echo $imageOne ?>', 444, 124, '<?php echo $imageTwo; ?>', 150, 50];
+		<?php endif;?>
+		
 	}
 	
 	function getInitUrl() {

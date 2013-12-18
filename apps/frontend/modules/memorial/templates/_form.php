@@ -195,9 +195,9 @@
 <script>
 
 $(function() {
-	var cat = $("input[name='memorial[category_id]']").val();
+	var cat = $("input[name='memorial[category_id]']").filter(':checked').val();
 
-	if(cat == '7'){
+	if(cat == <?php echo sfConfig::get('app_site_mcat2');?>){//7
 		$('#die-two').show();
 	}else{
 		$('#die-two').hide();
@@ -205,7 +205,7 @@ $(function() {
 
 	$("input[name='memorial[category_id]']").click(function(){
 		var cat = $(this).val();
-		if (cat == '7'){
+		if (cat == <?php echo sfConfig::get('app_site_mcat2');?>){ //7
 			$('#die-two').show();
 		}else{
 			$('#die-two').hide();
