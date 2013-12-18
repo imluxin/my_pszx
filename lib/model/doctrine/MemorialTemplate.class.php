@@ -19,7 +19,7 @@ class MemorialTemplate extends BaseMemorialTemplate
 	
 	public function getPicture($field, $full = false)
 	{
-		$image = $this->get($field);
+		$image = $this->_get($field);
 		$match = preg_match('^(http|https)://^', $image);
 		if ($match){
 			return $image;

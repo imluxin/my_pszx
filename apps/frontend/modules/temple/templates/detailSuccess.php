@@ -16,6 +16,15 @@
 	function getScene() {
 		return '<?php echo '/uploads/temple/'.$temple->getImgOne() ?>';
 	}
+
+	function getTitle(){
+		return null;
+	}
+
+	function getPhotos(){
+		return [];
+	}
+	
 	
 	function getDeskInfo() {
 		return ['<?php echo ''//lx::getZhuozi() ?>', 300, 320];

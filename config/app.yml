@@ -1,14 +1,16 @@
 all: 
   gain: 0.1
   site:
-    domain: http://www.pusazaixian.com/
-
+    domain: http://www.pushazaixian.com
+    mcat2: 7
   sfImageTransformPlugin:
+    default_adapter:  GD
     mime_type:
       auto_detect: true
-      library: fileinfo
+      library: gd_mime_type
 dev: 
   gain: 0.1
   site:
     domain: http://pszx.dev
+    mcat2: 2
   

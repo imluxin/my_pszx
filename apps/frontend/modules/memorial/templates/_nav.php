@@ -7,7 +7,7 @@
 		<a href="<?php echo url_for('memorial/lifetime?id='.$id) ?>">视频</a>
 		<a href="<?php echo url_for('memorial/message?id='.$id) ?>">留言</a>
 		<a href="<?php echo url_for('memorial/lifetime?id='.$id) ?>">追忆祭文</a>
-		<a href="#">背景音乐</a>
-		<?php include_partial('global/audio')?>
+		<a id="open-music-box" href="javascript:void(0);">背景佛乐</a>
+		<?php include_partial('global/audio', array('left' => '735px'))?>
 	 </h2>
 <a class="btnPurple buildBtn" href="#">写追忆祭文</a>

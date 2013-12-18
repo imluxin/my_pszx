@@ -15,6 +15,14 @@
 	function getScene() {
 		return '<?php echo sfConfig::get('app_site_domain').'/uploads/buddha/'.$buddha->getImages() ?>';
 	}
+
+	function getTitle(){
+		return null;
+	}
+
+	function getPhotos(){
+		return [];
+	}
 	
 	function getDeskInfo() {
 		return ['<?php echo $buddha->getPicture('zhuozi', true); ?>', 150, 430];

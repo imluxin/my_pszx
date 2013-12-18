@@ -12,6 +12,12 @@
  */
 class Memorial extends BaseMemorial
 {
+	public function getDieName()
+	{
+		return $this->getDieNameOne().' '.$this->getDieNameTwo();
+
+	}
+
 	
 	static public function getFileDir()
 	{
@@ -49,7 +55,7 @@ class Memorial extends BaseMemorial
     	return substr($path, 0, 10);
     }
 
-	public function getThumbnail($field, $w = 75, $h = 90)
+	public function getThumbnail($field, $w = 30, $h = 38)
 	{
 		if (!file_exists(sfConfig::get('sf_upload_dir').'/memorial') ||
 		!file_exists(sfConfig::get('sf_upload_dir').'/memorial/thumbs/'.$this->getUniqueName($field))){
@@ -65,9 +71,10 @@ class Memorial extends BaseMemorial
 		$image_path = sfConfig::get('sf_upload_dir').'/memorial/'.$image;
 	
 		if (is_file($image_path)){
+			
 			$thumber = new sfImage($image_path);
 			
-			$thumber->thumbnail($w, $h, 'center');
+			$thumber->thumbnail($w, $h);
 			$thumber->saveAs($savepath);
 			return '/'.strstr($savepath, 'uploads');
 		}else{
