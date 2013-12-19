@@ -21,7 +21,7 @@
 	}
 
 	function getPhotos(){
-		return [];
+		return null;
 	}
 	
 	function getDeskInfo() {

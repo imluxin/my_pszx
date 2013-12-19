@@ -184,7 +184,10 @@
 .memorial-img img{ width:155px !important; height:179px !important; }
 
 
-object{
+#music-box{
+    z-index:-1;
+}
+#music-box object{
 	position:relative; 
     z-index:-1;
 }

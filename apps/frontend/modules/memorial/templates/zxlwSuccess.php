@@ -26,7 +26,7 @@
 	}
 
 	function getTitle(){
-		return ['<?php echo $memorial->getDieName().'灵位' ?>', null ];
+		return ['<?php echo $memorial->getDieName().' 灵位' ?>', 410, 20, 28, 0 ];
 	}
 	function getPhotos(){
 		<?php if ($memorial->getCategoryId() ==  sfConfig::get('app_site_mcat2')): //7

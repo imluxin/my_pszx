@@ -26,7 +26,11 @@
 	}
 
 	function getTitle(){
-		return null;
+		<?php if ($memorial->getCategoryId() == sfConfig::get('app_site_mcat2')): ?>
+			return ['<?php echo $memorial->getDieNameOne().'之墓' ?>', 470, 370, 13, 1, '<?php echo $memorial->getDieNameTwo().'之墓' ?>', 510, 370, 13, 1 ];
+		<?php else: ?>
+			return ['<?php echo $memorial->getDieNameOne().'之墓' ?>', 490, 370, 13, 1 ];
+		<?php endif;?>
 	}
 	function getPhotos(){
 		<?php if ($memorial->getCategoryId() == sfConfig::get('app_site_mcat2')): //7

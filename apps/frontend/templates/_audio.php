@@ -18,8 +18,10 @@ $(document).ready(function() {
 		var z = $('#music-box object').css('z-index');
 
 		if(z == '-1' ){
+			$( "#music-box" ).css('z-index', '9999');
 			$( "#music-box object" ).css('z-index', '9999');
 		}else{
+			$( "#music-box" ).css('z-index', '-1');
 			$( "#music-box object" ).css('z-index', '-1');
 		}
 	});
