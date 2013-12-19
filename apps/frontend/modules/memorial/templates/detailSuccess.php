@@ -12,7 +12,7 @@
             <div class="cont">
             	<div class="pr">
             		<div id="die-name-in-pic">
-            			<span><?php echo $memorial['die_name_one'].' '.$memorial['die_name_two'].' 之墓'?></span>
+            			<span><?php echo $memorial['die_name_one'].' '.$memorial['die_name_two'].' 纪念馆'?></span>
             		</div>
             		<img class="w" alt="" src="<?php echo $memorial->getMemorialTemplate()->getPicture('jng_path', true);?>">
             	</div>

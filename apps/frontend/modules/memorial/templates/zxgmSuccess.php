@@ -8,10 +8,7 @@
 				<?php include_partial('memorial/nav', array('id'=>$memorial->getId()))?>
 </div>
 
-<div class="flash pr">
-<div class="grade grade10"></div>
-<div class="number">编号：<?php echo $memorial->getId() ?></div>
-</div>
+
 <!--flash-->
 <div class="flash">
 <?php include_partial('global/js_for_flash', array('myuser'=>$myuser))?>
