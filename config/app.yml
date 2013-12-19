@@ -1,7 +1,7 @@
 all: 
   gain: 0.1
   site:
-    domain: http://www.pushazaixian.com
+    domain: http://www.pusazaixian.com
     mcat2: 7
   sfImageTransformPlugin:
     default_adapter:  GD
