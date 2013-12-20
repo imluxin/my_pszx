@@ -3,68 +3,68 @@
 <?php use_stylesheet('../flash/history/history.css')?>
 <?php slot('title',$memorial->getMName().'-在线公墓-菩萨在线') ?>
 <div id="content" class="jng detail">
-<div class="row box">
-<div class="titleBar">
-				<?php include_partial('memorial/nav', array('id'=>$memorial->getId()))?>
-</div>
-
-
-<!--flash-->
-<div class="flash">
-<?php include_partial('global/js_for_flash', array('myuser'=>$myuser))?>
-<script type="text/javascript">
-
-	function getScene() {
-		return '<?php echo $memorial->getMemorialTemplate()->getPicture('gm_path', true); ?>';
-	}
-	
-	function getDeskInfo() {
-		return null;
-	}
-
-	function getTitle(){
-		<?php if ($memorial->getCategoryId() == sfConfig::get('app_site_mcat2')): ?>
-			return ['<?php echo $memorial->getDieNameOne().'之墓' ?>', 470, 370, 13, 1, '<?php echo $memorial->getDieNameTwo().'之墓' ?>', 510, 370, 13, 1 ];
-		<?php else: ?>
-			return ['<?php echo $memorial->getDieNameOne().'之墓' ?>', 490, 370, 13, 1 ];
-		<?php endif;?>
-	}
-	function getPhotos(){
-		<?php if ($memorial->getCategoryId() == sfConfig::get('app_site_mcat2')): //7
-				$imageOne = $memorial->getThumbnail('die_photo_one');
-				$imageTwo = $memorial->getThumbnail('die_photo_two');
-		?>
-			return ['<?php echo $imageOne ?>', 466, 325, '<?php echo $imageTwo; ?>', 506, 325];
-		<?php else:
-			$imageOne = $memorial->getThumbnail('die_photo_one');
-			$imageTwo = '';
-		?>
-			return ['<?php echo $imageOne ?>', 485, 325, '<?php echo $imageTwo; ?>', 150, 50];
-		<?php endif;?>
+	<div class="row box">
+		<div class="titleBar">
+			<?php include_partial('memorial/nav', array('id'=>$memorial->getId()))?>
+		</div>
 		
-	}
+		
+		<!--flash-->
+		<div class="flash">
+			<?php include_partial('global/js_for_flash', array('myuser'=>$myuser))?>
+			<script type="text/javascript">
+			
+				function getScene() {
+					return '<?php echo $memorial->getMemorialTemplate()->getPicture('gm_path', true); ?>';
+				}
+				
+				function getDeskInfo() {
+					return null;
+				}
+			
+				function getTitle(){
+					<?php if ($memorial->getCategoryId() == sfConfig::get('app_site_mcat2')): ?>
+						return ['<?php echo $memorial->getDieNameOne().'之墓' ?>', 470, 370, 13, 1, '<?php echo $memorial->getDieNameTwo().'之墓' ?>', 510, 370, 13, 1 ];
+					<?php else: ?>
+						return ['<?php echo $memorial->getDieNameOne().'之墓' ?>', 490, 370, 13, 1 ];
+					<?php endif;?>
+				}
+				function getPhotos(){
+					<?php if ($memorial->getCategoryId() == sfConfig::get('app_site_mcat2')): //7
+							$imageOne = $memorial->getThumbnail('die_photo_one');
+							$imageTwo = $memorial->getThumbnail('die_photo_two');
+					?>
+						return ['<?php echo $imageOne ?>', 466, 325, '<?php echo $imageTwo; ?>', 506, 325];
+					<?php else:
+						$imageOne = $memorial->getThumbnail('die_photo_one');
+						$imageTwo = '';
+					?>
+						return ['<?php echo $imageOne ?>', 485, 325, '<?php echo $imageTwo; ?>', 150, 50];
+					<?php endif;?>
+					
+				}
+				
+				function getInitUrl() {
+					return '<?php echo url_for('owtr/zxgminit?mid='.$memorial->getId())?>';
+				}
+			</script>
+			
+			<div id="flashContent">
+				<p>
+			        To view this page ensure that Adobe Flash Player version 
+					11.6.0 or greater is installed. 
+				</p>
+			    <script type="text/javascript"> 
+			           var pageHost = ((document.location.protocol == "https:") ? "https://" : "http://"); 
+			           document.write("<a href='http://www.adobe.com/go/getflashplayer'><img src='" 
+			                                + pageHost + "www.adobe.com/images/shared/download_buttons/get_flash_player.gif' alt='Get Adobe Flash player' /></a>" ); 
+			    </script> 
+			</div>
+		
+		</div>
+		<!--/flash-->
 	
-	function getInitUrl() {
-		return '<?php echo url_for('owtr/zxgminit?mid='.$memorial->getId())?>';
-	}
-</script>
-
-<div id="flashContent">
-	<p>
-        To view this page ensure that Adobe Flash Player version 
-		11.6.0 or greater is installed. 
-	</p>
-    <script type="text/javascript"> 
-           var pageHost = ((document.location.protocol == "https:") ? "https://" : "http://"); 
-           document.write("<a href='http://www.adobe.com/go/getflashplayer'><img src='" 
-                                + pageHost + "www.adobe.com/images/shared/download_buttons/get_flash_player.gif' alt='Get Adobe Flash player' /></a>" ); 
-    </script> 
-</div>
-
-</div>
-
-<!--/flash-->
-</div>
+	</div>
 
 <?php include_component('main', 'obls');?>
 
@@ -161,35 +161,37 @@ function move(sid,ggid,uid,x,y,sx,sy) {
 	<?php endforeach;?>
 </table>
 <div class="pages">
-<?php if(count($pg)>0): ?>
-<?php if($pg->getPage()==1): ?>
-<!-- 如果当前是第1页 -->
-<a class="disabled">首页</a>
-<a class="disabled">前一页</a>
-<?php else : ?>
-<a href="<?php echo url_for('temple/detail?id='.$temple->getId().'&page=1') ?>">首页</a>
-<a
-	href="<?php echo url_for('temple/detail?id='.$temple->getId().'&page='.$pg->getPreviousPage()) ?>">前一页</a>
-<!-- 前一页号 -->
-<?php endif; ?>
-<?php foreach ($pg->getLinks() as $page): ?>
-<!-- 页号集合 -->
-<?php if($page==$pg->getPage()): ?>
-<a class="current"><?php echo $page ?></a>
-<?php else: ?>
-<a href="<?php echo url_for('temple/detail?id='.$temple->getId().'&page='.$page) ?>"><?php echo $page ?></a>
-<?php endif; ?>
-<?php endforeach; ?>
-<?php if($pg->getPage()==$pg->getLastPage()): ?>
-<!-- 最后一页页号 -->
-<a class="disabled">后一页</a>
-<a class="disabled">尾页</a>
-<?php else : ?>
-<a href="<?php echo url_for('temple/detail?id='.$temple->getId().'&page='.$pg->getNextPage()) ?>">后一页</a>
-<!-- 下一页页号 -->
-<a href="<?php echo url_for('temple/detail?id='.$temple->getId().'&page='.$pg->getLastPage()) ?>">尾页</a>
-<?php endif; ?>
-<?php endif;?>
+	<?php $id = $sf_request->getParameter('id');?>
+	<?php if(count($pg)>0): ?>
+		<?php if($pg->getPage()==1): ?>
+			<!-- 如果当前是第1页 -->
+			<a class="disabled">首页</a>
+			<a class="disabled">前一页</a>
+		<?php else : ?>
+			<a href="<?php echo url_for('memorial/zxgm?id='.$id.'&page=1') ?>">首页</a>
+			<a href="<?php echo url_for('memorial/zxgm?id='.$id.'&page='.$pg->getPreviousPage()) ?>">前一页</a>
+		<!-- 前一页号 -->
+		<?php endif; ?>
+		
+		<?php foreach ($pg->getLinks() as $page): ?>
+			<!-- 页号集合 -->
+			<?php if($page==$pg->getPage()): ?>
+				<a class="current"><?php echo $page ?></a>
+			<?php else: ?>
+				<a href="<?php echo url_for('memorial/zxgm?id='.$id.'&page='.$page) ?>"><?php echo $page ?></a>
+			<?php endif; ?>
+		<?php endforeach; ?>
+		
+		<?php if($pg->getPage()==$pg->getLastPage()): ?>
+			<!-- 最后一页页号 -->
+			<a class="disabled">后一页</a>
+			<a class="disabled">尾页</a>
+		<?php else : ?>
+			<a href="<?php echo url_for('memorial/zxgm?id='.$id.'&page='.$pg->getNextPage()) ?>">后一页</a>
+			<!-- 下一页页号 -->
+			<a href="<?php echo url_for('memorial/zxgm?id='.$id.'&page='.$pg->getLastPage()) ?>">尾页</a>
+		<?php endif; ?>
+	<?php endif;?>
 </div>
 </div>
 </div>

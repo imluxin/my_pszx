@@ -236,7 +236,7 @@ class memorialActions extends lxActions
 		$this->myuser = $this->getUser()->getGuardUser();
 		
 		$page= $request->getParameter('page',1);        //默认第1页
-		$query = Doctrine_Core::getTable('MemorialHistory')->getListOnPage($page,30);
+		$query = Doctrine_Core::getTable('MemorialHistory')->createQuery();//->getListOnPage($page,30);
 		$query->where('m_id=?',$request->getParameter('id'))
 		->andWhere('module=?','zxlw')
 		->orderBy('id DESC');
@@ -255,7 +255,7 @@ class memorialActions extends lxActions
 		$this->myuser = $this->getUser()->getGuardUser();
 		
 		$page= $request->getParameter('page',1);        //默认第1页
-		$query = Doctrine_Core::getTable('MemorialHistory')->getListOnPage($page,30);
+		$query = Doctrine_Core::getTable('MemorialHistory')->createQuery();//->getListOnPage($page,30);
 		$query->where('m_id=?',$request->getParameter('id'))
 		->andWhere('module=?','zxgm')
 		->orderBy('id DESC');
