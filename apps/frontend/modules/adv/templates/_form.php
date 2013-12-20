@@ -47,9 +47,8 @@
       </tr>
       <tr>
         <th><?php echo $form['images']->renderLabel() ?></th>
-        <td id="img">
+        <td>
           <?php echo $form['images']->renderError() ?>
-          <?php echo image_tag('../uploads/adv/'.$adv['images']) ?>
           <?php echo $form['images'] ?>
         </td>
       </tr>
@@ -58,8 +57,8 @@
 </form>
 <script>
 	$(function() {
-		var imgs = $('#img img');
-		$(imgs[1]).css('display','none');
+		//var imgs = $('#img img');
+		//$(imgs[1]).css('display','none');
 
 		$( "#adv_start_date" ).datepicker({
 			changeMonth: true,

@@ -19,4 +19,20 @@ class Adv extends BaseAdv
 	public function getPublicFileLocation() {
 		return str_replace(sfConfig::get('sf_web_dir'), '', self::getFileDir()) . '/' . $this->getImages();
 	}
+	
+	public function getPicture($full = false)
+	{
+		$image = $this->getImages();
+		$match = preg_match('^(http|https)://^', $image);
+		if ($match){
+			return $image;
+		}else {
+			if ($full){
+				return '/uploads/adv/'.$image;
+			}
+			else {
+				return $image;
+			}
+		}
+	}
 }

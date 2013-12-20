@@ -19,9 +19,9 @@
 		<td><?php echo $one->getEndDate() ?></td>
 		<td><?php echo $one->getUrl() ?></td>
 		<td>
-		<?php if($one->getImages() != '' ) {?>
-		<?php echo image_tag('../uploads/adv/'.$one['images'],array('style'=>"width:50%;height:auto;")) ?>
-		<?php } ?>
+			<?php if($one->getImages() != '' ): ?>
+				<?php echo image_tag($one->getPicture(true),array('style'=>"width:50%;height:auto;")) ?>
+			<?php endif;?>
 		</td>
 		<td><a href="<?php echo url_for('adv/edit?id='.$one->getId()) ?>">修改</a></td>
 	</tr>

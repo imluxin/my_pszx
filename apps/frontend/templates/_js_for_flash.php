@@ -8,10 +8,6 @@
 		return '1';
 	}
 
-	function getDragRectangle(){
-		return [ 200, 400, 600, 200 ];
-	}
-
 	function getEffectInfo(){
 		return ['<?php echo lx::getShe(); ?>', 100, 250, 15000, 380, 380 ];
 	}

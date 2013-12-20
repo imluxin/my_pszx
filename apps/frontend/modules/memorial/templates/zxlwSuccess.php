@@ -16,6 +16,10 @@
 	function getScene() {
 		return '<?php echo $memorial->getMemorialTemplate()->getPicture('lw_path', true); ?>';
 	}
+
+	function getDragRectangle(){
+		return [ 70, 400, 860, 200, 0, 0, 0, 0 ];
+	}
 	
 	function getDeskInfo() {
 		return null;

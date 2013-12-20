@@ -4,7 +4,7 @@
 	<?php $u = $one->getUrl();
 	?>
 	<a href="<?php echo lx::getUrl($u); ?>" title="<?php echo $one->getTitle() ?>" rel="external">
-	<?php echo image_tag('../uploads/adv/'.$one['images'],array('alt'=> $one->getTitle())) ?>
+	<?php echo image_tag($one->getPicture(true),array('alt'=> $one->getTitle())) ?>
 	</a>
 <?php endforeach;?>
 

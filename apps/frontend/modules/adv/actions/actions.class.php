@@ -73,7 +73,7 @@ class advActions extends sfActions
 		{
 			$adv = $form->save();
 
-			$this->redirect('manager/adv');
+			$this->redirect('adv/edit?id='.$adv->getId());
 		}
 	}
 }

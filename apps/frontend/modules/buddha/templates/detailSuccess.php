@@ -16,6 +16,10 @@
 		return '<?php echo '/uploads/buddha/'.$buddha->getImages() ?>';
 	}
 
+	function getDragRectangle(){
+		return [ 70, 400, 860, 200, 0, 0, 0, 0 ];
+	}
+
 	function getTitle(){
 		return null;
 	}

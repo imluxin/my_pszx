@@ -18,19 +18,21 @@ class AdvForm extends BaseAdvForm
 		$this['updated_at']
 		);
 
-		$this->widgetSchema['images'] = new sfWidgetFormInputFileEditable(array(
-		    'file_src' => $this->getObject()->getPublicFileLocation(),
-		    'is_image' => true,
-		    'with_delete' => false,
-		    'edit_mode' => !$this->isNew() && $this->getObject()->getImages()
-		));
+// 		$this->widgetSchema['images'] = new sfWidgetFormInputFileEditable(array(
+// 		    'file_src' => $this->getObject()->getPublicFileLocation(),
+// 		    'is_image' => true,
+// 		    'with_delete' => false,
+// 		    'edit_mode' => !$this->isNew() && $this->getObject()->getImages()
+// 		));
 
-		$this->validatorSchema['images'] = new sfValidatorFile(array(
-				    'mime_types' => 'web_images',
-				    'path' => $this->getObject()->getFileDir(),
-					'required' => false
-		),array()
-		);
+// 		$this->validatorSchema['images'] = new sfValidatorFile(array(
+// 				    'mime_types' => 'web_images',
+// 				    'path' => $this->getObject()->getFileDir(),
+// 					'required' => false
+// 		),array()
+// 		);
+		
+		$this->configureImages('images', '上传图片', 'adv');
 
 		$this->widgetSchema->setLabels(array(
 		  	'title' => '广告标题：',

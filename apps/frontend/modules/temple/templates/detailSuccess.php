@@ -17,6 +17,10 @@
 		return '<?php echo '/uploads/temple/'.$temple->getImgOne() ?>';
 	}
 
+	function getDragRectangle(){
+		return [ 70, 400, 860, 200, 0, 0, 0, 0 ];
+	}
+
 	function getTitle(){
 		return null;
 	}
