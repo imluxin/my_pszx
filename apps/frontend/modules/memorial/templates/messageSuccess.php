@@ -4,11 +4,7 @@
         	<div class="titleBar">
 				<?php include_partial('memorial/nav', array('id'=>$memorial->getId()))?>
             </div>
-            <!--flash-->
-            <div class="flash"></div>
-            <!--/flash-->
-        </div>
-        <div class="row box">
+            
             <div class="cont">
 			<h3 class="subTitle mb20">留言</h3>
 	            
