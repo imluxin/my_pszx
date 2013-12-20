@@ -52,7 +52,7 @@
                                 	<p>名称：<?php echo $one['name']?></p>
                                 	<p>价格：<?php echo $one['price']?>金币</p>
                                 	<p>时间：<?php echo $one['times']?>天</p>
-                                	<p><a class="btnPurple" href="#">购买</a></p>
+                                	<p><a class="btnPurple" href="<?php echo url_for('buddha/index')?>">购买</a></p>
                                 </div>
                             </li>
                             <?php endforeach; ?>

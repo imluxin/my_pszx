@@ -27,7 +27,7 @@
 			<td><?php echo $one->getTimes()?>天</td>
 		</tr>
 		<tr>
-			<td colspan="2"><a class="btnPurple" href="#">购买</a></td>
+			<td colspan="2"><a class="btnPurple" href="<?php echo url_for('buddha/index')?>">购买</a></td>
 		</tr>
 	</table>
 	</div>
