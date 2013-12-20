@@ -19,15 +19,15 @@ class lx
 	
 	public static function getZhuozi()
 	{
-		return sfConfig::get('app_site_domain').'/flash/asset/zhuozi.png';
+		return '/flash/asset/zhuozi.png';
 	}
 	public static function getShe()
 	{
-		return sfConfig::get('app_site_domain').'/flash/asset/she.gif';
+		return '/flash/asset/she.gif';
 	}
 	public static function getFOswf()
 	{
-		return sfConfig::get('app_site_domain')."/flash/FO.swf";
+		return "/flash/FO.swf";
 	}
 	
 	

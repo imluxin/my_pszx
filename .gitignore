@@ -1,7 +1,8 @@
 cache/*
 log/*
 web/uploads/*
-config/propel.ini
+config/propel.ini 
+
 
 <<<<<<< HEAD
 .buildpath
