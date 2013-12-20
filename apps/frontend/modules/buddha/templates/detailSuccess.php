@@ -13,7 +13,7 @@
 <script type="text/javascript">
 
 	function getScene() {
-		return '<?php echo sfConfig::get('app_site_domain').'/uploads/buddha/'.$buddha->getImages() ?>';
+		return '<?php echo '/uploads/buddha/'.$buddha->getImages() ?>';
 	}
 
 	function getTitle(){
@@ -29,7 +29,7 @@
 	}
 	
 	function getInitUrl() {
-		return '<?php echo sfConfig::get('app_site_domain').url_for('owtr/buddhainit?bhid='.$buddha->getId(), array(), true)?>';
+		return '<?php echo url_for('owtr/buddhainit?bhid='.$buddha->getId(), array(), true)?>';
 	}
 
 </script>
