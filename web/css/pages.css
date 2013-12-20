@@ -2,9 +2,9 @@
 /* 各页面样式 */
 
 /* index 首页 */
-.index .user .login,.index .user .userInfo{height:102px}
+.index .user .login,.index .user .userInfo{height:85px}
 .index .user .cont{padding:15px}
-.index .user .titleBar{ background:none;border:none;text-align:center;color:#800080;font-size:18px;line-height:34px;font-family:"楷体"}
+.index .user .titleBar{ background:none;border:none;text-align:center;color:#800080;font-size:18px;font-family:"楷体"}
 .index .loginInput{float:left;display:inline}
 .index .loginInput li{margin-bottom:9px}
 .index .loginInput input{width:165px}
@@ -22,7 +22,7 @@
 .shopList img{width:133px;height:auto;}
 .index .shopList li{width:338px;}
 .index .side .imgList img{width:125px;height:80px}
-.index .row1 .cont{height:286px}
+.index .row1 .cont{height:299px}
 .index .row2 .cont{height:452px}
 .index .row3 .cont{height:383px}
 .index .row4 .cont{height:352px}
@@ -51,13 +51,13 @@
 .buddha .imgList li{width:320px; max-height:260px;}
 .buddha .imgList img{width:320px; height: 188px;}
 .buddha .imgList li a p {text-align: left;}
-.buddha .side{height:348px}
+.buddha .side{height:330px}
 
 /* temple 名山名寺 */
 .temple .imgList li{width:320px;height: 260px;margin-right: 9px;}
 .temple .imgList img{width:320px; height: 194px;}
 .temple .imgList li a p {text-align: left;}
-.temple .side{height:348px}
+.temple .side{height:330px}
 
 /* memorial 纪念馆 */
 .memorial .imgList li{width:155px}
@@ -77,12 +77,12 @@
 .zyjwTable table{width:100%}
 .zyjwTable td{border:#ddd 1px solid}
 .memorial .searchPeople .btnPurple{width:52px;height:52px}
-.memorial .side{height:348px}
+.memorial .side{height:330px}
 
 /* shop 祭品商店 */
 .shopSort{padding:10px;text-align:center}
 .shopSort a{display:inline-block;margin:5px 18px}
-.shop .side{height:348px}
+.shop .side{height:330px}
 
 /* news 最新动态 */
 .news .main{border-right:#ddd 1px dotted}
@@ -98,7 +98,7 @@
 .news .authorLink_name{font-size:18px;text-align:center;margin:10px 5px}
 .news .authorLink a{display:block;width:100px;margin:15px 5px}
 .news .otherWriting li{text-align:center}
-.news .side.box{height:348px}
+.news .side.box{height:330px}
 
 
 /* pay 充值提现 */

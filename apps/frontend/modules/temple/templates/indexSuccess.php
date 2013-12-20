@@ -10,7 +10,7 @@
 <div class="side fr box">
 <div class="cont">
 <div class="bannerTip tc mb15 static-border">
-山西五台山  浙江普陀山<br><br>
+山西五台山  浙江普陀山<br>
 四川峨眉山  安徽九华山
 </div>
 <div class="bannerNote">
